@@ -1,0 +1,10 @@
+@mixin eva-scroll-gradient($gradient-size: 7px) {
+	background: unquote("linear-gradient(var(--shadow-cover-color) 30%, rgba(255,255,255,0)), linear-gradient(rgba(255,255,255,0), var(--shadow-cover-color) 70%) 0 100%, linear-gradient(rgba(0,0,0,0.15) 0%, rgba(255,255,255,0))");
+	background-attachment: local, local, scroll;
+	background-repeat: no-repeat;
+	background-size: 100% ($gradient-size * 2), 100% 0, 100% $gradient-size;
+	overflow-y: auto;
+}
+
+// El mixin debe estar incluido dentro del contenedor scrolleable, y se le debe pasar el parametro --shadow-cover-color(css3), de acuerdo al background color en donde se lo este utilizando.
+// Se le debe pasar el alto del gradient si se necesita.

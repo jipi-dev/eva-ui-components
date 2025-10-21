@@ -1,0 +1,52 @@
+@mixin spinner( $size: 17px, $color: #FFF ) {
+	&:before {
+		content: "";
+		display: inline-block;
+		width: $size;
+		height: $size;
+		margin-top: -4px;
+		border: 4px solid $color;
+		border-top: 4px solid rgba(0,0,0,0);
+		border-left: 4px solid rgba(0,0,0,0);
+		border-radius: 50px;
+		-moz-animation: spinner 0.75s infinite linear;
+		-webkit-animation: spinner 0.75s infinite linear;
+		animation: spinner 0.75s infinite linear;
+		vertical-align: middle;
+	}
+
+	.ie8 &, .ie9 & {
+		width: 35px;
+		height: 35px;
+		border: 0 none;
+		border-radius: 0;
+		//background-image: url(/despegar/inc/images/common/modules/spinner/common-spinner.gif);
+		background-repeat: no-repeat;
+		opacity: 1;
+	}
+}
+
+@mixin spinner-button( $size: 17px, $color: #FFF ) {
+	@include spinner();
+	display: inline-block;
+	max-width: 0px;
+	transition: max-width 0.3s, opacity 0.3s;
+	vertical-align: bottom;
+	overflow: hidden;
+	opacity: 0;
+}
+
+@keyframes spinner {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@-moz-keyframes spinner {
+	0% { -moz-transform: rotate(0deg); }
+	100% { -moz-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spinner {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}

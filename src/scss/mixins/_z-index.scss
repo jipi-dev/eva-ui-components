@@ -1,0 +1,18 @@
+/* MUST READ:
+https://blog.logrocket.com/how-css-works-creating-layers-with-z-index-6a20afe1550e
+https://hackernoon.com/my-approach-to-using-z-index-eca67feb079c
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+*/
+
+$z-indexes: (
+	"background"          : -1,
+	"base"                : 0,
+	"over-elements"       : 10,
+	"headers"             : 100,
+	"floating-components" : 200,
+	"overlay"             : 999
+);
+
+@mixin eva-z-index($layer: "base", $delta: 0) {
+	z-index: (map-get($z-indexes, $layer) + $delta);
+}

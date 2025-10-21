@@ -1,0 +1,6 @@
+// Ellipsis inline para mostrar los "..." al final del texto, o sea truncarlo
+@mixin eva-ellipsis-inline {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}

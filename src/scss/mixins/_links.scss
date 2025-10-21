@@ -1,0 +1,42 @@
+@mixin eva-link {
+	color: var(--brand-primary-3);
+	font-weight: 500;
+	text-decoration: underline;
+	transition: color 0.2s ease-out, opacity 0.2s;
+
+	&:hover {
+		color: var(--brand-primary-4);
+		transition: none;
+	}
+
+	&:active {
+		color: var(--brand-primary-4);
+	}
+
+	&:focus-visible {
+		@include eva-focus($radius: "rounded");
+	}
+
+	&[disable],
+	&.-disable {
+		color: var(--color-neutral-100);
+	}
+
+	&.-lighten {
+		color: var(--color-neutral-300);
+
+		&:hover {
+			color: var(--color-white);
+			transition: none;
+		}
+
+		&:active {
+			color: var(--color-white);
+		}
+
+		&[disable],
+		&.-disable {
+			opacity: 0.6;
+		}
+	}
+}

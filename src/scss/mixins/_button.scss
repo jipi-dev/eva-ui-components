@@ -1,0 +1,170 @@
+// General
+@mixin eva-button {
+	display: inline-block;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	border-radius: 24px;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: background-color 0.3s ease-out;
+	cursor: pointer;
+	user-select: none;
+	overflow: hidden;
+
+	// Status
+	&:hover {
+		text-decoration: none;
+		transition-duration: 0s;
+	}
+
+	&:after {
+		content: "";
+		display: none;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 4px;
+		transform-origin: 0 0;
+	}
+
+	&:active {
+		box-shadow: none;
+		transition-duration: 0s;
+	}
+
+	.btn-text {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.btn-status {
+		display: block;
+		color: var(--color-neutral-600);
+	}
+
+	.btn-text, .btn-status {
+		color: var(--color-white);
+		font-style: normal;
+		transition: transform 0.2s;
+	}
+
+	.btn-icon, &.-icon .btn-text {
+		color: var(--color-white);
+	}
+
+	// Sizes
+	&.-lg {
+		height: 48px;
+		padding: 0 20px;
+		font-size: 16px;
+		line-height: 48px;
+
+		.btn-icon {
+			font-size: 20px;
+
+			+ .btn-text {
+				padding-left: 8px;
+			}
+
+			&:last-child {
+				padding-left: 8px;
+			}
+		}
+	}
+
+	&.-md {
+		height: 36px;
+		padding: 0 16px;
+		font-size: 14px;
+		line-height: 36px;
+
+		.btn-icon { /* stylelint-disable */
+			font-size: 16px;
+
+			+ .btn-text {
+				padding-left: 8px;
+			}
+
+			&:last-child {
+				padding-left: 8px;
+			}
+		}
+	}
+
+	&.-sm {
+		height: 24px;
+		padding: 0 10px;
+		font-size: 11px;
+		line-height: 24px;
+
+		.btn-icon {
+			font-size: 12px;
+
+			+ .btn-text {
+				padding-left: 8px;
+			}
+
+			&:last-child {
+				padding-left: 8px;
+			}
+		}
+	}
+
+	&.-loading {
+		position: relative;
+		transform: translate3d(0,0,0);
+		pointer-events: none;
+
+		&:after {
+			display: block;
+			animation: eva-button-loading 1.4s infinite;
+		}
+
+		.btn-icon {
+			display: none;
+		}
+
+		&.-lg {
+			line-height: 46px;
+
+			.btn-text, .btn-status {
+				transform: translateY(-44px) translateZ(0);
+			}
+		}
+
+		&.-md {
+			line-height: 34px;
+
+			.btn-text, .btn-status {
+				transform: translateY(-34px) translateZ(0);
+			}
+		}
+
+		&.-sm {
+			line-height: 22px;
+
+			.btn-text, .btn-status {
+				transform: translateY(-24px) translateZ(0);
+			}
+		}
+	}
+
+	//Disabled
+	&.-disable,
+	&[disabled] {
+		background-color: var(--color-neutral-300) !important;
+		pointer-events: none;
+
+		&:after {
+			display: none;
+		}
+
+		.btn-text, .btn-status, .btn-icon {
+			color: var(--color-neutral-700) !important;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+// Slide transitions
+@mixin eva-show() {
+	max-height: 100%;
+	transform: translateX(0) translateY(0);
+	transition: transform 0.2s ease-out, opacity 0.2s ease-out, max-height 0s;
+	overflow: visible;
+	opacity: 1;
+}
+
+@mixin eva-hide( $translation: 15px) {
+	position: relative;
+	min-height: 0;
+	max-height: 0;
+	transition: transform 0.2s ease-out, opacity 0.2s ease-out, max-height 0s 0.2s;
+	overflow: hidden;
+	opacity: 0;
+
+	&.-up {
+		transform: translateY($translation);
+	}
+
+	&.-down {
+		transform: translateY(-$translation);
+	}
+
+	&.-left {
+		transform: translateX($translation);
+	}
+
+	&.-right {
+		transform: translateX(-($translation));
+	}
+
+	&.-start {
+		@include eva-show;
+	}
+}

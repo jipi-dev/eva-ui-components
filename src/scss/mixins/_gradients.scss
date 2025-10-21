@@ -1,0 +1,23 @@
+@mixin eva-over-gradient($gradient-size, $to-side: "right", $to-color: var(--color-white)) {
+	@include eva-z-index("base", 1);
+	content: "";
+	display: block;
+	position: absolute;
+	pointer-events: none;
+	background-image: linear-gradient(to unquote($to-side), rgba(255,255,255,0), $to-color 80%);
+	// Trasparent on gradint doesnt work on Safari
+	#{$to-side}: 0;
+
+	@if (($to-side == "right") or ($to-side == "left")) {
+		top: 0;
+		bottom: 0;
+		width: $gradient-size;
+		height: 100%;
+	}
+	@else {
+		right: 0;
+		left: 0;
+		width: 100%;
+		height: $gradient-size;
+	}
+}

@@ -1,0 +1,10 @@
+@mixin eva-icon($unicode-value) {
+	content: $unicode-value;
+	font-family: "eva-font"; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	text-transform: none;
+	font-variant: normal;
+}

@@ -1,0 +1,25 @@
+@mixin eva-input-placeholder($color: var(--color-neutral-600), $font-style: italic ) {
+	&::-webkit-input-placeholder {
+		color: $color;
+		font-family: var(--font-family), Arial, sans-serif;
+		font-style: $font-style;
+	}
+
+	&:-moz-placeholder {
+		color: $color;
+		font-family: var(--font-family), Arial, sans-serif;
+		font-style: $font-style;
+	}
+
+	&::-moz-placeholder {
+		color: $color;
+		font-family: var(--font-family), Arial, sans-serif;
+		font-style: $font-style;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color;
+		font-family: var(--font-family), Arial, sans-serif;
+		font-style: $font-style;
+	}
+}

@@ -1,0 +1,38 @@
+// Focus - Accesibilidad
+:root {
+	--focus-color: var(--color-neutral-800);
+	--focus-color-lighten: var(--color-white);
+	--focus-color-error: var(--color-error-500);
+}
+
+$focus-stroke: 2px;
+$focus-offset: 2px;
+$focus-radius: 4px;
+
+@mixin eva-focus($color: null, $offset: null, $radius: null, $none: false) {
+	// Color
+	@if $color == "lighten" {
+		outline: $focus-stroke solid var(--focus-color-lighten) !important;
+	} @else if $color == "error" {
+		outline: $focus-stroke solid var(--focus-color-error) !important;
+	} @else {
+		outline: $focus-stroke solid var(--focus-color) !important;
+	}
+
+	// Offset
+	@if $offset == "inside" {
+		outline-offset: calc(#{$focus-stroke} * -1);
+	} @else {
+		outline-offset: $focus-offset;
+	}
+
+	// Radius
+	@if $radius == "rounded" {
+		border-radius: $focus-radius;
+	}
+
+	// Remove default focus
+	@if $none {
+		outline: none !important;
+	}
+}

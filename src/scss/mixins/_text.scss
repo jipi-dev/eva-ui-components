@@ -1,0 +1,88 @@
+$font-sizes: (
+	"h1": (
+		"font-size": 44px,
+		"letter-spacing": -0.2px,
+		"line-height": 48px,
+		"font-weight": 500
+	),
+	"h2": (
+		"font-size": 32px,
+		"letter-spacing": -0.2px,
+		"line-height": 36px,
+		"font-weight": 500
+	),
+	"h3": (
+		"font-size": 24px,
+		"line-height": 32px,
+		"font-weight": 500
+	),
+	"h4": (
+		"font-size": 20px,
+		"line-height": 28px,
+		"font-weight": 500
+	),
+	"h5": (
+		"font-size": 16px,
+		"line-height": 24px,
+		"font-weight": 500
+	),
+	"h6": (
+		"font-size": 14px,
+		"letter-spacing": 0.1px,
+		"line-height": 20px,
+		"font-weight": 500
+	),
+	"subtitle-s": (
+		"font-size": 12px,
+		"letter-spacing": 0.1px,
+		"line-height": 16px,
+		"font-weight": 500
+	),
+	"p": (
+		"font-size": 12px,
+		"line-height": 16px,
+		"font-weight": normal
+	),
+	"small": (
+		"font-size": 11px
+	),
+	"body-1": (
+		"font-size": 16px,
+		"line-height": 24px
+	),
+	"body-2": (
+		"font-size": 14px,
+		"letter-spacing": 0.05px,
+		"line-height": 20px
+	),
+	"button": (
+		"font-size": 14px,
+		"line-height": 20px,
+		"font-weight": 500
+	),
+	"caption": (
+		"font-size": 12px,
+		"letter-spacing": 0.1px,
+		"line-height": 16px
+	),
+	"overline-1": (
+		"font-size": 14px,
+		"letter-spacing": 1.2px,
+		"line-height": 20px,
+		"font-weight": 500,
+		"text-transform": uppercase
+	),
+	"overline-2": (
+		"font-size": 12px,
+		"letter-spacing": 1px,
+		"line-height": 16px,
+		"font-weight": 500,
+		"text-transform": uppercase
+	)
+);
+
+@mixin eva-text-as($heading-key) {
+	@each $property, $value in map-get($font-sizes, $heading-key) {
+		#{$property}: $value;
+	}
+}

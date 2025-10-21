@@ -1,0 +1,365 @@
+@import "../../scss/eva-core";
+
+// Settings
+:root {
+	--button-border_radius: #{$spacing-6};
+}
+
+// $eva-btn-border_radius: $spacing-6;
+
+// General
+.eva-#{$version}-btn-ghost {
+	display: inline-block;
+	box-sizing: border-box;
+	outline: none;
+	border: solid 1px var(--brand-primary-3);
+	border-radius: var(--button-border_radius);
+	background-color: transparent;
+	color: var(--brand-primary-3);
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: background-color 0.3s ease-out;
+	cursor: pointer;
+	user-select: none;
+	vertical-align: bottom;
+	overflow: hidden;
+
+	&:after {
+		content: "";
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: var(--button-border_radius);
+		transform-origin: 0 0;
+	}
+
+	&:focus-visible {
+		@include breakpoint("large","up") {
+			@include eva-focus;
+		}
+	}
+
+	.btn-text {
+		display: inline-block;
+	}
+
+	.btn-status {
+		display: none;
+		color: var(--brand-primary-3);
+	}
+
+	.btn-text, .btn-status {
+		font-weight: 500;
+		transition: transform 0.2s, color 0.3s;
+		vertical-align: top;
+	}
+
+	.btn-icon {
+		transition: color 0.3s;
+	}
+
+	// Sizes
+	&.-lg {
+		height: 48px;
+		padding: 0 $spacing-5;
+		font-size: 16px;
+		line-height: 48px;
+
+		.btn-icon {
+			font-size: 20px;
+
+			&:first-child {
+				padding-right: $spacing-2;
+			}
+
+			&:last-child {
+				padding-left: $spacing-2;
+			}
+		}
+
+		&.-circle {
+			width: 48px;
+			padding: 0;
+			border-radius: 50%;
+
+			.btn-icon {
+				display: block;
+				padding: 0;
+			}
+		}
+	}
+
+	&.-md {
+		height: 36px;
+		padding: 0 $spacing-4;
+		font-size: 14px;
+		line-height: 36px;
+
+		.btn-icon {
+			font-size: 16px;
+
+			&:first-child {
+				padding-right: $spacing-2;
+			}
+
+			&:last-child {
+				padding-left: $spacing-2;
+			}
+		}
+
+		&.-circle {
+			width: 36px;
+			padding: 0;
+			border-radius: 50%;
+
+			.btn-icon {
+				display: block;
+				padding: 0;
+			}
+		}
+	}
+
+	&.-sm {
+		height: 24px;
+		padding: 0 $spacing-2;
+		font-size: 11px;
+		line-height: 24px;
+
+		.btn-icon {
+			font-size: 12px;
+
+			&:first-child {
+				padding-right: $spacing-2;
+			}
+
+			&:last-child {
+				padding-left: $spacing-2;
+			}
+		}
+	}
+
+	&:active {
+		background-color: var(--brand-primary-1);
+		transition-duration: 0s;
+	}
+
+	&.-loading {
+		position: relative;
+		transform: translate3d(0,0,0);
+		pointer-events: none;
+
+		&:after {
+			display: block;
+			background-color: var(--brand-primary-1);
+			animation: eva-button-ghost-loading 1.4s infinite;
+			z-index: -1;
+		}
+
+		.btn-icon {
+			display: none;
+		}
+
+		&.-lg {
+			line-height: 46px;
+
+			.btn-text {
+				display: none;
+			}
+
+			.btn-status {
+				display: inline-block;
+			}
+		}
+
+		&.-md {
+			line-height: 34px;
+
+			.btn-text {
+				display: none;
+			}
+
+			.btn-status {
+				display: inline-block;
+			}
+		}
+
+		&.-sm {
+			line-height: 22px;
+
+			.btn-text {
+				display: none;
+			}
+
+			.btn-status {
+				display: inline-block;
+			}
+		}
+	}
+
+	// Colors
+	&.-darken {
+		border: solid 1px var(--color-neutral-800);
+		color: var(--color-neutral-800);
+
+		&:after {
+			background-color: var(--color-neutral-100);
+		}
+
+		&:active {
+			background-color: var(--color-neutral-100);
+		}
+
+		.btn-status {
+			color: var(--color-neutral-800);
+		}
+		// Status
+		@include breakpoint ("large", "up") {
+			&:hover {
+				background-color: var(--color-neutral-100);
+			}
+		}
+	}
+
+	&.-lighten, &.-white-loyalty {
+		border: solid 1px var(--color-white);
+		color: var(--color-white);
+
+		&:after {
+			background-color: var(--color-white);
+		}
+
+		&:active {
+			background-color: var(--brand-primary-1);
+			color: var(--brand-primary-3);
+		}
+
+		@include breakpoint("large","up") {
+			&:focus-visible {
+				@include eva-focus("lighten");
+			}
+		}
+
+		// Status
+		@include breakpoint ("large", "up") {
+			&:hover {
+				background-color: var(--brand-primary-1);
+				color: var(--brand-primary-3);
+			}
+		}
+	}
+
+	&.-lighten {
+		&.-loading {
+			background-color: var(--brand-primary-1);
+		}
+	}
+
+	&.-white-loyalty {
+		&:hover, &:active {
+			background-color: var(--color-white);
+			color: var(--color-neutral-800);
+		}
+
+		&.-loading {
+			background-color: var(--eva-loyalty-primary-100);
+
+			.btn-status {
+				color: var(--color-neutral-800);
+			}
+		}
+	}
+
+	// Blue variant
+	&.-blue {
+		border: solid 1px var(--brand-primary-2);
+		color: var(--brand-primary-2);
+
+		&:after {
+			background-color: var(--brand-primary-2);
+		}
+
+		&:active {
+			background-color: var(--brand-primary-3);
+			color: var(--color-white);
+		}
+
+		.btn-status {
+			color: var(--brand-primary-2);
+		}
+		// Status
+		@include breakpoint ("large", "up") {
+			&:hover {
+				background-color: var(--brand-primary-2);
+				color: var(--color-white);
+			}
+		}
+	}
+	//Disabled
+	&.-disable,
+	&[disabled] {
+		border-color: var(--color-neutral-400);
+		pointer-events: none;
+
+		&:after {
+			display: none;
+		}
+
+		.btn-text, .btn-status, .btn-icon {
+			color: var(--color-neutral-400) !important;
+		}
+
+		&.-lighten, &.-white-loyalty {
+			border-color: var(--color-neutral-400);
+		}
+	}
+
+	// Status
+	@include breakpoint ("large", "up") {
+		&:hover {
+			background-color: var(--brand-primary-1);
+			text-decoration: none;
+			transition-duration: 0s;
+
+			.btn-text, .btn-icon {
+				transition-duration: 0s;
+			}
+		}
+	}
+}
+
+// Keyframe
+@include keyframes(eva-button-ghost-loading) {
+	0% {
+		transform: translateX(-100%);
+		opacity: 1;
+	}
+
+	70% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+
+	97% {
+		transform: translateX(100%);
+		opacity: 1;
+	}
+
+	98% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	99% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(-100%);
+		opacity: 1;
+	}
+}

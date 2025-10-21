@@ -1,0 +1,57 @@
+@mixin breakpoint($size, $exact: "exact") {
+	@if $size == "small" {
+		@if $exact == "exact" {
+			@media (min-width:1px) and (max-width:767px) {
+				@content;
+			}
+		}@if $exact == "up" {
+			@media (min-width:1px) {
+				@content;
+			}
+		}
+	}
+
+	@else if $size == "medium" {
+		@if $exact == "exact" {
+			@media (min-width:768px) and (max-width:1023px) {
+				@content;
+			}
+		}@if $exact == "up" {
+			@media (min-width:768px) {
+				@content;
+			}
+		}@if $exact == "down" {
+			@media (max-width:1023px) {
+				@content;
+			}
+		}
+	}
+
+	@else if $size == "large" {
+		@if $exact {
+			@media (min-width:1024px) and (max-width:1279px) {
+				@content;
+			}
+		}@if $exact == "up" {
+			@media (min-width:1024px) {
+				@content;
+			}
+		}@if $exact == "down" {
+			@media (max-width:1279px) {
+				@content;
+			}
+		}
+	}
+
+	@else if $size == "huge" {
+		@media (min-width:1280px) {
+			@content;
+		}
+	}
+}
+
+@mixin breakpoint-manual($break-max, $break-min) {
+	@media (min-width: $break-min) and (max-width: $break-max) {
+		@content;
+	}
+}

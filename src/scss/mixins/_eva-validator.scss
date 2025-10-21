@@ -1,0 +1,217 @@
+// Validator
+@mixin eva-validator($position: "top-left") {
+	// Positions
+	@if $position == "top-left" {
+		.validation-msg {
+			top: auto;
+			right: auto;
+			bottom: 100%;
+			left: 0;
+			margin: auto 5px -12px;
+
+			&:before {
+				top: auto;
+				right: auto;
+				bottom: -16px;
+				left: 7px;
+				border-color: var(--color-error-900) transparent transparent;
+			}
+		}
+
+		&.-sm {
+			.validation-msg {
+				margin-bottom: -8px;
+			}
+		}
+
+		&.-lg {
+			.validation-msg {
+				margin-bottom: -15px;
+			}
+		}
+
+		&.-invalid {
+			.validation-msg {
+				transform: translateY(-10px);
+			}
+		}
+	}@else if $position == "top-right" {
+		.validation-msg {
+			top: auto;
+			right: 0;
+			bottom: 100%;
+			left: auto;
+			margin: auto 5px -12px;
+
+			&:before {
+				top: auto;
+				right: 7px;
+				bottom: -16px;
+				left: auto;
+				border-color: var(--color-error-900) transparent transparent;
+			}
+		}
+
+		&.-sm {
+			.validation-msg {
+				margin-bottom: -8px;
+			}
+		}
+
+		&.-lg {
+			.validation-msg {
+				margin-bottom: -15px;
+			}
+		}
+
+		&.-invalid {
+			.validation-msg {
+				transform: translateY(-10px);
+			}
+		}
+	}@else if $position == "top-center" {
+		.validation-msg {
+			top: auto;
+			right: auto;
+			bottom: 100%;
+			left: 50%;
+			width: 300px;
+			margin-bottom: -12px;
+			margin-left: calc((300px / 2) * -1);
+			text-align: center;
+
+			&:before {
+				top: auto;
+				right: auto;
+				bottom: -16px;
+				left: 50%;
+				margin-left: -9px;
+				border-color: var(--color-error-900) transparent transparent;
+			}
+		}
+
+		&.-sm {
+			.validation-msg {
+				margin-bottom: -8px;
+			}
+		}
+
+		&.-lg {
+			.validation-msg {
+				margin-bottom: -15px;
+			}
+		}
+
+		&.-invalid {
+			.validation-msg {
+				transform: translateY(-10px);
+			}
+		}
+	}@else if $position == "bottom-left" {
+		.validation-msg {
+			top: 100%;
+			right: auto;
+			bottom: auto;
+			left: 0;
+			margin: -12px 5px auto;
+
+			&:before {
+				top: -16px;
+				right: auto;
+				bottom: auto;
+				left: 7px;
+				border-color: transparent transparent var(--color-error-900);
+			}
+		}
+
+		&.-sm {
+			.validation-msg {
+				margin-top: -8px;
+			}
+		}
+
+		&.-lg {
+			.validation-msg {
+				margin-top: -15px;
+			}
+		}
+
+		&.-invalid {
+			.validation-msg {
+				transform: translateY(10px);
+			}
+		}
+	}@else if $position == "bottom-right" {
+		.validation-msg {
+			top: 100%;
+			right: 0;
+			bottom: auto;
+			left: auto;
+			margin: -12px 5px auto;
+
+			&:before {
+				top: -16px;
+				right: 10%;
+				bottom: auto;
+				left: auto;
+				border-color: transparent transparent var(--color-error-900);
+			}
+		}
+
+		&.-sm {
+			.validation-msg {
+				margin-top: -8px;
+			}
+		}
+
+		&.-lg {
+			.validation-msg {
+				margin-top: -15px;
+			}
+		}
+
+		&.-invalid {
+			.validation-msg {
+				transform: translateY(10px);
+			}
+		}
+	}@else if $position == "bottom-center" {
+		.validation-msg {
+			top: 100%;
+			right: auto;
+			bottom: auto;
+			left: 50%;
+			width: 300px;
+			margin-top: -12px;
+			margin-left: calc((300px / 2) * -1);
+			text-align: center;
+
+			&:before {
+				top: -16px;
+				right: auto;
+				bottom: auto;
+				left: 50%;
+				margin-left: -9px;
+				border-color: transparent transparent var(--color-error-900);
+			}
+		}
+
+		&.-sm {
+			.validation-msg {
+				margin-top: -8px;
+			}
+		}
+
+		&.-lg {
+			.validation-msg {
+				margin-top: -15px;
+			}
+		}
+
+		&.-invalid {
+			.validation-msg {
+				transform: translateY(10px);
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+// Variables de version
+@import "variables/config";
+
+// Map de colores con los nombres de las clases
+@import "variables/colours-class-list";
+
+// Variables de spacing
+@import "variables/spacing";
+
+// Border-radius
+@import "variables/border-radius";
+
+// Mediaqueries
+@import "mixins/breakpoints";
+
+// Button
+@import "mixins/button";
+
+// Clearfix
+@import "mixins/clearfix";
+
+// Ellipsis Inline
+@import "mixins/ellipsis-inline";
+
+// Eva validator
+@import "mixins/eva-validator";
+
+// Focus
+@import "mixins/focus";
+
+// Gradients
+@import "mixins/gradients";
+
+// Icon
+@import "mixins/icon";
+
+// Input-placeholder
+@import "mixins/input-placeholder";
+
+// Keyframe
+@import "mixins/keyframe";
+
+// Links
+@import "mixins/links";
+
+// Overlays
+@import "mixins/overlays";
+
+// Gradients
+@import "mixins/scroll-gradient";
+
+// Show hide modules
+@import "mixins/show-hide-modules";
+
+// Text
+@import "mixins/text";
+
+// Z-index
+@import "mixins/z-index";
+
+// Function return var colors
+@function color($color-name) {
+	@return var(--color-#{$color-name});
+}
