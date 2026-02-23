@@ -1,0 +1,62 @@
+@import "../../scss/eva-core";
+
+// Variables
+$rating-width-lg: 60px;
+$rating-height-lg: 48px;
+$rating-width-md: 36px;
+$rating-height-md: 28px;
+$rating-width-sm: 28px;
+$rating-height-sm: 20px;
+
+.eva-#{$version}-rating {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&.-lg {
+		width: $rating-width-lg;
+		height: $rating-height-lg;
+		border-radius: $border-radius-4;
+
+		.rating-text {
+			@include eva-text-as("h3");
+		}
+	}
+
+	&.-md {
+		width: $rating-width-md;
+		height: $rating-height-md;
+		border-radius: $border-radius-3;
+
+		.rating-text {
+			@include eva-text-as("body-1");
+		}
+	}
+
+	&.-sm {
+		width: $rating-width-sm;
+		height: $rating-height-sm;
+		border-radius: $border-radius-2;
+
+		.rating-text {
+			@include eva-text-as("p");
+		}
+	}
+
+	// Score
+	&.-good {
+		background-color: var(--color-success-500);
+	}
+
+	&.-regular, &.-bad {
+		background-color: var(--color-neutral-300);
+
+		.rating-text {
+			color: var(--color-neutral-800);
+		}
+	}
+
+	.rating-text {
+		color: var(--color-white);
+	}
+}

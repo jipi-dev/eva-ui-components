@@ -1,0 +1,382 @@
+@import "../../scss/eva-core";
+
+// Research
+.eva-#{$version}-re-search {
+	$re-search-padding-top-bottom: $spacing-4;
+	$re-search-padding-left-right: $spacing-6;
+	position: relative;
+	border: 1px solid var(--color-neutral-300);
+	background-color: var(--color-white);
+	cursor: pointer;
+	z-index: 10;
+
+	&:hover {
+		border-color: var(--brand-primary-3);
+	}
+
+	&.-sticky {
+		position: sticky;
+		top: 0;
+	}
+
+	&.-sticky-animated {
+		position: sticky;
+		top: 0;
+		transform: translateY(calc(-100% - 32px));
+		// considerando los 32px de shadow
+		transition: transform 0.3s cubic-bezier(0.4,0,0.6,1);
+
+		&.-show {
+			transform: translateY(0);
+			transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+		}
+	}
+
+	&.-multiple-columns {
+		.re-search-container {
+			display: flex;
+			align-items: stretch;
+			justify-content: space-between;
+			padding: 0;
+		}
+
+		.re-search-aside {
+			display: none;
+			align-items: center;
+			min-width: 260px;
+			border-left: 1px solid var(--color-neutral-300);
+		}
+
+		.re-search-searchbox {
+			display: flex;
+			align-items: center;
+			padding: $spacing-4;
+		}
+	}
+
+	// Show content
+	&.-show-content {
+		border: none !important;
+
+		.re-search-content {
+			.eva-#{$version}-transition {
+				display: block;
+			}
+		}
+	}
+
+	&.-with-inputs {
+		.item-container,.item-iata {
+			color: var(--brand-primary-4);
+		}
+	}
+
+	&.-purple {
+		border: 0;
+		background-color: var(--brand-primary-4);
+
+		.re-search-content {
+			background-color: var(--brand-primary-4);
+		}
+
+		.re-search-container {
+			.re-search-item {
+				&.re-search-action {
+					color: var(--color-white);
+				}
+			}
+
+			.re-search-item-icon {
+				color: var(--color-white);
+				opacity: 0.6;
+			}
+		}
+
+		&.-with-inputs {
+			border: 0;
+
+			.item-container {
+				background-color: transparent;
+				color: var(--color-white);
+			}
+
+			.item-iata {
+				color: var(--color-white);
+			}
+		}
+
+		.item-container, .item-iata {
+			color: var(--color-white);
+		}
+	}
+
+	.re-search-container {
+		display: flex;
+		align-items: center;
+		box-sizing: border-box;
+		max-width: 1280px;
+		min-height: 68px;
+		margin: 0 auto;
+		padding: $re-search-padding-top-bottom $re-search-padding-left-right;
+	}
+
+	.re-search-item {
+		box-sizing: border-box;
+		color: var(--color-neutral-700);
+		font-size: 14px;
+		white-space: nowrap;
+
+		&.re-search-action {
+			display: flex;
+
+			.item-container {
+				margin-right: 0;
+				padding-right: 0;
+				border-right: none;
+			}
+		}
+	}
+
+	.item-container {
+		display: inline-flex;
+		align-items: center;
+		margin-right: $spacing-3;
+		padding-right: $spacing-3;
+		border-right: 1px solid var(--color-neutral-300);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.origin,
+	.destination {
+		display: inline-block;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.origin {
+		max-width: 145px;
+		margin-right: $spacing-1;
+
+		// - En 1024, el origen pasa a tener un max de 19 caracteres.
+		~ .destination {
+			// - Si solo se pone destino, como en seguros y cruceros, se pone el nombre entero.
+			max-width: 190px;
+			margin-left: $spacing-1;
+		}
+	}
+
+	.re-search-item-icon {
+		margin-right: $spacing-2;
+		color: var(--brand-primary-3);
+		font-size: 20px;
+	}
+
+	.re-search-content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: var(--color-white);
+
+		.eva-#{$version}-transition {
+			display: none;
+			box-sizing: border-box;
+			max-width: 1280px;
+			margin: 0 auto;
+			padding: 0 $spacing-6;
+		}
+	}
+
+	.item-date-container {
+		margin-right: $spacing-1;
+
+		~ .item-date-container {
+			margin-right: 0;
+			margin-left: $spacing-1;
+		}
+	}
+
+	@include breakpoint("medium","exact") {
+		.origin {
+			max-width: 110px;
+			// - En 1024, el origen pasa a tener un max de 19 caracteres.
+			~ .destination {
+				// - Si solo se pone destino, como en seguros y cruceros, se pone el nombre entero.
+				max-width: 120px;
+				margin-left: $spacing-1;
+			}
+		}
+
+		.destination {
+			max-width: 200px;
+		}
+	}
+
+	// Small
+	@include breakpoint("small", "exact") {
+		.re-search-container {
+			position: relative;
+			flex-wrap: wrap;
+			padding: $spacing-4 54px $spacing-4 0;
+			//Remove left padding because all re-search-item has the same padding
+
+			.re-search-item {
+				padding-left: $spacing-3;
+
+				&:first-child, &.item-first {
+					// Keep item-first modifcator to old implementations
+					flex: 0 0 100%;
+					overflow: hidden;
+				}
+
+				& ~ .re-search-item {
+					margin-top: $spacing-2;
+				}
+
+				&.re-search-action {
+					position: absolute;
+					top: 0;
+					right: 0;
+					align-items: center;
+					box-sizing: border-box;
+					height: calc(100% - #{$re-search-padding-top-bottom} * 2);
+					margin: $re-search-padding-top-bottom 0;
+					padding: 0 $spacing-3 0 $spacing-2;
+					border-left: 1px solid var(--color-neutral-300);
+					color: var(--brand-primary-3);
+					font-size: 24px;
+				}
+			}
+		}
+
+		&.-with-inputs {
+			border-bottom: 1px solid var(--brand-primary-3);
+
+			.re-search-item {
+				&.re-search-action {
+					border-left: none;
+				}
+			}
+		}
+
+		&.-multiple-columns {
+			.re-search-container {
+				padding: $spacing-4 54px $spacing-4 0;
+			}
+
+			.re-search-searchbox {
+				flex-wrap: wrap;
+				padding: 0;
+			}
+		}
+
+		.origin {
+			max-width: 100px;
+			font-weight: 500;
+
+			& ~ .destination {
+				max-width: 100px;
+				font-weight: 500;
+			}
+		}
+
+		.destination {
+			max-width: 200px;
+		}
+
+		.eva-#{$version}-transition {
+			box-sizing: border-box;
+		}
+
+		.item-container {
+			height: auto;
+			margin-right: 0;
+			padding-right: 0;
+			border: none;
+		}
+
+		.re-search-item:first-child, .re-search-item.item-first {
+			padding-right: 0;
+
+			.item-container {
+				max-width: 100%;
+			}
+		}
+
+		.item-iata {
+			flex: 1;
+			color: var(--color-neutral-800);
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+	}
+
+	@include breakpoint("large", "up") {
+		.origin,
+		.destination {
+			max-width: 215px;
+			//- Origen y destino 34 caracteres.
+		}
+
+		&.-with-inputs {
+			.origin {
+				max-width: 180px;
+			}
+
+			.destination {
+				max-width: 215px;
+				//- Origen y destino 34 caracteres.
+			}
+		}
+
+		//- Multiple columns layout
+		&.-multiple-columns {
+			.re-search-aside {
+				display: flex;
+			}
+		}
+	}
+
+	@include breakpoint("medium","up") {
+		&.-with-inputs {
+			.item-container {
+				height: 36px;
+				padding: 0 $spacing-3;
+				border-radius: 4px;
+				border-color: transparent;
+				background-color: var(--brand-primary-1);
+				line-height: 16px;
+			}
+		}
+	}
+
+	@include breakpoint("large","exact") {
+		//- Multiple columns layout
+		&.-multiple-columns {
+			.origin {
+				max-width: 100px;
+			}
+
+			.destination {
+				max-width: 105px;
+			}
+
+			&.-with-inputs {
+				.origin {
+					max-width: 75px;
+
+					~ .destination {
+						max-width: 85px;
+					}
+				}
+
+				.destination {
+					max-width: 150px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+@import "../../scss/eva-core";
+
+.eva-#{$version}-breadcrumb {
+	@include clearfix;
+	position: relative;
+	padding: 8px 0;
+	font-size: 14px;
+	line-height: 20px;
+
+	.breadcrumb-item {
+		float: left;
+		margin-right: 8px;
+		color: var(--brand-primary-3); //Same color as eva-{version}-link
+
+		&:before {
+			content: "\f010";
+			margin-right: 8px;
+			font-family: "eva-font"; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+			font-size: 16px;
+			font-weight: normal;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-style: normal;
+			text-transform: none;
+			vertical-align: middle;
+			font-variant: normal;
+			speak: none;
+		}
+
+		&:first-of-type {
+			&:before {
+				display: none;
+			}
+		}
+
+		&:last-of-type {
+			color: var(--color-neutral-800);
+		}
+	}
+}

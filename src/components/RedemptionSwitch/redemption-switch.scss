@@ -1,0 +1,194 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-redemption-switch {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 15px;
+	border-radius: 4px;
+
+	.redemption-logo {
+		margin-right: 12px;
+	}
+
+	.redemption-title {
+		display: block;
+		margin-bottom: 5px;
+		color: var(--brand-primary-3);
+		font-size: 16px;
+	}
+
+	.redemption-subtitle {
+		display: block;
+		color: var(--color-neutral-800);
+		font-size: 13px;
+	}
+
+	.redemption-switch {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.-desktop {
+		.redemption-content {
+			margin-right: 30px;
+		}
+
+		.redemption-title {
+			position: relative;
+			margin-bottom: 10px;
+			padding-bottom: 15px;
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 16px;
+				height: 1px;
+				border-bottom: solid 1px var(--color-neutral-100);
+			}
+		}
+
+		&.-align-right {
+			justify-content: flex-end;
+			padding: 14px 15px;
+
+			.redemption-content {
+				text-align: right;
+			}
+
+			.redemption-title {
+				margin-bottom: 5px;
+				padding-bottom: 0;
+
+				&:after {
+					content: none;
+				}
+			}
+		}
+
+		&.-align-left {
+			justify-content: flex-start;
+
+			.redemption-switch {
+				align-items: flex-start;
+			}
+		}
+	}
+
+	&.-loyalty {
+		justify-content: flex-start;
+		padding: 12px;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(68,68,68, 0.2);
+
+		.redemption-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin: 0 auto 0 0;
+		}
+
+		.redemption-title {
+			color: var(--color-neutral-800);
+		}
+
+		.redemption-subtitle {
+			@include eva-text-as("caption");
+			text-decoration: none;
+		}
+
+		.redemption-switch {
+			justify-content: flex-end;
+			margin-left: 12px;
+		}
+
+		&.-horizontal, &.-pill {
+			align-items: center;
+			padding: $spacing-2;
+			box-shadow: none;
+
+			.redemption-content {
+				flex-direction: row;
+				flex-grow: 1;
+				align-items: center;
+				margin: 0;
+			}
+
+			.redemption-switch {
+				margin-left: $spacing-2;
+			}
+		}
+
+		&.-horizontal {
+			border: 1px solid var(--color-neutral-300);
+
+			.redemption-title {
+				@include eva-text-as("h6");
+				margin-bottom: 0;
+				margin-left: $spacing-2;
+			}
+		}
+
+		&.-pill {
+			border-radius: $spacing-8;
+			background-color: var(--brand-secondary-1);
+
+			.redemption-content {
+				margin-left: $spacing-1
+			}
+		}
+
+		&.-highlighted {
+			$redemption-switch-padding-x: 16px;
+			$redemption-switch-padding-y: 12px;
+			$redemption-logo-height: 45px;
+			$redemption-logo-padding-y: 8px;
+			$redemption-separator-position: $redemption-switch-padding-y + $redemption-logo-height + $redemption-logo-padding-y;
+			$redemption-separator-shrink: $redemption-switch-padding-x * 2;
+			position: relative;
+			flex-wrap: wrap;
+			padding: $redemption-switch-padding-y $redemption-switch-padding-x;
+			border-top: 2px solid var(--eva-loyalty-primary-300);
+			border-radius: 0 0 8px 8px;
+			overflow: hidden;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: $redemption-separator-position;
+				width: calc(100% - #{$redemption-separator-shrink});
+				height: 1px;
+				background-color: var(--color-neutral-100);
+			}
+
+			& .redemption-logo {
+				height: 45px;
+				margin-right: 0px;
+				padding-right: 90%;
+				padding-bottom: 8px;
+			}
+
+			& .redemption-content {
+				padding-top: 12px;
+			}
+
+			& .redemption-switch {
+				margin-left: 0;
+				padding-top: 10px;
+			}
+		}
+
+		&.-card {
+			border: 2px solid var(--eva-loyalty-primary-300);
+		}
+
+		&.-collapsed {
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+}

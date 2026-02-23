@@ -1,0 +1,78 @@
+@import "../../scss/eva-core";
+
+$shadow-color: rgba(84, 89, 98, 0.15); // Este rgb equivale al neutral-700 (#545962)
+
+// Shadows
+.eva-#{$version}-shadow {
+	box-shadow: 0 4px 8px $shadow-color;
+	transition: box-shadow 0.2s ease-out;
+
+	&.-plus:hover {
+		box-shadow: 0 12px 20px $shadow-color;
+	}
+}
+
+.-eva-#{$version}-shadow {
+	&-1-hover {
+		transition: box-shadow 0.2s ease-out;
+
+		&:hover {
+			box-shadow: 0 0 10px $shadow-color;
+		}
+	}
+
+	&-2-hover {
+		transition: box-shadow 0.2s ease-out;
+
+		&:hover {
+			box-shadow: 0 0 15px $shadow-color;
+		}
+	}
+
+	&-1 {
+		box-shadow: 0 4px 8px $shadow-color;
+	}
+
+	&-2 {
+		box-shadow: 0 4px 8px $shadow-color;
+	}
+
+	&-3 {
+		box-shadow: 0 12px 20px $shadow-color;
+	}
+
+	//new shadows
+	&-line-hover {
+		border: 1px solid var(--color-neutral-300);
+		transition: box-shadow 0.2s ease-out;
+
+		&:hover {
+			box-shadow: 0 12px 20px $shadow-color;
+		}
+	}
+
+	&-static-hover {
+		box-shadow: 0 4px 8px $shadow-color;
+		transition: box-shadow 0.2s ease-out;
+
+		&:hover {
+			box-shadow: 0 12px 20px $shadow-color;
+		}
+	}
+
+	&-line {
+		border: 1px solid var(--color-neutral-300);
+	}
+
+	&-static {
+		box-shadow: 0 4px 8px $shadow-color; // este rgba equivale al color-neutral-700
+	}
+
+	&-top {
+		box-shadow: 0 -2px 8px $shadow-color;
+	}
+
+	&-bottom {
+		box-shadow: 0 2px 8px $shadow-color;
+	}
+}

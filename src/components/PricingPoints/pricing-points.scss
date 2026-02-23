@@ -1,0 +1,17 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-pricing-points {
+	@include eva-text-as("caption");
+	display: flex;
+	align-items: center;
+	background-color: var(--color-white);
+
+	.pricing-points-logo {
+		width: 18px;
+
+		+ * {
+			margin-left: $spacing-2;
+		}
+	}
+}

@@ -1,0 +1,129 @@
+@import "../../scss/eva-core";
+@import "../../variables/spacing";
+@import "../../variables/border-radius";
+
+$eva-mintur-primary: #37BBED;
+$eva-driver-height: $spacing-6;
+$eva-driver-max_width: 210px;
+
+.eva-#{$version}-driver {
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
+	max-width: $eva-driver-max_width;
+	height: $eva-driver-height;
+	padding: 0 $spacing-2;
+	border-radius: $border-radius-2;
+	background-color: var(--color-neutral-800);
+	color: var(--color-white);
+	overflow: hidden;
+
+	.driver-text {
+		@include eva-text-as("p");
+		@include eva-ellipsis-inline;
+		font-weight: 500;
+	}
+
+	.driver-icon {
+		font-size: 16px;
+
+		+ .driver-text {
+			margin-left: $spacing-1;
+		}
+
+		+ .driver-icon {
+			margin-left: 2px;
+		}
+	}
+
+	+ .eva-#{$version}-driver {
+		margin-left: $spacing-2;
+	}
+
+	// Drivers de atributo
+
+	// Benefit
+	&.-benefits {
+		background-color: var(--color-success-300);
+		color: var(--color-success-900);
+	}
+
+	// Variante urgent
+	&.-urgent {
+		background-color: var(--color-error-300);
+		color: var(--color-error-900);
+	}
+
+	// Variante default lighten
+	&.-default-lighten {
+		background-color: var(--color-white);
+		color: var(--color-neutral-800);
+	}
+
+	// Variante new lighten
+	&.-new-lighten {
+		background-color: var(--brand-primary-1);
+		color: var(--brand-primary-4);
+	}
+
+	// Variante new
+	&.-new {
+		background-color: var(--brand-primary-4);
+		color: var(--color-white);
+	}
+
+	// Default - Secondary
+	&.-secondary,
+	&.-info:not(.-j1),
+	&.-j4:not(.-benefits, .-urgent, .-mintur),
+	&.-j5:not(.-benefits, .-urgent, .-mintur) {
+		background-color: var(--color-neutral-200);
+		color: var(--color-neutral-800);
+	}
+
+	// Drivers de estado
+
+	// Success
+	&.-success {
+		background-color: var(--color-success-300);
+		color: var(--color-success-900);
+	}
+
+	// Information
+	// &.-information {
+	// 	background-color: var(--color-info-300);
+	// 	color: var(--color-info-900);
+	// }
+
+	// Warning
+	&.-warning {
+		background-color: var(--color-warning-300);
+		color: var(--color-warning-900);
+	}
+
+	// Error
+	&.-error {
+		background-color: var(--color-error-300);
+		color: var(--color-error-900);
+	}
+
+	// Drivers de sub-marcas
+
+	// Variante loyalty
+	&.-loyalty {
+		background-color: var(--eva-loyalty-primary-500);
+		color: var(--color-white);
+	}
+
+	// Variante Imbatibles
+	&.-unbeatable {
+		background-color: var(--eva-unbeatable-secondary-800);
+		color: var(--eva-unbeatable-primary-500);
+	}
+
+	// Variante Mintur
+	&.-mintur {
+		background-color: $eva-mintur-primary;
+		color: var(--color-white);
+	}
+}

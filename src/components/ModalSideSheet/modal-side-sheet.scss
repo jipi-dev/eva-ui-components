@@ -1,0 +1,255 @@
+@import "../../scss/eva-core";
+
+$default-transition: all 0.3s ease-in-out;
+$sheet-size-sm: 424px;
+$sheet-size-md: 640px;
+$sheet-size-lg: 960px;
+$sheet-padding-default: $spacing-5;
+$sheet-padding-sm: $spacing-6;
+$sheet-padding-md: $spacing-8;
+$sheet-padding-lg: $spacing-9;
+$sheet-padding-bottom-header-no-title: $spacing-3;
+
+// Modal side sheet
+html {
+	&.-show-modal-side-sheet, &.-show-modal-side-sheet body {
+		position: relative !important;
+		overflow: hidden !important;
+	}
+}
+
+.eva-#{$version}-modal-side-sheet {
+	@include overlays;
+	display: flex;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	justify-content: flex-end;
+	transition: none;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.sheet-container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background-color: var(--color-neutral-100);
+		overflow-y: auto;
+	}
+
+	.sheet-header {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding: $sheet-padding-default $sheet-padding-default $spacing-5 $sheet-padding-default;
+		background-color: var(--color-white);
+	}
+
+	.sheet-footer {
+		display: flex;
+		position: sticky;
+		bottom: 0;
+		align-items: center;
+		justify-content: flex-end;
+		padding: $sheet-padding-default $spacing-5 $sheet-padding-default $sheet-padding-default;
+		background-color: var(--color-white);
+	}
+
+	.sheet-title {
+		@include eva-ellipsis-inline;
+		@include eva-text-as("h4");
+		flex-grow: 1;
+	}
+
+	.modal-close {
+		margin-left: $sheet-padding-sm;
+		color: var(--color-neutral-700);
+		font-size: 24px;
+		transition: $default-transition;
+		cursor: pointer;
+
+		&:hover {
+			color: var(--color-neutral-800);
+			transition-duration: 0s;
+		}
+
+		&:focus-visible {
+			@include eva-focus($radius: "rounded");
+			transition-duration: 0s;
+		}
+	}
+
+	.sheet-content {
+		padding: 0 $sheet-padding-default $sheet-padding-default $sheet-padding-default;
+	}
+
+	// Sheet background color
+	&.-white {
+		.sheet-container {
+			background-color: var(--color-white);
+		}
+	}
+
+	// Header fixed
+	&.-fixed-header:not(.-no-title) {
+		.sheet-container {
+			overflow-y: hidden;
+		}
+
+		.sheet-header {
+			border-bottom: 1px solid var(--color-neutral-300);
+		}
+
+		.sheet-content {
+			overflow-y: auto;
+		}
+	}
+
+	// No title
+	&.-no-title {
+		.sheet-header {
+			padding-bottom: $sheet-padding-bottom-header-no-title;
+			background-color: transparent;
+		}
+
+		.sheet-title {
+			display: none;
+		}
+
+		.sheet-content {
+			padding-top: 0;
+		}
+	}
+
+	// No padding
+	&.-no-padding {
+		.sheet-content {
+			padding: 0;
+		}
+	}
+
+	// Show modal
+	&.-show-modal-side-sheet {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+@include breakpoint("large", "up") {
+	.eva-#{$version}-modal-side-sheet {
+		transition: $default-transition;
+
+		.sheet-container {
+			transition: $default-transition;
+		}
+
+		// Sheet positions
+		&.-right {
+			justify-content: flex-end;
+
+			.sheet-container {
+				transform: translateX(100%);
+			}
+		}
+
+		&.-left {
+			justify-content: flex-start;
+
+			.sheet-container {
+				transform: translateX(-100%);
+			}
+		}
+
+		// Sheet sizes
+		&.-sm {
+			.sheet-container {
+				width: $sheet-size-sm;
+			}
+
+			.sheet-header {
+				padding: $sheet-padding-sm $sheet-padding-sm $spacing-5 $sheet-padding-sm;
+			}
+
+			.sheet-content {
+				padding: 0 $sheet-padding-sm $sheet-padding-sm $sheet-padding-sm;
+			}
+
+			.sheet-footer {
+				padding: $spacing-5 $sheet-padding-sm $sheet-padding-sm $sheet-padding-sm;
+			}
+		}
+
+		&.-md {
+			.sheet-container {
+				width: $sheet-size-md;
+			}
+
+			.sheet-header {
+				padding: $sheet-padding-md $sheet-padding-md $spacing-5 $sheet-padding-md;
+			}
+
+			.sheet-content {
+				padding: 0 $sheet-padding-md $sheet-padding-md $sheet-padding-md;
+			}
+
+			.sheet-footer {
+				padding: $spacing-5 $sheet-padding-md $sheet-padding-md $sheet-padding-md;
+			}
+		}
+
+		&.-lg {
+			.sheet-container {
+				width: $sheet-size-lg;
+			}
+
+			.sheet-header {
+				padding: $sheet-padding-lg $sheet-padding-lg $spacing-5 $sheet-padding-lg;
+			}
+
+			.sheet-content {
+				padding: 0 $sheet-padding-lg $sheet-padding-lg $sheet-padding-lg;
+			}
+
+			.sheet-footer {
+				padding: $spacing-5 $sheet-padding-lg $sheet-padding-lg $sheet-padding-lg;
+			}
+		}
+
+		// No title
+		&.-no-title {
+			&.-sm, &.-md, &.-lg {
+				.sheet-header {
+					padding-bottom: $sheet-padding-bottom-header-no-title;
+				}
+
+				.sheet-content {
+					padding-top: 0;
+				}
+			}
+		}
+
+		// No padding
+		&.-no-padding {
+			&.-sm, &.-md, &.-lg {
+				.sheet-content {
+					padding: 0;
+				}
+			}
+		}
+
+		// Show modal
+		&.-show-modal-side-sheet {
+			transition-delay: 0s;
+
+			.sheet-container {
+				transform: translateX(0);
+				transition-delay: 0.3s;
+			}
+		}
+	}
+}

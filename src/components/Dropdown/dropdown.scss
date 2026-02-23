@@ -1,0 +1,107 @@
+@import "../../scss/eva-core";
+
+// Dropdown
+.eva-#{$version}-dropdown {
+	.dropdown-item {
+		padding: 20px 8px;
+		border-top: 1px solid var(--color-neutral-300);
+
+		&:last-child {
+			border-bottom: 1px solid var(--color-neutral-300);
+		}
+		// Active dropdown
+		&.-active {
+			//max-height: 100%;
+
+			.dropdown-icon {
+				margin-top: -1px;
+				transform: rotateZ(180deg);
+			}
+
+			.dropdown-subcontent {
+				max-height: 3000px; // Se necesita declarar un alto maximo en pixeles para poder animar el contenido, con alto porcentual no se anima.
+				transform: translateY(8px);
+				overflow: visible;
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.dropdown-subitem {
+				opacity: 1;
+
+				&:first-of-type {
+					.dropdown-item-container {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.item-label {
+		font-weight: 500;
+	}
+
+	// Dropdown item
+	.dropdown-item-container {
+		display: block;
+		position: relative;
+		cursor: pointer;
+
+		&:focus-visible {
+			@include eva-focus($radius: "rounded");
+		}
+	}
+
+	.dropdown-subitem {
+		margin-top: $spacing-4;
+
+		&:first-child {
+			margin-top: $spacing-2;
+		}
+
+		.dropdown-item-container {
+			line-height: 1.5;
+
+			.eva-#{$version}-label-form {
+				font-weight: normal;
+			}
+		}
+
+		&.view-more-content {
+			margin-top: 0;
+		}
+	}
+
+	.dropdown-icon {
+		position: absolute;
+		right: $spacing-2;
+		color: var(--color-neutral-800);
+		font-size: 16px;
+	}
+
+	.eva-#{$version}-view-more.dropdown-subcontent.-sm {
+		padding-bottom: $spacing-9;
+	}
+
+	.dropdown-subcontent {
+		max-height: 0;
+		margin: 0;
+		padding: 0;
+		transition: opacity 0.3s ease-out, max-height 0.3s, transform 0.3s ease-out, visibility 0.3s;
+		overflow: hidden;
+		visibility: hidden;
+		opacity: 0;
+
+		&.view-more-btn {
+			transition: opacity 0s ease-out;
+			opacity: 0;
+		}
+	}
+}
+
+@include breakpoint("small" , "exact") {
+	.eva-#{$version}-dropdown {
+		background-color: var(--color-white);
+	}
+}

@@ -1,0 +1,132 @@
+@import "../../scss/eva-core";
+
+$navdot-color: var(--color-neutral-300);
+$navdot-active-color: var(--brand-primary-3);
+
+$navdot-lighten-color: rgba(255,255,255,0.5);
+$navdot-lighten-active-color: var(--color-white);
+
+$navdot-height: 4px;
+$navdot-gutter: 4px;
+
+$navdot-width-sm: 8px;
+$navdot-width-md: 12px;
+$navdot-width-lg: 16px;
+
+$navdot-width-active-sm: 10px;
+$navdot-width-active-md: 16px;
+$navdot-width-active-lg: 20px;
+
+$navdot-transition-property: 0.2s width, 0.2s background-color, 0.2s left;
+// General
+.eva-#{$version}-nav-dots {
+	display: flex;
+	position: relative;
+	justify-content: center;
+
+	.nav-dot {
+		position: relative;
+		width: $navdot-width-md;
+		height: $navdot-height;
+		margin: 0 $navdot-gutter;
+		border-radius: 10px;
+		background-color: $navdot-color;
+		transform-origin: center center;
+		transition: none;
+		transition: $navdot-transition-property;
+
+		&.-active {
+			width: $navdot-width-active-md;
+			background-color: $navdot-active-color;
+		}
+	}
+
+	&.-lighten {
+		.nav-dot {
+			border: 0;
+			background-color: $navdot-lighten-color;
+
+			&:after {
+				background-color: $navdot-lighten-active-color;
+			}
+
+			&.-active {
+				background-color: $navdot-lighten-active-color;
+			}
+		}
+	}
+
+	&.-lg {
+		.nav-dot {
+			width: $navdot-width-lg;
+
+			&.-active {
+				width: $navdot-width-active-lg;
+			}
+		}
+	}
+
+	&.-sm {
+		.nav-dot {
+			width: $navdot-width-sm;
+
+			&.-active {
+				max-width: $navdot-width-active-sm;
+			}
+		}
+	}
+
+	&.-center {
+		text-align: center;
+	}
+
+	&.-left {
+		text-align: left;
+	}
+
+	&.-right {
+		text-align: right;
+	}
+
+	&.-carousel {
+		justify-content: normal;
+		// WIDTH: 1active + 1nearest + 1near + 2far
+		width: 80px;
+		overflow: hidden;
+
+		&.-sm {
+			.nav-dot {
+				// -active-* classes are added becouse IT team use swiper.js library and add those clases
+				// https://idangero.us/swiper/
+				&.-far,&.-active-next-next-next,&.-active-prev-prev-prev { width: calc(#{$navdot-width-sm} * 0.5);     }
+				&.-near,&.-active-next-next,&.-active-prev-prev { width: calc(#{$navdot-width-sm} * 0.5);     }
+				&.-nearest,&.-active-next,&.-active-prev { width: calc(#{$navdot-width-sm} * 0.66667); }
+			}
+		}
+
+		&.-lg {
+			width: 93px;
+
+			.nav-dot {
+				// -active-* classes are added becouse IT team use swiper.js library and add those clases
+				// https://idangero.us/swiper/
+				&.-far,&.-active-next-next-next,&.-active-prev-prev-prev { width: calc(#{$navdot-width-lg} * 0.33333); }
+				&.-near,&.-active-next-next,&.-active-prev-prev { width: calc(#{$navdot-width-lg} * 0.5);     }
+				&.-nearest,&.-active-next,&.-active-prev { width: calc(#{$navdot-width-lg} * 0.66667); }
+			}
+		}
+
+		.nav-dot {
+			flex-shrink: 0;
+
+			&.-out {
+				width: 0px;
+				transition-duration: 0; }
+			// -active-* classes are added becouse IT team use swiper.js library and add those clases
+			// https://idangero.us/swiper/
+			&.-far,&.-active-next-next-next,&.-active-prev-prev-prev { width: calc(#{$navdot-width-md} * 0.33333); }
+			&.-near,&.-active-next-next,&.-active-prev-prev { width: calc(#{$navdot-width-md} * 0.5);     }
+			&.-nearest,&.-active-next,&.-active-prev { width: calc(#{$navdot-width-md} * 0.66667); }
+		}
+	}
+}

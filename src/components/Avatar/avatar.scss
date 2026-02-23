@@ -1,0 +1,36 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-avatar {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	font-size: 24px;
+	overflow: hidden;
+
+	&.-icon, &.-letter {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--brand-primary-3);
+	}
+
+	&.-icon {
+		color: var(--brand-primary-1);
+	}
+
+	&.-letter {
+		color: var(--color-white);
+	}
+
+	.avatar-image {
+		width: 100%;
+		height: 100%;
+	}
+
+	&.-md {
+		width: 30px;
+		height: 30px;
+		font-size: 16px;
+	}
+}

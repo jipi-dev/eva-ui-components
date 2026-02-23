@@ -1,0 +1,197 @@
+@import "../../scss/eva-core";
+
+// Variables for switch-container
+$switch-container-width: 34px;
+$switch-container-height: 18px;
+$switch-container-md-width: 45px;
+$switch-container-md-height: 24px;
+$switch-container-border_radius: $switch-container-md-height; // the height of the heightest casuistic. so that its always completely rounded.
+
+// Variables for switch-circle
+$switch-circle-width: 16px;
+$switch-circle-height: $switch-circle-width;
+$switch-circle-md-width: 22px;
+$switch-circle-md-height: $switch-circle-md-width;
+$switch-circle-translate_x: $switch-container-width - $switch-circle-width - 2;
+$switch-circle-md-translate_x: $switch-container-md-width - $switch-circle-md-width - 2;
+
+// Eva Switch
+.eva-#{$version}-switch {
+	display: flex;
+	align-items: center;
+
+	&:focus-visible {
+		outline: none;
+
+		.switch-container {
+			@include eva-focus;
+		}
+	}
+
+	.switch-input {
+		position: absolute;
+		max-height: 0;
+		margin: 0;
+		cursor: pointer;
+		opacity: 0;
+
+		// States
+		&:disabled {
+			cursor: default;
+
+			& + .switch-container {
+				background-color: var(--color-neutral-400)!important;
+				color: var(--color-neutral-400)!important;
+				cursor: default;
+
+				.switch-circle {
+					background-color: var(--color-white)!important;
+				}
+			}
+		}
+
+		&:focus-visible {
+			outline: none;
+
+			+ .switch-container {
+				@include eva-focus;
+			}
+		}
+	}
+
+	.switch-container {
+		display: inline-block;
+		width: $switch-container-width;
+		height: $switch-container-height;
+		border-radius: $switch-container-border_radius;
+		background-color: var(--color-neutral-700);
+		transition: background-color 0.2s ease-out;
+		cursor: pointer;
+	}
+
+	.switch-circle {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		width: $switch-circle-width;
+		height: $switch-circle-height;
+		margin: 1px 0 0 1px;
+		border-radius: $border-radius-half;
+		background-color: var(--color-white);
+		font-size: 10px;
+		transition: transform 0.2s cubic-bezier(0.04,1.2,0.94,1.19);
+
+		&:after {
+			content: "\f036";
+			font-family: "eva-font"; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+			transition: opacity 0.2s cubic-bezier(0.04,1.2,0.94,1.19);
+			opacity: 0;
+		}
+	}
+
+	.switch-input:checked + .switch-container {
+		background-color: var(--brand-primary-3);
+		color: var(--brand-primary-3);
+
+		.switch-circle {
+			transform: translateX($switch-circle-translate_x);
+
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+
+	.switch-label:hover {
+		.switch-input + .switch-container {
+			background-color: var(--color-neutral-800);
+		}
+
+		.switch-input:checked + .switch-container {
+			background-color: var(--brand-primary-4);
+			color: var(--brand-primary-4);
+		}
+	}
+
+	// Sizes
+	&.-md {
+		.switch-container {
+			width: $switch-container-md-width;
+			height: $switch-container-md-height;
+		}
+
+		.switch-circle {
+			width: $switch-circle-md-width;
+			height: $switch-circle-md-height;
+			margin: 1px 0 0 1px;
+			font-size: 12px;
+		}
+
+		.switch-input:checked + .switch-container .switch-circle {
+			transform: translateX($switch-circle-md-translate_x);
+		}
+	}
+
+	// Loyalty
+	&.-loyalty {
+		.switch-label:hover {
+			.switch-input:checked + .switch-container {
+				background-color: var(--eva-loyalty-primary-500);
+				color: var(--eva-loyalty-primary-500);
+			}
+		}
+
+		.switch-input:checked + .switch-container {
+			background-color: var(--eva-loyalty-primary-300);
+			color: var(--eva-loyalty-primary-300);
+		}
+	}
+
+	// Lighten
+	&.-lighten {
+		&:focus-visible {
+			.switch-container {
+				@include eva-focus("lighten");
+			}
+		}
+
+		.switch-container {
+			background-color: var(--color-neutral-400);
+		}
+
+		.switch-label:hover {
+			.switch-input + .switch-container {
+				background-color: var(--color-neutral-600);
+			}
+
+			.switch-input:checked + .switch-container {
+				background-color: var(--brand-primary-2);
+				color: var(--brand-primary-3);
+			}
+		}
+
+		.switch-input:checked + .switch-container {
+			background-color: var(--brand-primary-2);
+			color: var(--brand-primary-3);
+		}
+
+		.switch-input {
+			&:disabled {
+				& + .switch-container {
+					.switch-circle {
+						background-color: var(--color-neutral-600)!important;
+					}
+				}
+			}
+
+			&:focus-visible {
+				outline: none;
+
+				+ .switch-container {
+					@include eva-focus("lighten");
+				}
+			}
+		}
+	}
+}

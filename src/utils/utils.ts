@@ -7,3 +7,7 @@ export function classResolver(classes: Record<string, boolean | string | undefin
     .map(([className]) => className)
     .join(' ');
 }
+
+export function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}

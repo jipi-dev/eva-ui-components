@@ -1,0 +1,158 @@
+@import "../../scss/eva-core";
+
+// Modal--coachmark Variant
+.eva-#{$version}-modal--coachmark {
+	@include keyframes (appear) {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	.modal-content {
+		position: relative;
+		padding: 0px 20px 16px 20px !important;
+		border-radius: 8px !important;
+		text-align: center;
+	}
+
+	.modal-close {
+		position: absolute;
+		top: $spacing-5;
+		right: $spacing-5;
+		z-index: 2;
+	}
+
+	.modal-coachmark-img-container {
+		// margin-top and margin-left must be the inverse of the .modal-content 's padding.
+		margin-left: -20px;
+		padding-bottom: 20px;
+		text-align: left;
+	}
+
+	.modal-coachmark-title {
+		@include eva-text-as("h4");
+		padding-bottom: 5px;
+		text-align: left;
+	}
+
+	.modal-coachmark-description {
+		padding-bottom: 12px;
+		color: var(--color-neutral-600);
+		text-align: left;
+	}
+
+	.modal-coachmark-nav-dots {
+		flex-grow: 1;
+		padding-top: $spacing-4;
+		padding-bottom: $spacing-6;
+	}
+
+	.modal-coachmark-steps-container {
+		overflow: visible;
+	}
+
+	.modal-coachmark-actions {
+		display: flex;
+		justify-content: flex-end;
+		margin: 0 $spacing-n5; // -20px is the inverse of the parent's padding so the border top can reach the 100% of the width
+		padding: $spacing-4 $spacing-5 0 $spacing-5;
+		border-top: 1px solid var(--color-neutral-300);
+		text-align: right;
+	}
+
+	.modal-coachmark-step-content {
+		display: none;
+		width: 100%;
+		transition: opacity 0.5s, visibility 0.5s;
+		visibility: hidden;
+
+		&.-active {
+			display: inline-block;
+			transition: opacity 0.5s, visibility 0.5s;
+			animation: appear 1s forwards;
+			visibility: visible;
+
+			.modal-coachmark-img-container {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&.-lg {
+		.modal-coachmark-actions {
+			border-top: none;
+		}
+
+		.modal-coachmark-nav-dots {
+			.eva-3-nav-dots {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	&.-info {
+		.modal-content {
+			background-color: var(--brand-primary-4);
+		}
+
+		.modal-coachmark-title .eva-#{$version}-h3, .modal-coachmark-description .eva-#{$version}-h5 {
+			color: var(--color-white);
+		}
+
+		.modal-close {
+			color: var(--color-neutral-300);
+
+			&:hover {
+				color: var(--color-white);
+			}
+		}
+
+		.modal-coachmark-actions {
+			border-top: none;
+		}
+	}
+	// Breakpoint small
+	@include breakpoint("small", "exact") {
+		.modal-content {
+			margin: 0;
+			border-radius: 4px;
+		}
+
+		&.-sm {
+			.modal-content {
+				max-height: 100%;
+				margin: 80px 25px;
+			}
+		}
+
+		.modal-coachmark-title {
+			padding-bottom: 10px;
+		}
+
+		.modal-coachmark-description {
+			padding-bottom: 20px;
+		}
+	}
+	@include breakpoint("medium", "up") {
+		&.eva-#{$version}-modal {
+			.modal-content {
+				margin: 80px auto 0;
+			}
+		}
+	}
+	@include breakpoint("large", "up") {
+		&.eva-#{$version}-modal.-lg {
+			.modal-content {
+				padding-bottom: 28px !important;
+			}
+
+			.modal-coachmark-img-container {
+				padding-bottom: 32px;
+			}
+		}
+	}
+}

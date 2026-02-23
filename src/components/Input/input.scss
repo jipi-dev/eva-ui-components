@@ -1,0 +1,238 @@
+@import "../../scss/eva-core";
+
+// MIXINS --------------------------------------------------
+//sizes inputs
+@mixin eva-input-size($width: 100%, $font-size: 14px, $height: 36, $padding: 16px) {
+	.input-label {
+		margin-bottom: $padding;
+		border-radius: $border-radius-3;
+	}
+
+	.input-tag {
+		width: $width;
+		height: #{$height}px;
+		padding: 0 $padding;
+		border-radius: $border-radius-3;
+		font-size: $font-size;
+	}
+
+	.input-gradient {
+		position: absolute;
+		right: 1px;
+		width: 50px;
+		height: #{$height - 2}px;
+		margin-top: 1px;
+		pointer-events: none;
+	}
+}
+
+// Inputs
+.eva-#{$version}-input {
+	.input-container {
+		position: relative;
+	}
+
+	.input-tag {
+		@include eva-input-placeholder;
+		box-sizing: border-box;
+		border-width: 1px;
+		border-style: solid;
+		border-color: var(--color-neutral-600);
+		box-shadow: none;
+		color: var(--color-neutral-800);
+		font-family: var(--font-family), Arial, sans-serif;
+		transition: border-color 0.3s ease-out;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+
+		&:focus, &:focus-visible {
+			@include eva-focus($offset: "inside");
+
+			~ .input-gradient {
+				opacity: 0;
+			}
+		}
+
+		&:disabled {
+			border-color: var(--color-neutral-400);
+			background-color: var(--color-neutral-400);
+			color: var(--color-neutral-600);
+			cursor: default;
+			opacity: 1;
+
+			~ .input-icon {
+				color: var(--color-neutral-600);
+			}
+
+			~ .input-gradient {
+				background-image: linear-gradient(to right, rgba(#EEE,0),#EEE 80%);
+			}
+		}
+	}
+
+	.input-gradient {
+		top: 0;
+		width: 30px;
+		border-radius: 0 $border-radius-3 $border-radius-3 0;
+		background-image: linear-gradient(to right, rgba(#FFF,0),#FFF 80%);
+		background-size: 100%;
+		transition: opacity 200ms linear;
+		opacity: 1;
+	}
+
+	.input-icon {
+		position: absolute;
+		top: 50%;
+		color: var(--color-neutral-800);
+	}
+
+	.input-loader {
+		position: absolute;
+		top: 50%;
+	}
+
+	// Skins
+	&.-no-border:not(&.-invalid) {
+		.input-tag {
+			border-color: var(--color-white);
+
+			&:focus {
+				border-color: var(--brand-neutral-800);
+			}
+
+			&:disabled {
+				border-color: var(--color-neutral-400);
+			}
+		}
+	}
+
+	&.-invalid {
+		.input-tag {
+			border-color: var(--color-error-500);
+
+			&:focus, &:focus-visible {
+				@include eva-focus($color: "error", $offset: "inside");
+			}
+		}
+	}
+
+	&.-icon-left {
+		&.-lg,
+		&.-md {
+			.input-icon {
+				left: 10px;
+				margin-top: -10px;
+				font-size: 20px;
+			}
+
+			.input-tag {
+				padding-left: 44px;
+			}
+		}
+
+		&.-sm {
+			.input-icon {
+				left: 5px;
+				margin-top: -8px;
+				font-size: 16px;
+			}
+
+			.input-tag {
+				padding-left: 30px;
+			}
+		}
+	}
+
+	&.-icon-right {
+		&.-lg,
+		&.-md {
+			.input-icon {
+				right: 10px;
+				margin-top: -10px;
+				font-size: 20px;
+			}
+
+			.input-loader {
+				right: 10px;
+				margin-top: -10px;
+				font-size: 20px;
+			}
+
+			.input-tag {
+				padding-right: 40px;
+			}
+
+			.input-gradient {
+				right: 35px;
+			}
+		}
+
+		&.-sm {
+			.input-icon {
+				right: 5px;
+				margin-top: -8px;
+				font-size: 16px;
+			}
+
+			.input-loader {
+				right: 10px;
+				width: 16px;
+				height: 16px;
+				margin-top: -10px;
+				font-size: 20px;
+			}
+
+			.input-tag {
+				padding-right: 30px;
+			}
+
+			.input-gradient {
+				right: 25px;
+			}
+		}
+	}
+	// Sizes
+	&.-md {
+		@include eva-input-size;
+		@include breakpoint("medium", "down") {
+			@include eva-input-size(100%, 14px, 48, 16px);
+		}
+	}
+
+	&.-sm {
+		@include eva-input-size(100%, 12px, 25, 8px);
+		@include breakpoint("medium", "down") {
+			@include eva-input-size(100%, 14px, 48, 16px);
+
+			&.-icon-left {
+				.input-icon {
+					left: 10px;
+					margin-top: -10px;
+					font-size: 20px;
+				}
+
+				.input-tag {
+					padding-left: 40px;
+				}
+			}
+
+			&.-icon-right {
+				.input-icon {
+					right: 10px;
+					margin-top: -10px;
+					font-size: 20px;
+				}
+
+				.input-tag {
+					padding-right: 40px;
+				}
+			}
+		}
+	}
+
+	&.-lg {
+		@include eva-input-size(100%, 14px, 48, 16px);
+	}
+}

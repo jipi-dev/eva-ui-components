@@ -1,0 +1,282 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-pricebox-sticky {
+	$pricebox-sticky-padding-mobile: 12px;
+	$pricebox-sticky-padding-desktop: 16px;
+	$pricebox-sticky-padding-left-right-desktop: 32px;
+	$pricebox-sticky-margin-top-on-description: 5px;
+	$width-without-button-secure-area: calc(100% - 150px);
+	$discount-padding: 8px;
+	$discount-tail-size: 16px;
+	$discount-half-font-size: 7px;
+	display: flex;
+	position: relative;
+	align-items: stretch;
+	justify-content: space-between;
+	box-sizing: border-box;
+	width: 100%;
+	background-color: var(--color-white);
+
+	.pricebox-content-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: $pricebox-sticky-padding-mobile;
+	}
+
+	.pricebox-sticky-button {
+		flex-shrink: 0;
+	}
+
+	.pricebox-sticky-price {
+		margin: 2px 0 4px 0;
+		font-size: 20px;
+		line-height: 1;
+		white-space: nowrap;
+
+		&.-long {
+			font-size: 20px;
+		}
+	}
+
+	.pricebox-sticky-icon-container {
+		display: none;
+		margin-right: 5px;
+		color: var(--color-neutral-800);
+	}
+
+	.pricebox-sticky-discount-container {
+		position: absolute;
+		top: -32px;
+		left: 0;
+	}
+
+	.pricebox-sticky-currency {
+		display: inline-block;
+		margin-right: 3px;
+		font-size: 13px;
+	}
+
+	.pricebox-sticky-cents {
+		display: inline-block;
+		position: relative;
+		top: -7px;
+		left: 2px;
+		font-size: 12px;
+	}
+
+	.pricebox-sticky-more-info {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		margin-right: 10px;
+	}
+
+	.pricebox-sticky-info-icon {
+		border-radius: 50%;
+		color: var(--brand-primary-3);
+	}
+
+	.pricebox-sticky-info-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.pricebox-sticky-description {
+		&.-additional {
+			order: -1;
+		}
+
+		&.-loyalty-redemption {
+			margin-top: 2px;
+			font-weight: 500;
+		}
+	}
+
+	.pricebox-sticky-footer-loyalty-container,
+	.pricebox-sticky-loyalty-container {
+		display: none;
+	}
+
+	&.-desktop-white {
+		background: var(--color-white);
+
+		.pricebox-sticky-icon-container {
+			color: var(--brand-primary-2);
+		}
+	}
+
+	&.-with-info {
+		// Display info icon container
+		.pricebox-sticky-icon-container {
+			display: inline-block;
+		}
+		// Add margin to aling text with price
+		.pricebox-sticky-description {
+			margin-left: 34px;
+		}
+	}
+
+	&.-loyalty {
+		flex-direction: column;
+		padding-bottom: 0;
+
+		.pricebox-sticky-footer-loyalty-container {
+			display: flex;
+			padding: 8px $pricebox-sticky-padding-mobile;
+			border-top: 1px solid var(--color-neutral-300);
+		}
+
+		.pricebox-content-container {
+			flex-wrap: wrap;
+			padding-bottom: $pricebox-sticky-padding-mobile;
+		}
+
+		.pricebox-sticky-more-info {
+			//Este ancho considera el boton + las separaciones correspondientes
+			width: $width-without-button-secure-area;
+		}
+
+		.pricebox-sticky-description {
+			margin-left: 0;
+		}
+	}
+
+	&.-with-label {
+		padding-top: 10px;
+	}
+
+	@include breakpoint("small", "exact") {
+		&.-with-additional {
+			padding-top: 10px;
+		}
+	}
+
+	@include breakpoint("medium", "exact") {
+		&.-loyalty {
+			.pricebox-sticky-more-info {
+				justify-content: space-between;
+				text-align: left;
+			}
+
+			.pricebox-sticky-info-container {
+				margin-left: auto;
+				padding-left: 32px;
+
+				.pricebox-sticky-loyalty-container {
+					display: flex;
+					margin-top: $discount-padding;
+					padding-top: $discount-padding;
+					border-top: 1px solid var(--color-neutral-300);
+				}
+			}
+
+			&.-loyalty-redemption {
+				width: $width-without-button-secure-area;
+			}
+
+			.pricebox-sticky-loyalty-container {
+				display: flex;
+				flex-shrink: 0;
+				margin-right: 32px;
+				margin-left: auto;
+			}
+
+			.pricebox-sticky-loyalty-container + .pricebox-sticky-info-container {
+				margin: 0;
+				margin-left: 24px;
+				border-left: 1px solid var(--color-neutral-300);
+			}
+		}
+	}
+
+	@include breakpoint("large", "up") {
+		padding: $pricebox-sticky-padding-desktop
+			$pricebox-sticky-padding-left-right-desktop;
+
+		.pricebox-content-container {
+			padding: 0;
+		}
+
+		.pricebox-price-container,
+		.pricebox-sticky-info-container {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+		}
+
+		.pricebox-sticky-description {
+			flex-shrink: 0;
+			margin-right: 20px;
+		}
+
+		.pricebox-sticky-info-container {
+			margin-left: auto;
+		}
+
+		.pricebox-sticky-message {
+			display: block;
+			margin-right: 48px;
+		}
+
+		.pricebox-sticky-more-info {
+			margin-right: 45px;
+		}
+
+		&.-loyalty {
+			//Remove padding, because the child pricebox-content-container has it
+			height: auto;
+			padding: 0;
+
+			.pricebox-sticky-info-container {
+				flex-direction: column;
+				flex-shrink: 0;
+				align-items: flex-start;
+				padding-left: 32px;
+			}
+
+			.pricebox-sticky-loyalty-container + .pricebox-sticky-info-container {
+				margin: 0;
+				border-left: 1px solid var(--color-neutral-300);
+			}
+
+			.pricebox-sticky-loyalty-container {
+				display: flex;
+				flex-shrink: 0;
+				margin-right: 32px;
+				margin-left: auto;
+			}
+
+			.pricebox-sticky-footer-loyalty-container {
+				display: none;
+			}
+
+			.pricebox-content-container {
+				flex-wrap: nowrap;
+				padding: $pricebox-sticky-padding-desktop
+					$pricebox-sticky-padding-left-right-desktop;
+			}
+		}
+
+		&.-desktop-white {
+			border-top: 3px solid var(--brand-primary-3);
+		}
+
+		&.-with-additional {
+			.pricebox-sticky-description.-additional {
+				margin-top: 0;
+			}
+
+			.pricebox-sticky-discount-container {
+				transform: translateY(calc((
+					#{$pricebox-sticky-padding-mobile} + #{$discount-padding} + #{$discount-tail-size} + #{$discount-half-font-size}
+				) * -1));
+			}
+		}
+	}
+}

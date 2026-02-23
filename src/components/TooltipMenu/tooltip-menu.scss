@@ -1,0 +1,172 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-tooltip--menu {
+	$tooltip-menu-container-min-width: 160px;
+	$tooltip-menu-container-max-width: 480px;
+	$tooltip-menu-container-max-height: 320px;
+
+	.tooltip-container {
+		pointer-events: auto;
+		width: auto;
+		min-width: $tooltip-menu-container-min-width;
+		max-width: $tooltip-menu-container-max-width;
+		padding: 0 !important;
+
+		.tooltip-content {
+			pointer-events: auto;
+		}
+	}
+
+	&.-scroll-y {
+		.tooltip-content {
+			max-height: $tooltip-menu-container-max-height;
+			overflow-x: hidden;
+			overflow-y: overlay;
+		}
+	}
+
+	.tooltip-section-container {
+		&:first-child {
+			.section-title, .-option-item:first-child {
+				border-radius: $border-radius-4 $border-radius-4 0 0;
+			}
+		}
+
+		&:last-child {
+			.-option-item:last-child {
+				border-radius: 0 0 $border-radius-4 $border-radius-4;
+			}
+		}
+
+		.section-title {
+			@include eva-text-as("overline-2");
+			display: block;
+			position: relative;
+			padding: $spacing-3 $spacing-4;
+			background-color: var(--color-neutral-100);
+			color: var(--color-neutral-800);
+			white-space: nowrap;
+			cursor: default;
+
+			.section-title-icon {
+				margin-right: $spacing-3;
+			}
+		}
+	}
+
+	.submenu {
+		display: none;
+		position: absolute;
+		top: 0px;
+		left: 100%;
+		border: 1px solid var(--color-neutral-300);
+		border-radius: 0 $border-radius-4 $border-radius-4 0;
+		background: var(--color-white);
+	}
+
+	.submenu-item {
+		padding: $spacing-3;
+		color: var(--color-neutral-700);
+		white-space: nowrap;
+
+		&:hover {
+			background-color: var(--color-neutral-100);
+		}
+
+		&:first-child {
+			border-radius: 0 $border-radius-4 0 0;
+		}
+
+		&:last-child {
+			border-radius: 0 0 $border-radius-4 0;
+		}
+	}
+
+	.info-item {
+		display: flex;
+		justify-content: center;
+		padding: $spacing-6 $spacing-4;
+		color: var(--color-neutral-600);
+	}
+
+	.-option-item {
+		display: flex;
+		position: relative;
+		padding: $spacing-2 $spacing-4;
+		color: var(--color-neutral-700);
+		white-space: nowrap;
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--color-neutral-100);
+
+			.submenu {
+				display: block;
+			}
+		}
+
+		.option-subtitle, .option-status {
+			@include eva-text-as("body-2");
+		}
+
+		.option-subtitle + .option-submenu-icon {
+			margin-left: $spacing-2;
+		}
+
+		.option-title {
+			@include eva-text-as("h6");
+			margin-bottom: $spacing-1;
+			color: var(--color-neutral-700);
+		}
+
+		.option-item-loader {
+			margin: 0 auto;
+		}
+
+		.option-submenu-icon {
+			color: var(--color-neutral-700);
+		}
+
+		.option-icon {
+			margin-right: $spacing-2;
+		}
+
+		.option-highlighted {
+			color: var(--brand-primary-3);
+		}
+
+		.option-status {
+			&.-success {
+				color: var(--color-success-300);
+			}
+
+			&.-error {
+				color: var(--color-error-300);
+			}
+		}
+
+		&.-multiline {
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		&.-singleline {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&.-separator {
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--color-neutral-300);
+			}
+		}
+	}
+
+	@include breakpoint("medium","up") {
+		.tooltip-container {
+			margin-left: -50% !important;
+		}
+	}
+}

@@ -1,0 +1,85 @@
+@import "../../scss/eva-core";
+
+// Heading color
+$heading-color: var(--color-neutral-800);
+
+.eva-#{$version}-h1,.eva-#{$version}-h2,.eva-#{$version}-h3,.eva-#{$version}-h4,.eva-#{$version}-h5,.eva-#{$version}-h6 {
+	color: $heading-color;
+	font-weight: normal;
+}
+
+.eva-#{$version}-h1 {
+	@include eva-text-as("h1");
+}
+
+.eva-#{$version}-h2 {
+	@include eva-text-as("h2");
+}
+
+.eva-#{$version}-h3 {
+	@include eva-text-as("h3");
+}
+
+.eva-#{$version}-h4 {
+	@include eva-text-as("h4");
+}
+
+.eva-#{$version}-h5 {
+	@include eva-text-as("h5");
+}
+
+.eva-#{$version}-h6 {
+	@include eva-text-as("h6");
+}
+
+.eva-#{$version}-subtitle-s {
+	@include eva-text-as("subtitle-s");
+}
+
+.eva-#{$version}-p {
+	@include eva-text-as("p");
+
+	//clase deprecada
+	&.-lg {
+		font-size: 16px;
+	}
+}
+
+.eva-#{$version}-small {
+	@include eva-text-as("small");
+}
+
+//nuevas clases
+.eva-#{$version}-body-1 {
+	@include eva-text-as("body-1");
+}
+
+.eva-#{$version}-body-2 {
+	@include eva-text-as("body-2");
+}
+
+.eva-#{$version}-button {
+	@include eva-text-as("button");
+}
+
+.eva-#{$version}-caption {
+	@include eva-text-as("caption");
+}
+
+.eva-#{$version}-overline-1 {
+	@include eva-text-as("overline-1");
+}
+
+.eva-#{$version}-overline-2 {
+	@include eva-text-as("overline-2");
+}
+
+.eva-#{$version}-link, .eva-#{$version}-link-underline {
+	@include eva-link;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.eva-#{$version}-link-underline {
+	text-decoration: underline !important;
+}

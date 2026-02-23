@@ -1,0 +1,85 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-mosaic-gallery {
+	position: relative;
+	max-width: 1280px;
+	margin: 0 auto;
+
+	.mosaic-gallery-actions-container {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+
+	.mosaic-gallery-button {
+		padding: 8px 16px;
+		border: none;
+		border-radius: 20px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+		background-color: var(--color-white);
+		color: var(--color-neutral-700);
+		font-size: 16px;
+		line-height: 20px;
+		cursor: pointer;
+		//border: 1px solid var(--color-neutral-300);
+	}
+
+	.mosaic-gallery-list {
+		max-height: 380px;
+	}
+
+	.mosaic-gallery-item {
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+
+		&:nth-child(1) {
+			.mosaic-gallery-image {
+				height: 380px;
+			}
+		}
+
+		&:nth-child(2) {
+			box-sizing: border-box;
+			padding: 0 0 5px 5px !important;
+
+			.mosaic-gallery-image {
+				height: 250px;
+			}
+
+			&:last-child {
+				.mosaic-gallery-image {
+					height: 380px;
+				}
+			}
+		}
+
+		&:nth-child(3),
+		&:nth-child(4) {
+			box-sizing: border-box;
+			padding-left: 5px !important;
+
+			.mosaic-gallery-image {
+				height: 125px;
+			}
+		}
+	}
+
+	.mosaic-gallery-image {
+		width: 100%;
+	}
+
+	&.-loyalty {
+		.mosaic-gallery-actions-container {
+			left: 20px;
+		}
+	}
+}
+
+@include breakpoint ("small" , "down") {
+	.eva-#{$version}-mosaic-gallery {
+		display: none;
+	}
+}

@@ -1,0 +1,66 @@
+@import "../../scss/eva-core";
+
+.eva-#{$version}-luggage {
+	.luggage-title {
+		@include eva-text-as("eva-3-body-1");
+		margin-bottom: $spacing-3;
+		color: var(--color-neutral-600);
+	}
+
+	.luggage-item {
+		display: flex;
+
+		&:not(:first-child) {
+			padding-top: $spacing-3;
+		}
+
+		&:not(:last-child) {
+			padding-bottom: $spacing-3;
+		}
+
+		&.-included {
+			.luggage-item-icon, .luggage-item-title {
+				color: var(--color-success-500);
+			}
+		}
+	}
+
+	.luggage-item-icon {
+		color: var(--color-neutral-300);
+	}
+
+	.luggage-item-content {
+		@include eva-text-as("eva-3-body-1");
+		padding-left: $spacing-1;
+	}
+
+	.luggage-item-title {
+		color: var(--color-neutral-600);
+	}
+
+	.luggage-item-description {
+		margin-top: $spacing-1;
+		color: var(--color-neutral-700);
+	}
+
+	// Border on items
+	&.-border {
+		.luggage-item {
+			&:not(:first-child) {
+				border-top: 1px solid var(--color-neutral-100);
+			}
+		}
+	}
+
+	// Column layout
+	&.-column-layout {
+		display: flex;
+
+		.luggage-title {
+			margin-right: $spacing-6;
+			margin-bottom: 0;
+			padding-right: $spacing-6;
+			border-right: 1px solid var(--color-neutral-100);
+		}
+	}
+}

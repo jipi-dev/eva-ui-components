@@ -1,0 +1,203 @@
+@import "../../scss/eva-core";
+
+// Steppers
+.eva-#{$version}-steppers {
+	position: relative;
+	box-sizing: border-box;
+	width: 100px;
+	height: 36px;
+	overflow: hidden;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.-step-up {
+		.steppers-tag {
+			animation: eva-step-up 0.2s ease-out;
+		}
+	}
+
+	&.-step-down {
+		.steppers-tag {
+			animation: eva-step-down 0.2s ease-out backwards;
+		}
+	}
+
+	.steppers-icon-left, .steppers-icon-right {
+		@include eva-text-as("body-1");
+		display: flex;
+		position: absolute;
+		top: 0;
+		align-items: center;
+		justify-content: center;
+		box-sizing: border-box;
+		width: 36px;
+		height: 36px;
+		border: solid 1px var(--color-neutral-800);
+		border-radius: $border-radius-half;
+		background-color: transparent;
+		color: var(--color-neutral-800);
+		transition: transform 0.2s ease-out;
+		z-index: 1;
+
+		&:hover {
+			background-color: var(--color-neutral-100);
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus-visible {
+			@include eva-focus($offset: "inside");
+		}
+
+		&:active {
+			transform: scale(0.9);
+		}
+
+		&.-disable, &:disabled {
+			border-color: var(--color-neutral-400);
+			background-color: transparent;
+			color: var(--color-neutral-400);
+			pointer-events: none;
+		}
+	}
+
+	.steppers-icon-left {
+		left: 0;
+	}
+
+	.steppers-icon-right {
+		right: 0;
+	}
+
+	.steppers-tag {
+		@include eva-text-as("body-1");
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		color: var(--color-neutral-800);
+		font-family: var(--font-family), Arial, sans-serif;
+		text-align: center;
+		line-height: 36px;
+		cursor: default;
+		user-select: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		-webkit-touch-callout: none;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:disabled {
+			~ .steppers-icon-right, ~ .steppers-icon-left {
+				border-color: var(--color-neutral-400);
+				background-color: transparent;
+				color: var(--color-neutral-400);
+				pointer-events: none;
+			}
+		}
+	}
+
+	// Sizes
+	&.-lg {
+		width: 130px;
+		height: 48px;
+
+		.steppers-icon-left, .steppers-icon-right {
+			@include eva-text-as("h4");
+			width: 48px;
+			height: 48px;
+			font-weight: 400;
+		}
+
+		.steppers-tag {
+			@include eva-text-as("h4");
+			font-weight: 400;
+			line-height: 48px;
+		}
+	}
+}
+
+// Keyframe
+@include keyframes(eva-step-up) {
+	0% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+
+	5% {
+		transform: translateY(-10%);
+		opacity: 0.5;
+		filter: blur(1px);
+	}
+
+	25% {
+		transform: translateY(10%);
+		opacity: 0.2;
+		filter: blur(1px);
+	}
+
+	50% {
+		transform: translateY(100%);
+		opacity: 0.2;
+		filter: blur(1px);
+	}
+
+	51% {
+		transform: translateY(-100%);
+		opacity: 0.2;
+		filter: blur(1px);
+	}
+
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+		filter: blur(0px);
+	}
+}
+
+// Keyframe
+@include keyframes(eva-step-down) {
+	0% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+
+	5% {
+		transform: translateY(10%);
+		opacity: 0.5;
+		filter: blur(1px);
+	}
+
+	25% {
+		transform: translateY(-10%);
+		opacity: 0.2;
+		filter: blur(1px);
+	}
+
+	50% {
+		transform: translateY(-100%);
+		opacity: 0.2;
+		filter: blur(1px);
+	}
+
+	51% {
+		transform: translateY(100%);
+		opacity: 0.2;
+		filter: blur(1px);
+	}
+
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+		filter: blur(0px);
+	}
+}

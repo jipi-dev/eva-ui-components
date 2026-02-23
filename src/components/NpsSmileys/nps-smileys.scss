@@ -1,0 +1,104 @@
+@import "../../scss/eva-core";
+
+// General
+$width-smile-score-mobile:60px;
+$height-smile-score-mobile:88px;
+
+.eva-#{$version}-nps-smileys {
+	padding: $spacing-4;
+
+	.smileys-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.smile {
+		&-score {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: var(--color-neutral-600);
+
+			&:hover {
+				color: var(--brand-primary-3);
+				cursor: pointer;
+			}
+		}
+
+		&-radio {
+			position: absolute;
+			width: 0;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			opacity: 0;
+
+			&:checked {
+				~ .smile-icon, ~ .smile-value {
+					color: var(--brand-primary-3);
+				}
+			}
+		}
+
+		&-value {
+			display: none;
+		}
+	}
+
+	.nps-label {
+		@include eva-text-as("h4");
+	}
+
+	.nps-scores {
+		display: block;
+		margin-top: $spacing-4;
+	}
+
+	.nps-not-apply {
+		display: block;
+		margin-top: $spacing-4;
+	}
+
+	&.-not-apply {
+		.smile {
+			&-icon, &-value {
+				color: var(--color-neutral-600) !important;
+			}
+
+			&-score {
+				pointer-events: none;
+			}
+		}
+	}
+}
+
+@include breakpoint("medium", "up") {
+	.eva-#{$version}-nps-smileys {
+		.smile-score {
+			width: $width-smile-score-mobile;
+			height: $height-smile-score-mobile;
+			margin-right: $spacing-4;
+			padding: 0 14px;
+		}
+
+		.smile-value {
+			@include eva-text-as("p");
+			display: flex;
+			flex-grow: 1;
+			align-items: center;
+			justify-content: center;
+			margin-top: $spacing-2;
+			text-align: center;
+		}
+
+		.nps-scores {
+			display: flex;
+			align-items: center;
+		}
+
+		.nps-not-apply {
+			margin-top: 0;
+		}
+	}
+}

@@ -1,0 +1,355 @@
+@import "../../scss/eva-core";
+
+// settings
+$segmented-control-height: 44px;
+$segmented-control-border_radius: 24px;
+$segmented-control-button-border-width: 1px;
+$segmented-control-button-height: 36px;
+$segmented-control-button-border_radius: $segmented-control-border_radius;
+$segmented-control-item-width-3: calc((100% - #{$spacing-1 * 4}) / 3); // 4 = 2 padding + 2 gaps
+$segmented-control-item-width-4: calc((100% - #{$spacing-1 * 5}) / 4); // 5 = 2 padding + 3 gaps
+
+// Segmented Control
+.eva-#{$version}-segmented-control {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: $spacing-1;
+	box-sizing: border-box;
+	width: 100%;
+	height: $segmented-control-height;
+	padding: $spacing-1;
+	border-radius: $segmented-control-border_radius;
+	background-color: var(--color-neutral-100);
+
+	// Elemento activo (estado seleccionado) usando :before
+	&:before {
+		content: "";
+		position: absolute;
+		top: $spacing-1;
+		left: $spacing-1;
+		width: calc((100% - #{$spacing-1 * 3}) / 2); // Restar el gap del ancho
+		height: $segmented-control-button-height;
+		outline: $segmented-control-button-border-width solid var(--color-neutral-400);
+		outline-offset: -1px;
+		border-radius: $segmented-control-button-border_radius;
+		background-color: var(--color-white);
+		transform: scale(0.95); // Pequeña escala inicial para animación
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		opacity: 0; // Inicialmente oculto
+		z-index: 1; // Por encima del :after para que se vea
+		pointer-events: none;
+	}
+
+	// Elemento hover usando :after
+	&:after {
+		content: "";
+		position: absolute;
+		top: $spacing-1;
+		left: $spacing-1;
+		width: calc((100% - #{$spacing-1 * 3}) / 2); // Restar el gap del ancho
+		height: $segmented-control-button-height;
+		border-radius: $segmented-control-button-border_radius;
+		background-color: var(--color-neutral-300);
+		transform: scale(0.95); // Pequeña escala inicial para animación suave
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		opacity: 0; // Oculto por defecto
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	// Version darken
+	&.-darken {
+		background-color: var(--color-white);
+
+		&:before {
+			outline-color: var(--color-neutral-300);
+			background-color: var(--color-neutral-100);
+		}
+	}
+
+	.segmented-item {
+		position: relative;
+		flex-basis: 0; // Permite que los items se distribuyan equitativamente
+		flex-grow: 1;
+		flex-shrink: 1;
+		min-width: 0; // Para que el ellipsis funcione en flex items
+		z-index: 1;
+
+		// Anchor names únicos para cada item
+		/* stylelint-disable */
+		// &:nth-child(1) {
+		// 	anchor-name: --segment-1;
+		// }
+
+		// &:nth-child(2) {
+		// 	anchor-name: --segment-2;
+		// }
+
+		// &:nth-child(3) {
+		// 	anchor-name: --segment-3;
+		// }
+
+		// &:nth-child(4) {
+		// 	anchor-name: --segment-4;
+		// }
+		/* stylelint-enable */
+	}
+
+	.segmented-button {
+		@include eva-text-as("button");
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		gap: $spacing-1;
+		width: 100%;
+		min-width: 0; // Permite que el botón se encoja y el ellipsis funcione
+		height: $segmented-control-button-height;
+		padding: 0 $spacing-2;
+		border: none;
+		border-radius: $segmented-control-button-border_radius;
+		background: transparent;
+		color: var(--color-neutral-800);
+		text-align: center;
+		text-decoration: none;
+		transition: color 0.2s ease;
+		cursor: pointer;
+		z-index: 2; // Por encima del :before activo
+
+		// &:hover {
+		// 	color: var(--color-neutral-900);
+		// }
+
+		&:focus-visible {
+			@include breakpoint("large","up") {
+				@include eva-focus;
+			}
+		}
+
+		// Estado activo con clase -active
+		// &.-active {
+		// 	outline: $segmented-control-button-border-width solid var(--color-neutral-400);
+		// 	outline-offset: -1px;
+		// 	background-color: var(--color-white);
+		// }
+
+		.segmented-button-text {
+			min-width: 0; // Permite que el texto se encoja y el ellipsis funcione
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+
+	// Fallback para navegadores que no soportan anchor positioning
+	// Hover states para :after (solo si no tiene -active)
+	&:has(.segmented-item:nth-child(1) .segmented-button:hover:not(.-active)):after {
+		transform: translateX(0%) scale(1);
+		opacity: 1;
+	}
+
+	&:has(.segmented-item:nth-child(2) .segmented-button:hover:not(.-active)):after {
+		transform: translateX(calc(100% + #{$spacing-1})) scale(1);
+		opacity: 1;
+	}
+
+	// Estados activos para :before (fallback)
+	&:has(.segmented-item:nth-child(1) .segmented-button.-active):before {
+		transform: translateX(0%) scale(1);
+		opacity: 1;
+	}
+
+	&:has(.segmented-item:nth-child(2) .segmented-button.-active):before {
+		transform: translateX(calc(100% + #{$spacing-1})) scale(1);
+		opacity: 1;
+	}
+
+	// Para 3 segmentos
+	&.-segments-3 {
+		&:after,
+		&:before,
+		.segmented-item {
+			width: $segmented-control-item-width-3; // 4 = 2 padding + 2 gaps
+		}
+
+		&:has(.segmented-item:nth-child(1) .segmented-button:hover:not(.-active)):after {
+			transform: translateX(0%) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(2) .segmented-button:hover:not(.-active)):after {
+			transform: translateX(calc(100% + #{$spacing-1})) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(3) .segmented-button:hover:not(.-active)):after {
+			transform: translateX(calc(200% + #{$spacing-1 * 2})) scale(1);
+			opacity: 1;
+		}
+
+		// Estados activos para 3 segmentos
+		&:has(.segmented-item:nth-child(1) .segmented-button.-active):before {
+			transform: translateX(0%) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(2) .segmented-button.-active):before {
+			transform: translateX(calc(100% + #{$spacing-1})) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(3) .segmented-button.-active):before {
+			transform: translateX(calc(200% + #{$spacing-1 * 2})) scale(1);
+			opacity: 1;
+		}
+	}
+
+	// Para 4 segmentos
+	&.-segments-4 {
+		&:after,
+		&:before,
+		.segmented-item {
+			width: $segmented-control-item-width-4; // 5 = 2 padding + 3 gaps
+		}
+
+		&:has(.segmented-item:nth-child(1) .segmented-button:hover:not(.-active)):after {
+			transform: translateX(0%) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(2) .segmented-button:hover:not(.-active)):after {
+			transform: translateX(calc(100% + #{$spacing-1})) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(3) .segmented-button:hover:not(.-active)):after {
+			transform: translateX(calc(200% + #{$spacing-1 * 2})) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(4) .segmented-button:hover:not(.-active)):after {
+			transform: translateX(calc(300% + #{$spacing-1 * 3})) scale(1);
+			opacity: 1;
+		}
+
+		// Estados activos para 4 segmentos
+		&:has(.segmented-item:nth-child(1) .segmented-button.-active):before {
+			transform: translateX(0%) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(2) .segmented-button.-active):before {
+			transform: translateX(calc(100% + #{$spacing-1})) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(3) .segmented-button.-active):before {
+			transform: translateX(calc(200% + #{$spacing-1 * 2})) scale(1);
+			opacity: 1;
+		}
+
+		&:has(.segmented-item:nth-child(4) .segmented-button.-active):before {
+			transform: translateX(calc(300% + #{$spacing-1 * 3})) scale(1);
+			opacity: 1;
+		}
+	}
+
+	// ESTO SIRVE PARA CUANDO HAYA MAS SOPORTE DE VERSIONES DE NAVEGADORES, hoy muchos no soportan el anchor positioning
+	// Soporte para anchor positioning con animación de hover
+	// @supports (anchor-name: --segment-1) {
+	// 	&:has(.segmented-item:nth-child(1) .segmented-button:hover:not(.-active)):after {
+	// 		position-anchor: --segment-1; /* stylelint-disable-line */
+	// 		left: anchor(left);
+	// 		width: anchor-size(width);
+	// 		transform: scale(1);
+	// 		opacity: 1;
+	// 	}
+
+	// 	&:has(.segmented-item:nth-child(2) .segmented-button:hover:not(.-active)):after {
+	// 		position-anchor: --segment-2; /* stylelint-disable-line */
+	// 		left: anchor(left);
+	// 		width: anchor-size(width);
+	// 		transform: scale(1);
+	// 		opacity: 1;
+	// 	}
+
+	// 	&:has(.segmented-item:nth-child(3) .segmented-button:hover:not(.-active)):after {
+	// 		position-anchor: --segment-3; /* stylelint-disable-line */
+	// 		left: anchor(left);
+	// 		width: anchor-size(width);
+	// 		transform: scale(1);
+	// 		opacity: 1;
+	// 	}
+
+	// 	&:has(.segmented-item:nth-child(4) .segmented-button:hover:not(.-active)):after {
+	// 		position-anchor: --segment-4; /* stylelint-disable-line */
+	// 		left: anchor(left);
+	// 		width: anchor-size(width);
+	// 		transform: scale(1);
+	// 		opacity: 1;
+	// 	}
+
+	// 	// Estados activos con :before para anchor positioning
+	// 	&:has(.segmented-item:nth-child(1) .segmented-button.-active):before {
+	// 		position-anchor: --segment-1; /* stylelint-disable-line */
+	// 		left: anchor(left);
+	// 		width: anchor-size(width);
+	// 		transform: scale(1);
+	// 		opacity: 1;
+	// 	}
+
+	// 	&:has(.segmented-item:nth-child(2) .segmented-button.-active):before {
+	// 		position-anchor: --segment-2; /* stylelint-disable-line */
+	// 		left: anchor(left);
+	// 		width: anchor-size(width);
+	// 		transform: scale(1);
+	// 		opacity: 1;
+	// 	}
+
+	// 	&:has(.segmented-item:nth-child(3) .segmented-button.-active):before {
+	// 		position-anchor: --segment-3; /* stylelint-disable-line */
+	// 		left: anchor(left);
+	// 		width: anchor-size(width);
+	// 		transform: scale(1);
+	// 		opacity: 1;
+	// 	}
+
+	// 	&:has(.segmented-item:nth-child(4) .segmented-button.-active):before {
+	// 		position-anchor: --segment-4; /* stylelint-disable-line */
+	// 		left: anchor(left);
+	// 		width: anchor-size(width);
+	// 		transform: scale(1);
+	// 		opacity: 1;
+	// 	}
+	// }
+
+	// // Fallback para navegadores muy antiguos (sin :has() ni anchor positioning) Esto no podemos aplicarlo ahora hasta no migrar a dartSass ya que el preocompilador no soporta el @supports not (:has)
+	// @supports not (aspect-ratio: 1) {
+	// 	// Ocultar pseudo elementos en navegadores viejos ya que no funcionarán
+	// 	&:before,
+	// 	&:after {
+	// 		display: none;
+	// 	}
+
+	// 	// Navegadores viejos: estilos básicos sin animaciones complejas
+	// 	.segmented-button {
+	// 		&:hover:not(.-active) {
+	// 			background-color: var(--color-neutral-300);
+	// 		}
+
+	// 		&.-active {
+	// 			outline: $segmented-control-button-border-width solid var(--color-neutral-400);
+	// 			outline-offset: -1px;
+	// 			background-color: var(--color-white);
+	// 			color: var(--color-neutral-900);
+	// 			font-weight: 600;
+	// 		}
+	// 	}
+	// }
+}

@@ -1,0 +1,147 @@
+@import "../../scss/eva-core";
+
+// Settings
+$select-tag-height: $spacing-14;
+$select-tag-padding-right: $spacing-11;
+$select-icon-position: $spacing-11;
+$select-icon-padding-right: $spacing-2;
+$select-icon-width: $spacing-5;
+$select-tag-icon-padding-right: $select-icon-position + $select-icon-padding-right + $select-icon-width + $spacing-2;
+@mixin label-up {
+	@include eva-text-as("caption");
+	transform: translateY(-18px);
+}
+
+// Input field
+.eva-#{$version}-select-field {
+	&.-not-empty {
+		.select-label {
+			@include label-up;
+		}
+	}
+
+	.select-container {
+		position: relative;
+
+		&:after {
+			content: "\f008";
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			right: $spacing-4;
+			color: var(--color-neutral-800);
+			font-family: "eva-font"; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			pointer-events: none;
+			transform: translateY(-50%);
+		}
+
+		&:has(.select-tag:disabled) {
+			&:after {
+				color: var(--color-neutral-600);
+			}
+		}
+	}
+
+	.select-tag {
+		@include eva-text-as("body-2");
+		box-sizing: border-box;
+		width: 100%;
+		height: $select-tag-height;
+		padding: $spacing-4 $select-tag-padding-right 0 $spacing-4;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: $border-radius-4;
+		border-color: var(--color-neutral-600);
+		box-shadow: none;
+		color: var(--color-neutral-800);
+		font-family: var(--font-family), Arial, sans-serif;
+		transition: border-color 0.3s ease-out;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+
+		&:-moz-focusring {
+			color: transparent;
+			text-shadow: 0 0 0 var(--color-black);
+		}
+
+		&::-ms-expand {
+			display: none;
+		}
+
+		&:hover:not(:disabled) {
+			outline: 2px solid var(--color-neutral-600);
+			outline-offset: -2px;
+		}
+
+		&:focus, &:focus-visible {
+			@include eva-focus($offset: "inside");
+		}
+
+		&:focus, &:focus-visible,
+		&:not(:focus):not(:has(option:checked[value=""])) {
+			padding-top: $spacing-5;
+
+			& + .select-label {
+				@include label-up;
+			}
+		}
+
+		&:disabled {
+			border-color: var(--color-neutral-400);
+			background-color: var(--color-neutral-400);
+			color: var(--color-neutral-600);
+			cursor: default;
+
+			& ~ .select-icon {
+				color: var(--color-neutral-600);
+			}
+		}
+	}
+
+	.select-label {
+		@include eva-text-as("body-2");
+		position: absolute;
+		top: 50%;
+		left: $spacing-4;
+		color: var(--color-neutral-600);
+		transform: translateY(-50%);
+		transition: all 0.2s ease-out;
+		pointer-events: none;
+	}
+
+	.select-icon {
+		position: absolute;
+		top: 50%;
+		right: $select-icon-position;
+		padding-right: $select-icon-padding-right;
+		border-right: 1px solid var(--color-neutral-400);
+		color: var(--color-neutral-800);
+		font-size: $select-icon-width;
+		transform: translateY(-50%);
+	}
+
+	&.-invalid {
+		.select-tag:not(:disabled) {
+			border-color: var(--color-error-500);
+
+			&:focus, &:focus-visible {
+				@include eva-focus($color: "error", $offset: "inside");
+			}
+
+			~ .select-label {
+				color: var(--color-error-500);
+			}
+		}
+	}
+
+	&.-icon {
+		.select-tag {
+			padding-right: $select-tag-icon-padding-right;
+		}
+	}
+}

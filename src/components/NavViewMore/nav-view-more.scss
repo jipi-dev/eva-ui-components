@@ -1,0 +1,27 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-nav-view-more {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 230px;
+	text-decoration: none;
+	cursor: pointer;
+
+	.view-more-circle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 72px;
+		height: 72px;
+		border-radius: 50%;
+		background-color: white;
+	}
+
+	.view-more-label {
+		margin-top: 15px;
+		font-size: 16px;
+		cursor: inherit;
+	}
+}

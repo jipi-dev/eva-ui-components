@@ -1,0 +1,155 @@
+@import "../../scss/eva-core";
+
+// Variables
+$tag-height: 36px;
+$tag-border-radius: 24px;
+$tag-close-icon-size: 16px;
+$tag-product-icon-size: 20px;
+
+@mixin hover-state {
+	border: 1px solid var(--brand-primary-1);
+	background-color: var(--brand-primary-1);
+	color: var(--brand-primary-3);
+	transition: padding 0.2s ease-out, background-color 0s;
+}
+
+@mixin pressed-state {
+	border: 1px solid var(--brand-primary-3);
+	background-color: var(--brand-primary-1);
+	color: var(--brand-primary-3);
+}
+
+@mixin active-state {
+	padding-right: $spacing-10;
+	border: 1px solid var(--brand-primary-3);
+	background-color: var(--color-white);
+	color: var(--brand-primary-3);
+}
+
+// Tag
+.eva-#{$version}-tag {
+	display: inline-flex;
+	position: relative;
+	align-items: center;
+	box-sizing: border-box;
+	height: $tag-height;
+	margin: 0 $spacing-2 $spacing-2 0;
+	padding: 0 $spacing-4;
+	border: 1px solid var(--color-neutral-400);
+	border-radius: $tag-border-radius;
+	background-color: var(--color-white);
+	color: var(--color-neutral-800);
+	transition: padding 0.2s ease-out, background-color 0.3s;
+	cursor: pointer;
+	overflow: hidden;
+
+	&:hover {
+		@include hover-state;
+	}
+
+	&:active {
+		@include pressed-state;
+	}
+
+	&:focus-visible {
+		@include eva-focus;
+	}
+
+	.tag-icon {
+		font-size: $tag-close-icon-size;
+
+		&:focus-visible {
+			@include eva-focus($radius: "rounded");
+		}
+
+		&.-select {
+			margin-left: $spacing-2;
+		}
+	}
+
+	.tag-icon:not(.-select) {
+		position: absolute;
+		transition: opacity 0.2s ease-out;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.tag-icon-product {
+		margin-right: $spacing-2;
+		font-size: $tag-product-icon-size;
+	}
+
+	.tag-text {
+		@include eva-text-as("h6");
+		padding-right: $spacing-1;
+
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+
+	// Estado activo
+	&.-active {
+		@include active-state;
+
+		&:active {
+			@include pressed-state;
+		}
+
+		&.-select {
+			padding-right: $spacing-4;
+
+			.tag-icon:not(.-select) {
+				display: none;
+			}
+		}
+
+		.tag-icon {
+			right: $spacing-4;
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+
+	// Con icono de producto
+	&.-icon {
+		align-items: center;
+
+		&.-active {
+			.tag-icon {
+				pointer-events: all;
+			}
+		}
+	}
+
+	// Lighten
+	&.-lighten {
+		border: 1px solid var(--color-white);
+		background-color: transparent;
+		color: var(--color-white);
+
+		&:hover {
+			@include hover-state;
+		}
+
+		&:active {
+			@include pressed-state;
+			border: 1px solid transparent
+		}
+
+		&:focus-visible {
+			@include eva-focus("lighten");
+		}
+
+		&.-active {
+			@include active-state;
+			border: 1px solid transparent;
+		}
+
+		.tag-icon {
+			&:focus-visible {
+				@include eva-focus($radius: "rounded");
+			}
+		}
+	}
+}

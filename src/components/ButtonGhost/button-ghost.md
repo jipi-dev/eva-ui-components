@@ -1,549 +1,276 @@
-# Eva Button Ghost System
+# Button Ghost Component
 
-El sistema de botones Ghost Eva proporciona botones transparentes con bordes para acciones secundarias y casos donde necesitas un impacto visual más ligero. Los botones están disponibles tanto para React/TypeScript como para HTML puro.
+## Descripción
 
-## Instalación y Configuración
+Ghost buttons son botones transparentes con solo borde y texto, utilizados para acciones secundarias o terciarias. Proporcionan un peso visual más ligero en comparación con los botones sólidos.
 
-### CSS Required
-```html
-<!-- Incluir en el <head> de tu HTML -->
-<link rel="stylesheet" href="./eva/eva-core.min.css">
-```
+**Tipo:** Átomo  
+**Categoría:** Actions / Buttons  
+**Tags:** ghost, button, secondary, tertiary, outline, loading, disabled
 
-### Para React/TypeScript
-```tsx
-import { ButtonGhost } from './components/ButtonGhost/ButtonGhost';
-```
+## Cuándo Usar
+- Acciones secundarias/terciarias donde se busca menor peso visual.
+- Superficies con fondo claro u oscuro (ajustar contraste con variante adecuada).
+- Alternativa a `-link` cuando se requiere borde y hit area evidente.
 
-## Ejemplos de Uso
+## Mejores Prácticas
+- Usa un solo ghost por grupo de acciones para no saturar la interfaz.
+- Mantén el copy breve y claro; evita mayúsculas sostenidas largas.
+- Combina con tamaños `-md` o `-lg` según jerarquía y contexto.
+- Deshabilita con `-disabled` + `disabled` y evita hover en ese estado.
 
-### React/TypeScript
+## Dependencias
+- Clase base `eva-3-btn-ghost`; modificadores `-primary`, `-secondary`, tamaños `-md|-lg`, estados `-disabled` y `-loading`.
+- Íconos opcionales con `.btn-icon` y fuente de íconos EVA.
 
-#### Uso Básico
-```tsx
-import React from 'react';
-import { ButtonGhost } from './components/ButtonGhost/ButtonGhost';
-
-function MyComponent() {
-  return (
-    <div>
-      {/* Botón ghost básico */}
-      <ButtonGhost size="lg" variant="">
-        Acción secundaria
-      </ButtonGhost>
-      
-      {/* Botón ghost con variante darken */}
-      <ButtonGhost size="md" variant="darken">
-        Más información
-      </ButtonGhost>
-      
-      {/* Botón ghost deshabilitado */}
-      <ButtonGhost size="lg" variant="" disabled>
-        No disponible
-      </ButtonGhost>
-    </div>
-  );
-}
-```
-
-#### Botones Ghost con Iconos
-```tsx
-import React from 'react';
-import { ButtonGhost } from './components/ButtonGhost/ButtonGhost';
-
-function ButtonGhostExamples() {
-  return (
-    <div>
-      {/* Botón ghost con icono a la izquierda */}
-      <ButtonGhost size="lg" variant="" icon="info">
-        Más detalles
-      </ButtonGhost>
-      
-      {/* Botón ghost solo con icono */}
-      <ButtonGhost size="md" variant="darken" iconOnly icon="close" />
-      
-      {/* Botón ghost con flecha siguiente */}
-      <ButtonGhost size="lg" variant="lighten" next>
-        Explorar más
-      </ButtonGhost>
-      
-      {/* Botón ghost con icono personalizado */}
-      <ButtonGhost size="md" variant="" icon="download">
-        Descargar gratis
-      </ButtonGhost>
-    </div>
-  );
-}
-```
-
-#### Botones Ghost como Enlaces
-```tsx
-import React from 'react';
-import { ButtonGhost } from './components/ButtonGhost/ButtonGhost';
-
-function ButtonGhostLinks() {
-  return (
-    <div>
-      {/* Botón ghost como enlace externo */}
-      <ButtonGhost size="lg" variant="" href="https://example.com">
-        Sitio web
-      </ButtonGhost>
-      
-      {/* Botón ghost como enlace interno */}
-      <ButtonGhost size="md" variant="lighten" href="/help" icon="question-circle">
-        Centro de ayuda
-      </ButtonGhost>
-      
-      {/* Botón ghost como enlace con icono */}
-      <ButtonGhost size="lg" variant="darken" href="/contact" icon="mail">
-        Contactar soporte
-      </ButtonGhost>
-    </div>
-  );
-}
-```
-
-#### Estados de Botón Ghost
-```tsx
-import React from 'react';
-import { ButtonGhost } from './components/ButtonGhost/ButtonGhost';
-
-function ButtonGhostStates() {
-  const [loading, setLoading] = React.useState(false);
-
-  const handleClick = () => {
-    setLoading(true);
-    // Simular operación async
-    setTimeout(() => setLoading(false), 2000);
-  };
-
-  return (
-    <div>
-      {/* Botón ghost normal */}
-      <ButtonGhost size="lg" variant="" onClick={handleClick}>
-        Procesar
-      </ButtonGhost>
-      
-      {/* Botón ghost en estado de carga */}
-      <ButtonGhost size="lg" variant="" loading={loading}>
-        {loading ? 'Procesando...' : 'Procesar'}
-      </ButtonGhost>
-      
-      {/* Botón ghost deshabilitado */}
-      <ButtonGhost size="lg" variant="" disabled>
-        No disponible
-      </ButtonGhost>
-    </div>
-  );
-}
-```
-
-#### Diferentes Variantes Ghost
-```tsx
-import React from 'react';
-import { ButtonGhost } from './components/ButtonGhost/ButtonGhost';
-
-function ButtonGhostVariants() {
-  return (
-    <div className="button-group">
-      {/* Variante por defecto (sin variante) */}
-      <ButtonGhost size="lg" variant="">
-        Por defecto
-      </ButtonGhost>
-      
-      {/* Variante darken */}
-      <ButtonGhost size="lg" variant="darken">
-        Darken
-      </ButtonGhost>
-      
-      {/* Variante lighten */}
-      <ButtonGhost size="lg" variant="lighten">
-        Lighten
-      </ButtonGhost>
-      
-      {/* Variante white-loyalty */}
-      <ButtonGhost size="lg" variant="white-loyalty">
-        White Loyalty
-      </ButtonGhost>
-    </div>
-  );
-}
-```
-
-### HTML Puro
-
-#### Uso Básico
-```html
-<!-- Botón ghost básico -->
-<button class="eva-3-btn-ghost -lg" type="button">
-  <span class="btn-text">Acción secundaria</span>
-</button>
-
-<!-- Botón ghost con variante darken -->
-<button class="eva-3-btn-ghost -md -darken" type="button">
-  <span class="btn-text">Más información</span>
-</button>
-
-<!-- Botón ghost deshabilitado -->
-<button class="eva-3-btn-ghost -lg -disable" type="button">
-  <span class="btn-text">No disponible</span>
-</button>
-```
-
-#### Botones Ghost con Iconos
-```html
-<!-- Botón ghost con icono a la izquierda -->
-<button class="eva-3-btn-ghost -lg" type="button">
-  <i class="eva-3-icon-info btn-icon" aria-hidden="true"></i>
-  <span class="btn-text">Más detalles</span>
-</button>
-
-<!-- Botón ghost solo con icono -->
-<button class="eva-3-btn-ghost -md -darken -circle" type="button">
-  <i class="eva-3-icon-close btn-icon" aria-hidden="true"></i>
-</button>
-
-<!-- Botón ghost con flecha siguiente -->
-<button class="eva-3-btn-ghost -lg -lighten" type="button">
-  <span class="btn-text">Explorar más</span>
-  <i class="eva-3-icon-chevron-right btn-icon" aria-hidden="true"></i>
-</button>
-
-<!-- Botón ghost con icono personalizado -->
-<button class="eva-3-btn-ghost -md" type="button">
-  <i class="eva-3-icon-download btn-icon" aria-hidden="true"></i>
-  <span class="btn-text">Descargar gratis</span>
-</button>
-```
-
-#### Botones Ghost como Enlaces
-```html
-<!-- Botón ghost como enlace externo -->
-<a class="eva-3-btn-ghost -lg" href="https://example.com" target="_blank" rel="noopener">
-  <span class="btn-text">Sitio web</span>
-</a>
-
-<!-- Botón ghost como enlace interno -->
-<a class="eva-3-btn-ghost -md -lighten" href="/help">
-  <i class="eva-3-icon-question-circle btn-icon" aria-hidden="true"></i>
-  <span class="btn-text">Centro de ayuda</span>
-</a>
-
-<!-- Botón ghost como enlace con icono -->
-<a class="eva-3-btn-ghost -lg -darken" href="/contact">
-  <i class="eva-3-icon-mail btn-icon" aria-hidden="true"></i>
-  <span class="btn-text">Contactar soporte</span>
-</a>
-```
-
-#### Estados de Botón Ghost
-```html
-<!-- Botón ghost normal -->
-<button class="eva-3-btn-ghost -lg" type="button">
-  <span class="btn-text">Procesar</span>
-</button>
-
-<!-- Botón ghost en estado de carga -->
-<button class="eva-3-btn-ghost -lg -loading" type="button">
-  <span class="btn-status">Procesando...</span>
-</button>
-
-<!-- Botón ghost deshabilitado -->
-<button class="eva-3-btn-ghost -lg -disable" type="button">
-  <span class="btn-text">No disponible</span>
-</button>
-```
-
-#### Diferentes Variantes Ghost
-```html
-<div class="button-group">
-  <!-- Variante por defecto -->
-  <button class="eva-3-btn-ghost -lg" type="button">
-    <span class="btn-text">Por defecto</span>
-  </button>
-  
-  <!-- Variante darken -->
-  <button class="eva-3-btn-ghost -lg -darken" type="button">
-    <span class="btn-text">Darken</span>
-  </button>
-  
-  <!-- Variante lighten -->
-  <button class="eva-3-btn-ghost -lg -lighten" type="button">
-    <span class="btn-text">Lighten</span>
-  </button>
-  
-  <!-- Variante white-loyalty -->
-  <button class="eva-3-btn-ghost -lg -white-loyalty" type="button">
-    <span class="btn-text">White Loyalty</span>
-  </button>
-</div>
-```
-
-#### Botones Ghost en Formularios
-```html
-<form class="form">
-  <div class="form-group">
-    <label for="feedback">Comentarios</label>
-    <textarea id="feedback" name="feedback" rows="4"></textarea>
-  </div>
-  
-  <div class="form-actions">
-    <!-- Botón principal -->
-    <button class="eva-3-btn -lg -primary" type="submit">
-      <span class="btn-text">Enviar comentarios</span>
-    </button>
-    
-    <!-- Botón ghost secundario -->
-    <button class="eva-3-btn-ghost -md" type="button">
-      <span class="btn-text">Guardar borrador</span>
-    </button>
-    
-    <!-- Botón ghost de cancelar -->
-    <button class="eva-3-btn-ghost -md -darken" type="button">
-      <i class="eva-3-icon-cross btn-icon" aria-hidden="true"></i>
-      <span class="btn-text">Cancelar</span>
-    </button>
-  </div>
-</form>
-```
-
-## Propiedades Disponibles
-
-### Tamaños (size)
-- `md` - Mediano (32px height)
-- `lg` - Grande (48px height)
-
-### Variantes Ghost (variant)
-- `""` - Por defecto (borde gris claro, texto oscuro)
-- `darken` - Versión más oscura (borde más visible)
-- `lighten` - Versión más clara (borde más sutil)
-- `white-loyalty` - Versión blanca para programas de lealtad
-
-### Estados
-- `disabled` - Botón deshabilitado
-- `loading` - Botón en estado de carga
-- `iconOnly` - Solo muestra el icono (botón circular)
-- `next` - Muestra flecha de siguiente automáticamente
-
-### Funcionalidad
-- `href` - Convierte el botón en enlace (`<a>` tag)
-- `icon` - Acepta cualquier nombre de icono del sistema Eva
-- `onClick` - Manejador de clic para botones
-- `inputId` - ID para accesibilidad con inputs de formulario
-
-### Iconos
-- `icon` - Acepta cualquier nombre de icono del sistema Eva o `true` para icono por defecto
-- Consulta el listado completo en `ICONS.md`
-
-## Ejemplos de Casos de Uso
-
-### Navegación Secundaria
-```tsx
-// React
-<ButtonGhost size="md" variant="lighten" icon="chevron-left">
-  Atrás
-</ButtonGhost>
-
-<ButtonGhost size="md" variant="" href="/help">
-  Ayuda
-</ButtonGhost>
-```
-
-```html
-<!-- HTML -->
-<button class="eva-3-btn-ghost -md -lighten">
-  <i class="eva-3-icon-chevron-left btn-icon" aria-hidden="true"></i>
-  <span class="btn-text">Atrás</span>
-</button>
-
-<a class="eva-3-btn-ghost -md" href="/help">
-  <span class="btn-text">Ayuda</span>
-</a>
-```
-
-### Acciones en Cards
-```tsx
-// React
-<ButtonGhost size="md" variant="" icon="bookmark">
-  Guardar para después
-</ButtonGhost>
-
-<ButtonGhost size="md" variant="darken" iconOnly icon="more" />
-
-<ButtonGhost size="md" variant="lighten" icon="share">
-  Compartir
-</ButtonGhost>
-```
-
-```html
-<!-- HTML -->
-<button class="eva-3-btn-ghost -md">
-  <i class="eva-3-icon-bookmark btn-icon" aria-hidden="true"></i>
-  <span class="btn-text">Guardar para después</span>
-</button>
-
-<button class="eva-3-btn-ghost -md -darken -circle">
-  <i class="eva-3-icon-more btn-icon" aria-hidden="true"></i>
-</button>
-
-<button class="eva-3-btn-ghost -md -lighten">
-  <i class="eva-3-icon-share btn-icon" aria-hidden="true"></i>
-  <span class="btn-text">Compartir</span>
-</button>
-```
-
-### Formularios con Acciones Múltiples
-```tsx
-// React
-<div className="form-actions">
-  <Button size="lg" variant="primary" type="submit">
-    Confirmar reserva
-  </Button>
-  
-  <ButtonGhost size="md" variant="" type="button">
-    Revisar más tarde
-  </ButtonGhost>
-  
-  <ButtonGhost size="md" variant="darken" href="/terms">
-    Ver términos
-  </ButtonGhost>
-</div>
-```
-
-```html
-<!-- HTML -->
-<div class="form-actions">
-  <button class="eva-3-btn -lg -primary" type="submit">
-    <span class="btn-text">Confirmar reserva</span>
-  </button>
-  
-  <button class="eva-3-btn-ghost -md" type="button">
-    <span class="btn-text">Revisar más tarde</span>
-  </button>
-  
-  <a class="eva-3-btn-ghost -md -darken" href="/terms">
-    <span class="btn-text">Ver términos</span>
-  </a>
-</div>
-```
-
-### Filtros y Controles
-```tsx
-// React
-<div className="filter-controls">
-  <ButtonGhost size="md" variant="lighten" icon="filter">
-    Filtros
-  </ButtonGhost>
-  
-  <ButtonGhost size="md" variant="" icon="grid">
-    Ordenar
-  </ButtonGhost>
-  
-  <ButtonGhost size="md" variant="darken" iconOnly icon="refresh" />
-</div>
-```
-
-```html
-<!-- HTML -->
-<div class="filter-controls">
-  <button class="eva-3-btn-ghost -md -lighten">
-    <i class="eva-3-icon-filter btn-icon" aria-hidden="true"></i>
-    <span class="btn-text">Filtros</span>
-  </button>
-  
-  <button class="eva-3-btn-ghost -md">
-    <i class="eva-3-icon-grid btn-icon" aria-hidden="true"></i>
-    <span class="btn-text">Ordenar</span>
-  </button>
-  
-  <button class="eva-3-btn-ghost -md -darken -circle">
-    <i class="eva-3-icon-refresh btn-icon" aria-hidden="true"></i>
-  </button>
-</div>
-```
-
-## Clases CSS Disponibles
+## Estructura HTML
 
 ### Estructura Base
-```css
-.eva-3-btn-ghost {
-  /* Estilos base del botón ghost */
-}
+
+```html
+<button class="eva-3-btn-ghost [tamaño] [variante] [estados]">
+  <!-- Ícono opcional al inicio -->
+  <i class="[clase-icono] btn-icon"></i>
+  <!-- Texto del botón -->
+  <em class="btn-text">[texto]</em>
+</button>
 ```
 
-### Tamaños
-```css
-.eva-3-btn-ghost.-md { /* Botón mediano */ }
-.eva-3-btn-ghost.-lg { /* Botón grande */ }
+## Variantes
+
+### Primary (-primary)
+Ghost button primario con borde de color de marca primario.
+
+**CSS Classes:**
+- Base: `.eva-3-btn-ghost`
+- Modificador: `.-primary`
+- Tamaño: `.-lg` o `.-md` (opcional, por defecto es `md`)
+
+**HTML:**
+```html
+<button class="eva-3-btn-ghost -lg -primary">
+  <em class="btn-text">Button Primary</em>
+</button>
 ```
 
-### Variantes Ghost
-```css
-.eva-3-btn-ghost { /* Por defecto */ }
-.eva-3-btn-ghost.-darken { /* Variante más oscura */ }
-.eva-3-btn-ghost.-lighten { /* Variante más clara */ }
-.eva-3-btn-ghost.-white-loyalty { /* Variante blanca para loyalty */ }
+### Secondary (-secondary)
+Ghost button secundario con borde de color neutral.
+
+**CSS Classes:**
+- Base: `.eva-3-btn-ghost`
+- Modificador: `.-secondary`
+
+**HTML:**
+```html
+<button class="eva-3-btn-ghost -lg -secondary">
+  <em class="btn-text">Button Secondary</em>
+</button>
 ```
 
-### Estados
-```css
-.eva-3-btn-ghost.-disable { /* Botón deshabilitado */ }
-.eva-3-btn-ghost.-loading { /* Botón cargando */ }
-.eva-3-btn-ghost.-circle { /* Solo icono */ }
+## Tamaños
+
+### Medium (-md)
+Tamaño mediano (opcional, es el valor por defecto).
+
+**CSS Class:** `.-md`
+
+**Especificaciones:**
+- Height: 40px
+- Padding: 12px 20px
+- Font Size: 16px
+
+```html
+<button class="eva-3-btn-ghost -md -primary">
+  <em class="btn-text">Medium</em>
+</button>
 ```
 
-### Elementos internos
-```css
-.btn-text { /* Texto del botón */ }
-.btn-icon { /* Icono del botón */ }
-.btn-status { /* Estado de carga */ }
+**Sin especificar tamaño (default a md):**
+```html
+<button class="eva-3-btn-ghost -primary">
+  <em class="btn-text">Medium (por defecto)</em>
+</button>
 ```
+
+### Large (-lg)
+Tamaño grande (opcional).
+
+**CSS Class:** `.-lg`
+
+**Especificaciones:**
+- Height: 48px
+- Padding: 16px 24px
+- Font Size: 16px
+
+```html
+<button class="eva-3-btn-ghost -lg -primary">
+  <em class="btn-text">Large</em>
+</button>
+```
+
+**Nota**: El tamaño es opcional. Si no se especifica, el botón tomará el tamaño `md` por defecto. Solo se soportan los tamaños `md` y `lg`.
+
+## Estados
+
+### Default
+Estado normal con fondo transparente y borde de color.
+
+```html
+<button class="eva-3-btn-ghost -lg -primary">
+  <em class="btn-text">Default State</em>
+</button>
+```
+
+### Hover
+Al hacer hover, el fondo se llena con el mismo color y el texto se vuelve blanco.
+
+**Comportamiento:**
+- Background: Color del borde
+- Text Color: #ffffff
+- Transform: translateY(-1px)
+- Shadow: 0 4px 12px rgba(color, 0.2)
+
+### Disabled (-disabled)
+Botón deshabilitado con opacidad reducida.
+
+**CSS Class:** `.-disabled`
+**HTML Attribute:** `disabled`
+
+```html
+<button class="eva-3-btn-ghost -lg -primary -disabled" disabled>
+  <em class="btn-text">Disabled</em>
+</button>
+```
+
+## Características Especiales
+
+### Botón con Ícono
+El ícono puede estar al inicio del texto.
+
+**CSS Class:** `.btn-icon`
+
+```html
+<button class="eva-3-btn-ghost -lg -primary">
+  <i class="eva-3-icon-edit btn-icon"></i>
+  <em class="btn-text">Edit</em>
+</button>
+```
+
+### Botón con Ícono al Final
+
+```html
+<button class="eva-3-btn-ghost -lg -primary">
+  <em class="btn-text">Continuar</em>
+  <i class="eva-3-icon-chevron-right btn-icon"></i>
+</button>
+```
+
+## CSS Classes
+
+### Clases Principales
+
+- **Base**: `.eva-3-btn-ghost` - Clase principal del botón ghost
+
+### Clases de Tamaño
+
+- `.-sm` - Tamaño pequeño
+- `.-md` - Tamaño mediano (por defecto si no se especifica)
+- `.-lg` - Tamaño grande
+
+### Clases de Variante
+
+- `.-primary` - Variante primaria
+- `.-secondary` - Variante secundaria
+
+### Clases de Estado
+
+- `.-disabled` - Estado deshabilitado
+
+### Clases de Elementos
+### Clases de Tamaño
+
+- `.-md` - Tamaño mediano (por defecto si no se especifica)
+- `.-lg` - Tamaño grande
+
+### Clases de Variante
+
+**Primary:**
+- `.btn-text` - Texto del botón
+- `.btn-icon` - Ícono del botón
+
+## Atributos HTML con Ícono
+
+```html
+<button class="eva-3-btn-ghost -lg -primary">
+  <i class="eva-3-icon-save btn-icon"></i>
+  <em class="btn-text">Guardar borrador</em>
+</button>
+```
+
+### Ghost Secondary Deshabilitado
+
+```html
+<button class="eva-3-btn-ghost -md -secondary -disabled" disabled>
+  <em class="btn-text">No disponible</em>
+</button>
+```
+
+### Ghost Small con Ícono
+
+```html
+<button class="eva-3-btn-ghost -sm -primary">
+  <i class="eva-3-icon-edit btn-icon"></i>
+  <em class="btn-text">Editar</em>
+</button>
+```
+
+### Ghost Secondary Deshabilitado
+
+```html
+<button class="eva-3-btn-ghost -md -secondary -disabled" disabled>
+  <em class="btn-text">No disponible</em>
+</button>
+```
+
+### Ghost en Card Headera un peso visual más ligero
+- Ideal para botones de cancelar, reset o acciones alternativas
+- No usar como llamado a la acción principal (CTA)
+- Funciona bien en headers de cards o toolbars
+- Usar cuando se quiere mantener el diseño limpio y minimalista
+- Combinar con botones sólidos para establecer jerarquía visual
+
+### Cuándo NO usar Ghost Buttons
+
+- Como botón principal en formularios importantes
+- En fondos donde el borde no tenga suficiente contraste
+- Para acciones críticas que requieren máxima visibilidad
+- En contextos donde se necesita máxima atención del usuario
+
+## Accesibilidad
+
+Para este componente es recomendable utilizar las siguientes etiquetas:
+
+- **aria-role**: Definir el rol del botón
+- **aria-disabled**: Indicar si el botón está deshabilitado
+- **aria-label**: Proporcionar etiquetas descriptivas para botones con solo ícono
+
+### Accessibility Guidelines
+
+- Siempre incluir texto significativo en el elemento `btn-text`
+- Asegurar suficiente contraste entre el borde y el fondo (mínimo 3:1 para WCAG AA)
+- Asegurar suficiente contraste de texto (mínimo 4.5:1 para WCAG AA)
+- Soporte para navegación por teclado
+- El estado hover debe ser visible incluso sin color
+- Usar `aria-disabled` cuando el botón esté deshabilitado
+- Proporcionar `aria-label` para botones con solo ícono
 
 ## Diferencias con Button Regular
 
-### Cuándo usar ButtonGhost
-- **Acciones secundarias**: Cuando necesitas una acción menos prominente
-- **Sobre fondos coloridos**: Los botones ghost funcionan bien sobre imágenes o fondos
-- **Espacios limitados**: Cuando necesitas botones que no dominen visualmente
-- **Enlaces importantes**: Para enlaces que necesitan más prominencia que un link simple
-
-### Cuándo usar Button Regular
-- **Acciones primarias**: La acción principal de la página o sección
-- **Call-to-actions**: Botones que necesitan máxima atención
-- **Formularios principales**: Botones de submit en formularios importantes
-
-## Buenas Prácticas
-
-### Accesibilidad
-- Asegurar contraste suficiente con el fondo
-- Usar `aria-label` para botones con solo icono
-- Mantener tamaño mínimo de 44px para touch
-- Indicar visualmente el estado del enlace cuando se usa `href`
-
-### Semántica
-- Usar para acciones secundarias o de apoyo
-- No usar más de 2-3 botones ghost juntos
-- Combinar con botones regulares para jerarquía clara
-- Usar consistentemente las variantes según el contexto
-
-### Visual
-- Los botones ghost son ideales sobre fondos coloridos
-- Mantener suficiente espacio entre botones ghost adyacentes
-- Considerar el contraste con el fondo al elegir variante
-
-## Integración con Figma
-
-Este sistema de botones ghost está diseñado para integrarse perfectamente con Figma Code Components, permitiendo:
-
-1. **Props tipadas**: TypeScript proporciona autocompletado y validación
-2. **Variantes específicas**: Variantes optimizadas para diferentes contextos
-3. **Flexibilidad**: Puede funcionar como botón o enlace
-4. **Consistencia**: Mismo sistema visual en diseño y código
-
-### Uso en Figma Code Component
-```tsx
-// El componente puede usarse directamente en Figma
-<ButtonGhost size="lg" variant="darken" icon="info">
-  Más información
-</ButtonGhost>
-```
+| Característica | Button Regular | Button Ghost |
+|----------------|----------------|--------------|
+| Fondo | Sólido de color | Transparente |
+| Borde | Sin borde visible | Borde de 1px |
+| Peso visual | Alto | Bajo |
+| Uso principal | Acciones primarias | Acciones secundarias/terciarias |
+| Hover | Darkening del fondo | Relleno con color |
+| Jerarquía | Alta | Media-Baja |

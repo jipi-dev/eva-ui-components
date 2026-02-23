@@ -1,0 +1,691 @@
+@use "sass:string";
+@import "../../scss/eva-core";
+
+// Backgroud color
+$tooltip-bg-black: var(--color-neutral-800);
+$tooltip-bg-white: var(--color-white);
+
+// MIXINS
+// Hide tooltip
+@mixin eva-hide-tooltip($translate-type:"Y", $translate-value: "(5px)", $speed: "0.15s") {
+	display: block;
+	transform: translate#{$translate-type}#{$translate-value};
+	transform-origin: 50% 110%;
+	transition: opacity string.unquote($speed) ease-out, transform string.unquote($speed) ease-out, visibility string.unquote($speed) ease-out;
+	visibility: hidden;
+	opacity: 0;
+}
+// Show tooltip
+@mixin eva-show-tooltip($translate-type:"Y", $translate-value: "(0px)") {
+	display: block;
+	transform: translate#{$translate-type}#{$translate-value};
+	visibility: visible;
+	opacity: 1;
+}
+// Tooltip position
+@mixin eva-tooltip-position($position: "top", $background-color: $tooltip-bg-black, $font-color: var(--color-neutral-300)) {
+	.tooltip-container {
+		position: absolute;
+		left: 50%;
+		box-sizing: border-box;
+		border-radius: $spacing-2;
+		font-weight: normal;
+	}
+
+	.tooltip-marker {
+		left: 50%;
+		margin-left: -20px;
+	}
+
+	@if $position == "top" {
+		.tooltip-container {
+			@include eva-hide-tooltip;
+			bottom: calc(100% + 10px);
+		}
+
+		.tooltip-marker {
+			bottom: -20px;
+
+			&:after {
+				top: -9px;
+				border-radius: 2px;
+			}
+		}
+
+		.tooltip-content {
+			@include eva-hide-tooltip("Y", "(5px)", ".15s");
+		}
+	} @else if $position == "bottom" {
+		.tooltip-container {
+			@include eva-hide-tooltip("Y","(-5px)");
+			top: calc(100% + 10px);
+		}
+
+		.tooltip-marker {
+			top: -20px;
+
+			&:after {
+				bottom: -9px;
+			}
+		}
+
+		.tooltip-content {
+			@include eva-hide-tooltip("Y", "(-5px)", ".15s");
+		}
+	} @else if $position == "right-inline" {
+		.tooltip-container {
+			//right inline, use translateY -50% to center horizontally
+			//use trnslateX -5px to apear from left in transform when using -show-tooltip or :hover
+			@include eva-hide-tooltip("", "(-5px,-50%)");
+			// Using display flex to center the marker in tooltip-container. Align-items: center
+			display: flex;
+		}
+		// Marker position
+		.tooltip-marker {
+			left: -10px;
+
+			&:after {
+				top: -9px;
+			}
+		}
+
+		.tooltip-content {
+			//Use transaleX -5px to move content from left
+			@include eva-hide-tooltip("X", "(-5px)");
+		}
+	} @else if $position == "left-inline" {
+		.tooltip-container {
+			//right inline, use translateY -50% to center horizontally
+			//use trnslateX 5px to apear from left in transform when using -show-tooltip or :hover
+			@include eva-hide-tooltip("", "(5px,-50%)");
+			// Using display flex to center the marker in tooltip-container. Align-items: center
+			display: flex;
+		}
+
+		.tooltip-marker {
+			// Marker position
+			left: -10px;
+			margin-left: 100%;
+
+			&:after {
+				top: 13px;
+			}
+		}
+
+		.tooltip-content {
+			//Use transaleX 5px to move content from right
+			@include eva-hide-tooltip("X", "(5px)");
+		}
+	}
+}
+// OUTPUT
+.eva-#{$version}-tooltip {
+	position: relative;
+	white-space: normal;
+	cursor: pointer;
+	//Hover default show
+	&:hover {
+		&.-bottom,
+		&.-top {
+			.tooltip-container {
+				@include eva-show-tooltip;
+			}
+
+			.tooltip-content {
+				@include eva-show-tooltip;
+			}
+		}
+
+		&.-left-inline,
+		&.-right-inline {
+			.tooltip-container {
+				@include eva-show-tooltip("","(0px,-50%)");
+				display: flex;
+			}
+
+			.tooltip-content {
+				@include eva-show-tooltip("","(0px)");
+			}
+		}
+	}
+
+	.tooltip-container {
+		position: relative;
+		width: 290px;
+		margin-left: -145px;
+		padding: 16px;
+		background-color: var(--color-neutral-800);
+		text-align: left;
+		cursor: auto;
+		z-index: 1;
+
+		.eva-#{$version}-h5,
+		.tooltip-text {
+			color: var(--color-white);
+		}
+
+		.eva-#{$version}-h5 {
+			display: block;
+			padding-bottom: 8px;
+		}
+	}
+
+	.tooltip-marker {
+		position: absolute;
+		width: 40px;
+		height: 20px;
+		overflow: hidden;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 50%;
+			width: 15px;
+			height: 15px;
+			margin-left: -8px;
+			background-color: var(--color-neutral-800);
+			transform: rotateZ(45deg);
+		}
+	}
+
+	.tooltip-close {
+		@include eva-text-as("body-1");
+		position: absolute;
+		top: $spacing-3;
+		right: $spacing-3;
+		padding: 0 $spacing-1;
+		color: var(--color-white);
+		transition: opacity 0.2s ease-out;
+		cursor: pointer;
+		opacity: 1;
+		z-index: 1;
+
+		&:hover {
+			transition-duration: 0s;
+			opacity: 0.5;
+		}
+
+		&:focus-visible {
+			@include eva-focus($color: "lighten", $radius: "rounded");
+		}
+	}
+
+	// Close button
+	&.-close {
+		.tooltip-content {
+			padding-right: 30px;
+		}
+	}
+
+	//Change tooltip display to bigs blocks
+	&.-block {
+		display: inherit;
+	}
+	// Sizes
+	&.-sm {
+		.tooltip-container {
+			width: 153px;
+			margin-left: -77px;
+			padding: 12px;
+		}
+	}
+	// Show Tooltip
+	&.-bottom,
+	&.-top {
+		&.-show-tooltip {
+			.tooltip-container {
+				@include eva-show-tooltip;
+			}
+
+			.tooltip-content {
+				@include eva-show-tooltip;
+			}
+		}
+	}
+
+	&.-left-inline,
+	&.-right-inline {
+		&.-show-tooltip {
+			.tooltip-container {
+				// Use translate tooltip to the final and showed position
+				@include eva-show-tooltip("","(0px,-50%)");
+				// Using display flex to center the marker in tooltip-container. Align-items: center
+				display: flex;
+			}
+
+			.tooltip-content {
+				@include eva-show-tooltip;
+				flex-grow: 1;
+			}
+		}
+
+		.tooltip-container {
+			//Using top 50% and transaleY -50% you can center the tooltip. Read on stackoverflow.
+			top: 50%;
+			//use alig-items center to center the marker in the middle of the unknown tooltip-container size
+			align-items: center;
+			//Use justify content to remplace text-align center doesn't work with flex (?)
+			justify-content: center;
+			transform: translateY(-50%);
+		}
+
+		.tooltip-marker {
+			//marker rotation
+			transform: rotate(90deg);
+		}
+	}
+
+	&.-right-inline-bottom,
+	&.-right-inline-top,
+	&.-left-inline-bottom,
+	&.-left-inline-top {
+		&.-show-tooltip {
+			.tooltip-container {
+				// Using display flex to center the marker in tooltip-container. Align-items: center
+				display: flex;
+			}
+
+			.tooltip-content {
+				@include eva-show-tooltip;
+			}
+		}
+
+		.tooltip-marker {
+			//marker rotation
+			transform: rotate(90deg);
+		}
+	}
+
+	&.-right-inline-bottom, &.-left-inline-bottom {
+		&.-show-tooltip {
+			.tooltip-container {
+				// Use translate tooltip to the final and showed position
+				@include eva-show-tooltip("","(0px,-18px)");
+				top: 0;
+			}
+		}
+
+		.tooltip-marker {
+			top: 14px;
+		}
+	}
+
+	&.-right-inline-top, &.-left-inline-top {
+		&.-show-tooltip {
+			.tooltip-container {
+				// Use translate tooltip to the final and showed position
+				@include eva-show-tooltip("","(0px,18px)");
+				bottom: 0;
+			}
+		}
+
+		.tooltip-marker {
+			bottom: 14px;
+		}
+	}
+
+	// Tooltip position
+	&.-top {
+		@include eva-tooltip-position;
+	}
+
+	&.-bottom {
+		@include eva-tooltip-position("bottom");
+	}
+
+	&.-left {
+		.tooltip-container {
+			right: 50%;
+			left: auto;
+			margin-right: -25px;
+		}
+
+		.tooltip-marker {
+			right: 5px;
+			left: auto;
+			margin: 0;
+		}
+	}
+
+	&.-right {
+		.tooltip-container {
+			right: auto;
+			left: 50%;
+			margin-left: -25px;
+		}
+
+		.tooltip-marker {
+			right: auto;
+			left: 5px;
+			margin: 0;
+		}
+	}
+
+	&.-right-inline, &.-right-inline-bottom, &.-right-inline-top {
+		//Right inline position
+		@include eva-tooltip-position("right-inline");
+
+		.tooltip-container {
+			left: 20px;
+			margin-left: 100%;
+		}
+	}
+
+	&.-right-inline-bottom, &.-right-inline-top {
+		.tooltip-marker {
+			left: -10px;
+
+			&:after {
+				top: -9px;
+			}
+		}
+	}
+
+	&.-left-inline, &.-left-inline-bottom, &.-left-inline-top {
+		@include eva-tooltip-position("left-inline");
+
+		.tooltip-container {
+			right: 0;
+			left: auto;
+			margin-right: calc(100% + 20px);
+		}
+	}
+
+	&.-left-inline-bottom, &.-left-inline-top {
+		.tooltip-marker {
+			right: -10px;
+
+			&:after {
+				top: 13px;
+			}
+		}
+	}
+
+	// Tooltip skin
+	&.-white {
+		&.-sm {
+			.tooltip-container, .tooltip-marker {
+				border-radius: 4px;
+			}
+		}
+
+		.tooltip-container, .tooltip-marker {
+			border-radius: 8px;
+		}
+
+		.tooltip-container {
+			border: 1px solid var(--color-neutral-300);
+			background-color: $tooltip-bg-white;
+		}
+
+		.tooltip-marker {
+			&:after {
+				border: 1px solid var(--color-neutral-300);
+				background-color: $tooltip-bg-white;
+			}
+		}
+
+		.eva-#{$version}-h5,
+		.tooltip-close,
+		.tooltip-text {
+			color: var(--color-neutral-800);
+		}
+
+		.tooltip-close {
+			&:focus-visible {
+				@include eva-focus($radius: "rounded");
+			}
+		}
+	}
+	// Not hover
+	&.-not-hover, &.-not-hover:hover {
+		cursor: auto;
+
+		.tooltip-container,
+		.tooltip-content {
+			display: none;
+		}
+
+		&.-show-tooltip {
+			.tooltip-container,
+			.tooltip-content {
+				display: block;
+			}
+
+			&.-right-inline,&.-left-inline {
+				.tooltip-container {
+					display: flex;
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint("medium", "exact") {
+	.eva-#{$version}-tooltip:not(.-right-inline-bottom, .-right-inline-top, .-left-inline-bottom, .-left-inline-top) {
+		&.-medium-right {
+			.tooltip-container {
+				right: auto;
+				left: 50%;
+				margin-right: auto;
+				margin-left: -25px;
+			}
+
+			.tooltip-marker {
+				right: auto;
+				left: 5px;
+				margin: 0;
+			}
+			//Not display left-inline and right-inine on medium condition
+			&.-left-inline,&.-right-inline {
+				//TODO: work in this functionality
+				.tooltip-container {
+					display: none;
+				}
+			}
+		}
+
+		&.-medium-left {
+			.tooltip-container {
+				right: 50%;
+				left: auto;
+				margin-right: -25px;
+				margin-left: auto;
+			}
+
+			.tooltip-marker {
+				right: 5px;
+				left: auto;
+				margin: 0;
+			}
+			//Not display left-inline and right-inine on medium condition
+			&.-left-inline,&.-right-inline {
+				//TODO: work in this functionality
+				.tooltip-container {
+					display: none;
+				}
+			}
+		}
+
+		&.-medium-center {
+			.tooltip-container {
+				right: auto;
+				left: 50%;
+				margin-right: auto;
+				margin-left: -145px;
+			}
+
+			.tooltip-marker {
+				right: auto;
+				left: 50%;
+				margin-right: auto;
+				margin-left: -20px;
+			}
+
+			//Not display left-inline and right-inine on medium condition
+			&.-left-inline,&.-right-inline {
+				//TODO: work in this functionality
+				.tooltip-container {
+					display: none;
+				}
+			}
+
+			&.-sm {
+				.tooltip-container {
+					margin-left: -83px;
+				}
+			}
+		}
+		// Not hover
+		&.-not-hover-medium, &.-not-hover-medium:hover {
+			cursor: auto;
+
+			.tooltip-container,
+			.tooltip-content {
+				display: none;
+			}
+
+			&.-show-tooltip {
+				.tooltip-container,
+				.tooltip-content {
+					display: block;
+				}
+			}
+		}
+	}
+}
+@include breakpoint("small", "exact") {
+	.eva-#{$version}-tooltip.-sm-full {
+		.tooltip-container {
+			position: fixed;
+			top: 0 !important;
+			bottom: auto;
+			left: 0 !important;
+			width: calc(100% - 20px) !important;
+			margin: 10px 10px 0 !important;
+
+			.tooltip-marker {
+				display: none;
+			}
+		}
+		//Fix inline transaleY (%50) to show sm-full correctly
+		&.-right-inline,&.-left-inline {
+			.tooltip-container {
+				transform: translateY(0px);
+			}
+		}
+	}
+
+	.eva-#{$version}-tooltip:not(.-right-inline-bottom, .-right-inline-top, .-left-inline-bottom, .-left-inline-top) {
+		&.-small-right {
+			.tooltip-container {
+				right: auto;
+				left: 50%;
+				margin-right: auto;
+				margin-left: -25px;
+
+				.tooltip-marker {
+					right: auto;
+					left: 5px;
+					margin: 0;
+				}
+			}
+
+			//Not display left-inline and right-inine on small condition
+			&.-left-inline,&.-right-inline {
+				//TODO: work in this functionality
+				.tooltip-container {
+					display: none;
+				}
+			}
+		}
+
+		&.-small-left {
+			.tooltip-container {
+				right: 50%;
+				left: auto;
+				margin-right: -25px;
+				margin-left: auto;
+
+				.tooltip-marker {
+					right: 5px;
+					left: auto;
+					margin: 0;
+				}
+			}
+			//Not display left-inline and right-inine on small condition
+			&.-left-inline,&.-right-inline {
+				//TODO: work in this functionality
+				.tooltip-container {
+					display: none;
+				}
+			}
+		}
+
+		&.-small-center {
+			.tooltip-container {
+				right: auto;
+				left: 50%;
+				margin-right: auto;
+				margin-left: -145px;
+
+				.tooltip-marker {
+					right: auto;
+					left: 50%;
+					margin-right: auto;
+					margin-left: -20px;
+				}
+			}
+			//Not display left-inline and right-inine on small condition
+			&.-left-inline,&.-right-inline {
+				//TODO: work in this functionality
+				.tooltip-container {
+					display: none;
+				}
+			}
+
+			&.-sm {
+				.tooltip-container {
+					margin-left: -83px;
+				}
+			}
+		}
+		// Not hover
+		&.-not-hover-small, &.-not-hover-small:hover {
+			cursor: auto;
+
+			.tooltip-container,
+			.tooltip-content {
+				display: none;
+			}
+
+			&.-show-tooltip {
+				.tooltip-container,
+				.tooltip-content {
+					display: block;
+				}
+			}
+		}
+	}
+}
+@include breakpoint("large", "up") {
+	.eva-#{$version}-tooltip {
+		// Not hover
+		&.-not-hover-large, &.-not-hover-large:hover {
+			cursor: auto;
+
+			.tooltip-container,
+			.tooltip-content {
+				display: none;
+			}
+
+			&.-show-tooltip {
+				.tooltip-container,
+				.tooltip-content {
+					display: block;
+				}
+			}
+		}
+	}
+}

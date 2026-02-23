@@ -1,0 +1,90 @@
+@import "../../scss/eva-core";
+
+// Settings
+$upload-item-max_width: 770px;
+$upload-item-cancel-width: 55px;
+$upload-item-cancel-height: $upload-item-cancel-width;
+
+// General
+.eva-#{$version}-upload-item {
+	display: block;
+	position: relative;
+	//Avoid contaner with flex problem
+	flex: 1;
+	max-width: $upload-item-max_width;
+	padding: $spacing-5 $spacing-6;
+	border: 1px solid var(--color-neutral-300);
+	border-radius: $border-radius-4;
+
+	&.-error {
+		border-color: var(--color-error-500);
+
+		.item-status-container {
+			color: var(--color-error-500);
+		}
+	}
+
+	.item-status-container {
+		position: absolute;
+	}
+
+	.item-data-container {
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0 $spacing-10 0 $spacing-8;
+	}
+
+	.upload-item-title {
+		@include eva-text-as("h6");
+		color: var(--color-neutral-800);
+	}
+
+	.upload-item-description {
+		@include eva-text-as("body-2");
+		color: var(--color-neutral-600);
+	}
+
+	.upload-item-message-container {
+		@include eva-text-as("body-2");
+		margin-top: $spacing-3;
+		padding-left: $spacing-8;
+		color: var(--color-neutral-700);
+	}
+
+	.upload-checkbox {
+		display: inline-block;
+		margin: 0 $spacing-3 $spacing-2 0;
+		white-space: nowrap;
+	}
+
+	.upload-item-cancel {
+		position: absolute;
+		top: $spacing-2;
+		right: 0;
+		width: $upload-item-cancel-width;
+		height: $upload-item-cancel-height;
+		color: var(--color-neutral-600);
+		font-size: 20px;
+		text-align: center;
+		line-height: $upload-item-cancel-height;
+		transition: color 0.2s;
+		cursor: pointer;
+
+		&:hover {
+			color: var(--color-neutral-800);
+			transition-duration: 0s;
+		}
+	}
+
+	@include breakpoint(small) {
+		.item-data-container {
+			min-height: 60px;
+		}
+
+		.upload-checkbox {
+			width: 100%;
+			margin-bottom: $spacing-5;
+		}
+	}
+}

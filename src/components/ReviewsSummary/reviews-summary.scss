@@ -1,0 +1,134 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-reviews-summary {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	box-sizing: border-box;
+	min-height: 256px;
+	padding: 60px 0;
+	background-color: var(--color-white);
+	white-space: nowrap;
+
+	.reviews-summary-header {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.reviews-summary-body {
+		display: flex;
+		flex: 1;
+	}
+
+	.summary-rating-container {
+		display: flex;
+		margin-bottom: 20px;
+	}
+
+	.reviews-summary-rating-bar {
+		flex: 1;
+		padding: 0 54px;
+	}
+
+	.eva-#{$version}-rating {
+		margin-right: 12px;
+	}
+
+	.summary-avatar-container {
+		display: flex;
+		margin-bottom: 8px;
+	}
+
+	.eva-#{$version}-link {
+		font-size: 14px;
+	}
+
+	.summary-rating-bar-container {
+		display: flex;
+		justify-content: space-between;
+		margin: 12px 0 20px 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.eva-#{$version}-avatar {
+		margin-right: 8px;
+	}
+
+	&.-show-more {
+		.view-more-btn {
+			&:before {
+				content: none;
+			}
+		}
+	}
+
+	@include breakpoint("large" , "exact") {
+		.reviews-summary-rating-bar {
+			padding: 0 34px;
+		}
+	}
+
+	@include breakpoint("medium", "exact") {
+		padding: 32px 0;
+
+		.reviews-summary-header {
+			flex: 0;
+			justify-content: flex-start;
+		}
+
+		.summary-rating-bar-container {
+			margin: 12px 0;
+		}
+
+		.reviews-summary-rating-bar {
+			padding: 0 14px;
+		}
+
+		.summary-comment-content {
+			white-space: normal;
+		}
+	}
+
+	@include breakpoint("small" , "exact") {
+		flex-direction: column;
+		padding: 20px 0 0 0;
+		border-top: 1px solid var(--color-neutral-300);
+		border-bottom: 1px solid var(--color-neutral-300);
+
+		.reviews-summary-body {
+			flex-direction: column;
+		}
+
+		.summary-rating-container {
+			padding-bottom: 20px;
+			border-bottom: 1px solid var(--color-neutral-300);
+		}
+
+		.reviews-summary-rating-bar {
+			padding: 0;
+		}
+
+		.summary-rating-bar-container {
+			margin: 0 0 12px 0;
+
+			&:last-child {
+				margin-bottom: 12px;
+			}
+		}
+
+		.view-more-btn {
+			bottom: 10px !important;
+			margin-top: 0 !important;
+		}
+
+		.view-more-content {
+			max-height: 100px;
+			overflow: hidden;
+		}
+	}
+}

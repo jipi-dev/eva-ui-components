@@ -1,0 +1,20 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-uploader {
+	display: block;
+	max-width: 770px;
+	margin: 0 auto;
+
+	.uploader-items-container {
+		padding-top: $spacing-3;
+
+		> .eva-3-upload-item {
+			margin-top: $spacing-5;
+		}
+	}
+
+	@include breakpoint(small) {
+		padding: 0 15px;
+	}
+}

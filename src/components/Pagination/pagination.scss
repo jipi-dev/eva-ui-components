@@ -1,0 +1,89 @@
+@import "../../scss/eva-core";
+
+// Pagination
+.eva-#{$version}-pagination {
+	text-align: center;
+
+	.pagination-container {
+		@include clearfix;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.pagination-item-container {
+		margin: 0 4px;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+
+		&.page-prev {
+			.pagination-icon-text {
+				display: none;
+				margin-left: 8px;
+
+				@include breakpoint("medium", "up") {
+					display: inline-block;
+				}
+			}
+		}
+
+		&.page-next {
+			.pagination-icon-text {
+				display: none;
+				margin-right: 8px;
+
+				@include breakpoint("medium", "up") {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	.pagination-icon {
+		font-size: 16px;
+	}
+
+	.pagination-item {
+		display: block;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		color: var(--color-neutral-700);
+		font-size: 13px;
+		text-align: center;
+		line-height: 30px;
+		cursor: pointer;
+
+		&:hover {
+			box-shadow: inset 0 0 0 1px var(--brand-primary-4);
+			background-color: var(--brand-primary-4);
+			color: var(--color-white);
+		}
+
+		&.-active {
+			box-shadow: none;
+			background-color: var(--brand-primary-3);
+			color: var(--color-white);
+			cursor: default;
+		}
+
+		&.-disable {
+			pointer-events: none;
+
+			.pagination-icon {
+				color: var(--color-neutral-300);
+			}
+		}
+
+		&:active {
+			box-shadow: none;
+			background-color: var(--brand-primary-3);
+			color: var(--color-white);
+
+			.pagination-icon {
+				color: var(--color-white);
+			}
+		}
+	}
+}

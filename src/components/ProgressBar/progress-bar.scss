@@ -1,0 +1,15 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-progress-bar {
+	border-radius: 2px;
+	background-color: var(--color-neutral-100);
+	overflow: hidden;
+
+	.progress-bar-content {
+		width: 0;
+		height: 4px;
+		background-color: var(--brand-primary-3);
+		transition: width 0.3s ease-in;
+	}
+}

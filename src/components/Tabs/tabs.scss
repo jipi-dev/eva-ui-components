@@ -1,0 +1,237 @@
+@import "../../scss/eva-core";
+
+// Settings
+$tabs-nav-item-height: 52px;
+$tabs-nav-item-min_width: 110px;
+$tabs-nav-item-separator-height: 32px;
+
+// eva-Tabs
+.eva-#{$version}-tabs {
+
+	// Arrows
+	.tabs-nav-arrow-first,
+	.tabs-nav-arrow-last {
+		display: none;
+		z-index: 3;
+
+		&:hover {
+			~ .tabs-nav-container {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	.tabs-nav-arrow-first {
+		left: $spacing-2;
+	}
+
+	.tabs-nav-arrow-last {
+		right: $spacing-2;
+	}
+
+	&.-first:hover {
+		.tabs-nav-arrow-last {
+			display: flex;
+		}
+	}
+
+	&.-last:hover {
+		.tabs-nav-arrow-first {
+			display: flex;
+		}
+	}
+
+	// No stroke
+	&.-no-stroke {
+		&.-first, &.-last {
+			.tabs-nav-corners-container:before {
+				border-top-left-radius: 0;
+			}
+		}
+
+		.tabs-nav-container {
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			border-radius: 0;
+		}
+
+		.tabs-container {
+			border: none;
+			border-radius: 0;
+		}
+	}
+
+	.tabs-nav-container {
+		position: relative;
+		box-sizing: border-box;
+		width: 100%;
+		border: 1px solid var(--color-neutral-300);
+		border-radius: $border-radius-4 $border-radius-4 0 0;
+		background-color: var(--color-white);
+		transition: opacity 0.2s;
+		overflow: hidden;
+		z-index: 1;
+	}
+
+	.tabs-nav-corners-container {
+		position: relative;
+	}
+
+	.tabs-nav {
+		@include clearfix;
+		display: flex;
+		position: relative;
+		transition: left 0.3s ease-out;
+	}
+
+	.tabs-nav-item {
+		@include eva-text-as("h6");
+		display: block;
+		position: relative;
+		float: left;
+		flex: 1 0 auto;
+		box-sizing: border-box;
+		min-width: $tabs-nav-item-min_width;
+		height: $tabs-nav-item-height;
+		padding: 0 $spacing-3;
+		color: var(--color-neutral-700);
+		text-align: center;
+		line-height: $tabs-nav-item-height;
+		transition: color 0.2s ease-out;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 1px;
+			height: $tabs-nav-item-separator-height;
+			background-color: var(--color-neutral-300);
+			transform: translateY(-50%);
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			left: 50%;
+			width: 80%;
+			height: 2px;
+			border-radius: 2px 2px 0 0;
+			background-color: transparent;
+			transform: translateX(-50%);
+			transition: background-color 0.2s ease-out;
+		}
+
+		&:first-child {
+			&:before {
+				content: none;
+			}
+		}
+
+		&:hover:not(.-disabled) {
+			background-color: var(--brand-primary-1);
+			color: var(--brand-primary-3);
+		}
+
+		&:focus-visible {
+			@include eva-focus($offset: "inside", $radius: "rounded");
+		}
+
+		// Tab deshabilitado
+		&.-disabled {
+			background-color: var(--color-neutral-300);
+			color: var(--color-neutral-600);
+			cursor: default;
+			pointer-events: none;
+		}
+
+		// Tab activo
+		&.-active {
+			border-bottom: solid 1px transparent;
+			color: var(--brand-primary-3);
+			font-weight: 500;
+
+			&:after {
+				background-color: var(--brand-primary-3);
+			}
+
+			.tab-label {
+				color: var(--brand-primary-3);
+			}
+		}
+
+		// Tab con subtitulo
+		&.-subtitle {
+			padding: $spacing-2 $spacing-5;
+			line-height: 1;
+
+			.tab-label {
+				display: block;
+				line-height: 1.4;
+
+				+ .tab-label {
+					@include eva-text-as("caption");
+					font-weight: 400;
+				}
+			}
+		}
+	}
+
+	.tabs-container {
+		position: relative;
+		border: 1px solid var(--color-neutral-300);
+		border-top: none;
+		border-radius: 0 0 $border-radius-4 $border-radius-4;
+		background-color: var(--color-white);
+	}
+
+	.tab-content {
+		max-height: 0;
+		overflow: hidden;
+
+		&.-active {
+			max-height: none;
+
+			.tab-inner-content {
+				transition: opacity 0.5s ease-out;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+
+	.tab-inner-content {
+		padding: $spacing-5;
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	@include breakpoint("small", "exact") {
+		.tabs-nav-container {
+			position: relative;
+			overflow: scroll;
+			-webkit-overflow-scrolling: touch;
+			overflow-scrolling: touch; /* stylelint-disable-line property-no-unknown */
+		}
+
+		.tabs-nav-arrow-first,
+		.tabs-nav-arrow-last {
+			display: none !important;
+		}
+
+		&.-bg-white {
+			.tabs-nav-container {
+				background: var(--color-neutral-100);
+			}
+
+			.tabs-nav-item {
+				&.-active {
+					background-color: var(--color-white);
+				}
+			}
+		}
+	}
+}

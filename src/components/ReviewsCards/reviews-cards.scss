@@ -1,0 +1,75 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-reviews-cards {
+	$avatar-width: 42px;
+	$avatar-margin: 8px;
+	max-width: 300px;
+
+	.reviews-cards-profile {
+		display: flex;
+		margin-bottom: 8px;
+	}
+
+	.reviews-cards-review {
+		max-height: 100px;
+		overflow: hidden;
+
+		&.-expanded {
+			max-height: none;
+
+			.reviews-cards-text {
+				max-height: none;
+			}
+		}
+	}
+
+	.reviews-cards-image {
+		width: 100%;
+		height: 100%;
+	}
+
+	.reviews-cards-name, .reviews-cards-date {
+		display: block;
+	}
+
+	.reviews-cards-text {
+		font-style: italic;
+		overflow: hidden;
+	}
+
+	.reviews-cards-text-container {
+		width: calc(100% - #{$avatar-width} - #{$avatar-margin}); // Este calculo permite que el contenido no se pase del tamanio de la caja, esto sucede ya que el child tiene un white-space: nowrap para generar el ellipsis. Lo que se le resta al 100% es el ancho de la imagen (42px) y el del margin (8px).
+
+		.reviews-cards-name {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+
+	.reviews-more-button {
+		margin-bottom: $spacing-n5;
+	}
+
+	.reviews-view-more {
+		overflow: visible;
+	}
+
+	.eva-#{$version}-avatar {
+		flex-shrink: 0;
+		margin-right: 8px;
+	}
+
+	.eva-#{$version}-h5 {
+		color: var(--color-neutral-800);
+	}
+
+	.eva-#{$version}-caption {
+		color: var(--color-neutral-700);
+	}
+
+	.eva-#{$version}-body-2 {
+		color: var(--color-neutral-600);
+	}
+}

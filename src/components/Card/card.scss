@@ -1,0 +1,12 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-card {
+	box-sizing: border-box;
+	border-radius: $spacing-2;
+	background-color: var(--color-white);
+
+	&:focus-visible {
+		@include eva-focus;
+	}
+}

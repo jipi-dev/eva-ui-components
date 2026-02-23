@@ -1,0 +1,66 @@
+@import "../../scss/eva-core";
+
+@each $name, $value in $colours-classList {
+	.-eva-#{$version}-bc-#{$name} { background-color: $value !important; }
+	.-eva-#{$version}-tc-#{$name} { color: $value !important; }
+}
+
+.-eva-#{$version}-bc-dark {  background-color: rgba(black,0.9) !important; }
+.-eva-#{$version}-bc-light { background-color: rgba(white,0.9) !important; }
+
+// Loyalty
+.-eva-#{$version}-bc-bubblegum-1 {
+	background-color: var(--eva-loyalty-primary-300) !important;
+}
+
+.-eva-#{$version}-bc-bubblegum-2 {
+	background-color: var(--eva-loyalty-primary-500) !important;
+}
+
+.-eva-#{$version}-bc-bubblegum-3 {
+	background-color: var(--eva-loyalty-primary-100) !important;
+}
+
+.-eva-#{$version}-bc-lemon-1 {
+	background-color: var(--eva-loyalty-secondary-300) !important;
+}
+
+.-eva-#{$version}-bc-lemon-2 {
+	background-color: var(--eva-loyalty-secondary-500) !important;
+}
+
+.-eva-#{$version}-bc-lemon-3 {
+	background-color: var(--eva-loyalty-secondary-200) !important;
+}
+
+.-eva-#{$version}-bc-lemon-4 {
+	background-color: var(--eva-loyalty-secondary-100) !important;
+}
+
+.-eva-#{$version}-bc-blueberry-1 {
+	background-color: var(--eva-loyalty-tertiary-900) !important;
+}
+
+.-eva-#{$version}-bc-blueberry-2 {
+	background-color: var(--eva-loyalty-tertiary-800) !important;
+}
+
+.-eva-#{$version}-bc-blueberry-3 {
+	background-color: var(--eva-loyalty-tertiary-600) !important;
+}
+
+.-eva-#{$version}-bc-blueberry-4 {
+	background-color: var(--eva-loyalty-tertiary-400) !important;
+}
+
+.-eva-#{$version}-tc-bubblegum-1 {
+	color: var(--eva-loyalty-primary-500) !important;
+}
+
+.-eva-#{$version}-tc-bubblegum-2 {
+	color: var(--eva-loyalty-primary-700) !important;
+}
+
+.-eva-#{$version}-tc-lemon-1 {
+	color: var(--eva-loyalty-secondary-300) !important;
+}

@@ -1,0 +1,24 @@
+@import "../../scss/eva-core";
+
+html {
+	&.-show-overlay, &.-show-overlay body {
+		position: relative !important;
+		overflow: hidden !important;
+	}
+}
+
+// General
+.eva-#{$version}-overlay {
+	@include overlays;
+
+	&.-white {
+		background-color: rgba(255,255,255,0.8);
+	}
+
+	&.-show-overlay {
+		transition-delay: 0s;
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+}

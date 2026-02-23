@@ -1,0 +1,61 @@
+@import "../../scss/eva-core";
+
+// Settings
+$dotted-area-min_height: 100px;
+$message-max_width: 370px;
+$message-icon-width: 56px;
+$message-icon-height: $message-icon-width;
+
+// General
+.eva-#{$version}-dotted-area {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: $dotted-area-min_height;
+	padding: $spacing-10;
+	border: 1px dashed var(--color-neutral-300);
+	border-radius: $border-radius-4;
+	background: var(--color-neutral-100);
+	transition: color 0.2s ease-out, background-color 0.2s ease-out;
+
+	&:hover, &.-dragging {
+		border-color: var(--brand-primary-3);
+		background: var(--brand-primary-1);
+	}
+
+	.message-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: $message-icon-width;
+		height: $message-icon-height;
+		margin: 0 auto $spacing-5 auto;
+		border-radius: $border-radius-half;
+		background: var(--color-white);
+		color: var(--brand-primary-3);
+	}
+
+	.message {
+		@include eva-text-as("body-2");
+		max-width: $message-max_width;
+		color: var(--color-neutral-600);
+		text-align: center;
+
+		&.-dragndrop {
+			display: none;
+			background-color: var(--brand-primary-1);
+			color: var(--brand-primary-3);
+			text-align: center;
+		}
+	}
+
+	&.-dragging {
+		.message {
+			display: none;
+
+			// &.-dragndrop {
+			// 	display: block;
+			// }
+		}
+	}
+}

@@ -1,0 +1,101 @@
+@import "../../scss/eva-core";
+
+$default-transition: all 0.3s ease-in-out;
+$sheet-border-radius: 20px;
+$sheet-handler-width: $spacing-10;
+$sheet-handler-height: $spacing-1;
+
+// Modal bottom sheet
+html {
+	&.-show-modal-bottom-sheet, &.-show-modal-bottom-sheet body {
+		position: relative !important;
+		overflow: hidden !important;
+	}
+}
+
+.eva-#{$version}-modal-bottom-sheet {
+	@include overlays;
+	display: flex;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	flex-direction: column;
+	justify-content: flex-end;
+	transition: $default-transition;
+	overflow: hidden;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.sheet-container {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		width: 100%;
+		min-height: 10%;
+		max-height: 50%;
+		padding-top: $spacing-7;
+		border-radius: $sheet-border-radius $sheet-border-radius 0 0;
+		background-color: var(--color-white);
+		transition: $default-transition;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: $spacing-3;
+			left: 50%;
+			width: $sheet-handler-width;
+			height: $sheet-handler-height;
+			border-radius: $sheet-handler-height;
+			background-color: var(--color-neutral-400);
+			transform: translateX(-50%);
+		}
+	}
+
+	.sheet-title {
+		@include eva-text-as("h4");
+		padding: $spacing-2 $spacing-4;
+	}
+
+	.sheet-content {
+		height: 100%;
+		padding: $spacing-4;
+		overflow-y: hidden;
+	}
+
+	.sheet-footer {
+		padding: $spacing-4;
+		border-top: 1px solid var(--color-neutral-300);
+		background-color: var(--color-white);
+	}
+
+	// Show modal
+	&.-show-modal-bottom-sheet {
+		transition-delay: 0s;
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	// No title
+	&.-no-title {
+		.sheet-title {
+			display: none;
+		}
+	}
+
+	// Expanded
+	&.-expanded {
+		.sheet-container {
+			min-height: 90%;
+		}
+
+		.sheet-content {
+			overflow-y: auto;
+		}
+	}
+}

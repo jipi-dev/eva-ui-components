@@ -1,0 +1,256 @@
+@import "../../scss/eva-core";
+
+// Settings
+$message-header-min_height: 56px;
+$message-header-padding-left: 56px;
+$message-collapsible-shadow-blur: 30px;
+$message-collapsible-shadow-spread: 28px;
+$message-body-min_height: $message-header-min_height;
+$message-body-padding-left: $message-header-padding-left;
+$message-collapsible-height: 36px;
+$message-collapsible-max_height: 150px;
+$-collapsible-max_height: 150px;
+$-collapsible-message-body-padding-bottom: 52px;
+$-collapsible-message-body-padding-left: $message-body-padding-left;
+
+// Message base
+.eva-#{$version}-message {
+	position: relative;
+	border-radius: $border-radius-4;
+
+	.message-icon-container {
+		position: absolute;
+		top: $spacing-5;
+		left: $spacing-5;
+		font-size: 24px;
+	}
+
+	.message-icon {
+		display: block;
+	}
+
+	.message-header {
+		display: flex;
+		align-items: center;
+		box-sizing: border-box;
+		min-height: $message-header-min_height;
+		padding: $spacing-5 $spacing-5 $spacing-3 $message-header-padding-left;
+	}
+
+	.message-body {
+		box-sizing: border-box;
+		padding: 0 $spacing-5 $spacing-5 $message-body-padding-left;
+	}
+
+	.message-text {
+		@include eva-text-as("body-2");
+	}
+
+	.message-title, .message-text {
+		color: var(--color-neutral-800);
+	}
+
+	.message-action {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: $spacing-4;
+
+		> :not(:first-child) {
+			margin-left: $spacing-6;
+		}
+	}
+
+	// Types
+	&.-info {
+		background-color: var(--color-neutral-800);
+
+		.message-icon, .message-title, .message-text {
+			color: var(--color-white);
+		}
+
+		.message-link {
+			color: var(--color-white);
+
+			&:hover {
+				color: rgba(255,255,255,0.8); // Equivalente a --color-white
+			}
+		}
+
+		.message-collapsible {
+			box-shadow: 0 0 $message-collapsible-shadow-blur $message-collapsible-shadow-spread var(--color-neutral-800);
+			background-color: var(--color-neutral-800);
+			color: var(--color-white);
+
+			&:hover {
+				color: rgba(255, 255, 255, 0.8);
+			}
+		}
+	}
+
+	&.-success {
+		background-color: var(--color-success-300);
+
+		.message-icon {
+			color: var(--color-success-500);
+		}
+
+		.message-collapsible {
+			box-shadow: 0 0 $message-collapsible-shadow-blur $message-collapsible-shadow-spread var(--color-success-300);
+			background-color: var(--color-success-300);
+		}
+	}
+
+	&.-warning {
+		background-color: var(--color-warning-300);
+
+		.message-icon {
+			color: var(--color-warning-500);
+		}
+
+		.message-collapsible {
+			box-shadow: 0 0 $message-collapsible-shadow-blur $message-collapsible-shadow-spread var(--color-warning-300);
+			background-color: var(--color-warning-300);
+		}
+	}
+
+	&.-error {
+		background-color: var(--color-error-300);
+
+		.message-icon {
+			color: var(--color-error-500);
+		}
+
+		.message-collapsible {
+			box-shadow: 0 0 $message-collapsible-shadow-blur $message-collapsible-shadow-spread var(--color-error-300);
+			background-color: var(--color-error-300);
+		}
+	}
+
+	&.-success, &.-warning, &.-error {
+		.message-link {
+			color: var(--color-neutral-800);
+
+			&:hover {
+				color: rgba(68,68,68,0.8); // Equivalente a --color-neutral-800
+			}
+		}
+
+		.message-collapsible {
+			color: var(--color-neutral-800);
+
+			&:hover {
+				color: rgba(68,68,68,0.8);
+			}
+		}
+	}
+
+	&.-info-secondary {
+		.message-icon {
+			color: var(--color-neutral-800);
+		}
+	}
+
+	&.-success-secondary {
+		.message-icon {
+			color: var(--color-success-500);
+		}
+	}
+
+	&.-warning-secondary {
+		.message-icon {
+			color: var(--color-warning-500);
+		}
+	}
+
+	&.-error-secondary {
+		.message-icon {
+			color: var(--color-error-500);
+		}
+	}
+
+	&.-info-secondary, &.-success-secondary, &.-warning-secondary, &.-error-secondary {
+		border: 1px solid var(--color-neutral-300);
+		background-color: var(--color-white);
+
+		.message-collapsible {
+			box-shadow: 0 0 $message-collapsible-shadow-blur $message-collapsible-shadow-spread var(--color-white);
+			background-color: var(--color-white);
+		}
+	}
+
+	// No title
+	&.-no-title {
+		.message-body {
+			padding: $spacing-5 $spacing-5 $spacing-5 $message-body-padding-left;
+		}
+	}
+
+	// Collapsible
+	.message-collapsible {
+		position: absolute;
+		right: $spacing-5;
+		bottom: 0;
+		left: $-collapsible-message-body-padding-left;
+		height: $message-collapsible-height;
+		overflow: hidden;
+	}
+
+	.collapsible-false {
+		line-height: 1.5;
+		transition: transform 0.2s ease-out, opacity 0.15s ease-out;
+		opacity: 1;
+	}
+
+	.collapsible-true {
+		line-height: 1.5;
+		transition: transform 0.2s ease-out, opacity 0s ease-out;
+		opacity: 0;
+	}
+
+	.collapsible-text {
+		margin-right: $spacing-1;
+	}
+
+	.collapsible-icon {
+		display: inline-block;
+		font-size: 16px;
+		vertical-align: middle;
+	}
+
+	.collapsible-true .collapsible-icon {
+		transform: rotateX(180deg);
+	}
+
+	&.-collapsible {
+		max-height: $-collapsible-max_height;
+		cursor: pointer;
+		overflow: hidden;
+
+		.message-body {
+			padding-bottom: $-collapsible-message-body-padding-bottom;
+		}
+
+		&.-active {
+			max-height: 100%;
+			cursor: default;
+
+			.message-collapsible {
+				box-shadow: none;
+				background-color: transparent;
+			}
+
+			.collapsible-false {
+				transform: translateY(-100%) translateZ(0);
+				transition: transform 0.2s ease-out, opacity 0s ease-out;
+				opacity: 0;
+			}
+
+			.collapsible-true {
+				transform: translateY(-100%) translateZ(0);
+				transition: transform 0.2s ease-out, opacity 0.15s ease-out;
+				opacity: 1;
+			}
+		}
+	}
+}

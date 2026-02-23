@@ -1,0 +1,78 @@
+@import "../../scss/eva-core";
+
+// Research
+.eva-#{$version}-order {
+	margin-bottom: $spacing-5;
+	border: 1px solid var(--brand-primary-3);
+	border-radius: 25px;
+	background-color: var(--color-white);
+
+	.order-container {
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+		padding: 0 $spacing-2;
+	}
+
+	.order-item {
+		display: flex;
+		position: relative;
+		flex: 1;
+		justify-content: center;
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			align-self: center;
+			width: 1px;
+			height: 40%;
+			background-color: var(--color-neutral-300);
+			transform: translateX(-50%);
+		}
+
+		&:first-of-type {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.order-link {
+		display: flex;
+		align-items: center;
+		padding: $spacing-4 $spacing-2;
+		color: var(--color-neutral-800);
+		font-size: 16px;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.order-item-icon {
+		margin-right: $spacing-1;
+		color: var(--brand-primary-3);
+	}
+
+	.order-item-badge {
+		@include eva-text-as("small");
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: $spacing-4;
+		height: $spacing-4;
+		margin-right: $spacing-1;
+		border-radius: $border-radius-half;
+		background-color: var(--brand-primary-3);
+		color: var(--color-white);
+		text-align: center;
+	}
+
+	@include breakpoint("medium", "up") {
+		max-width: 373px;
+
+		.order-container {
+			padding: 0 $spacing-5;
+		}
+	}
+}

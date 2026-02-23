@@ -1,0 +1,1290 @@
+@import "../../scss/eva-core";
+
+.eva-#{$version}-flag {
+	display: inline-block;
+	box-sizing: content-box;
+	width: 32px;
+	height: 32px;
+	border-radius: $border-radius-half;
+	background-position: 0 0;
+	background-size: 100%
+}
+
+.eva-#{$version}-flag.-sprite,
+.eva-#{$version}-flag.-dj,
+.eva-#{$version}-flag.-ab,
+.eva-#{$version}-flag.-ad,
+.eva-#{$version}-flag.-ae,
+.eva-#{$version}-flag.-af,
+.eva-#{$version}-flag.-ag,
+.eva-#{$version}-flag.-ai,
+.eva-#{$version}-flag.-al,
+.eva-#{$version}-flag.-am,
+.eva-#{$version}-flag.-ao,
+.eva-#{$version}-flag.-aq,
+.eva-#{$version}-flag.-ar,
+.eva-#{$version}-flag.-as,
+.eva-#{$version}-flag.-at,
+.eva-#{$version}-flag.-au,
+.eva-#{$version}-flag.-aw,
+.eva-#{$version}-flag.-ax,
+.eva-#{$version}-flag.-az,
+.eva-#{$version}-flag.-ba,
+.eva-#{$version}-flag.-bb,
+.eva-#{$version}-flag.-bd,
+.eva-#{$version}-flag.-be,
+.eva-#{$version}-flag.-bf,
+.eva-#{$version}-flag.-bg,
+.eva-#{$version}-flag.-bh,
+.eva-#{$version}-flag.-bi,
+.eva-#{$version}-flag.-bj,
+.eva-#{$version}-flag.-bl,
+.eva-#{$version}-flag.-bm,
+.eva-#{$version}-flag.-bn,
+.eva-#{$version}-flag.-bo,
+.eva-#{$version}-flag.-bq,
+.eva-#{$version}-flag.-br,
+.eva-#{$version}-flag.-bs,
+.eva-#{$version}-flag.-bt,
+.eva-#{$version}-flag.-bv,
+.eva-#{$version}-flag.-bw,
+.eva-#{$version}-flag.-by,
+.eva-#{$version}-flag.-bz,
+.eva-#{$version}-flag.-ca,
+.eva-#{$version}-flag.-cc,
+.eva-#{$version}-flag.-cd,
+.eva-#{$version}-flag.-cf,
+.eva-#{$version}-flag.-cg,
+.eva-#{$version}-flag.-ch,
+.eva-#{$version}-flag.-ci,
+.eva-#{$version}-flag.-ck,
+.eva-#{$version}-flag.-cl,
+.eva-#{$version}-flag.-cm,
+.eva-#{$version}-flag.-cn,
+.eva-#{$version}-flag.-co,
+.eva-#{$version}-flag.-cr,
+.eva-#{$version}-flag.-cu,
+.eva-#{$version}-flag.-cv,
+.eva-#{$version}-flag.-cw,
+.eva-#{$version}-flag.-cx,
+.eva-#{$version}-flag.-cy,
+.eva-#{$version}-flag.-cz,
+.eva-#{$version}-flag.-de,
+.eva-#{$version}-flag.-dk,
+.eva-#{$version}-flag.-dm,
+.eva-#{$version}-flag.-do,
+.eva-#{$version}-flag.-dz,
+.eva-#{$version}-flag.-ec,
+.eva-#{$version}-flag.-ee,
+.eva-#{$version}-flag.-ef,
+.eva-#{$version}-flag.-eg,
+.eva-#{$version}-flag.-eh,
+.eva-#{$version}-flag.-en,
+.eva-#{$version}-flag.-er,
+.eva-#{$version}-flag.-es,
+.eva-#{$version}-flag.-et,
+.eva-#{$version}-flag.-fi,
+.eva-#{$version}-flag.-fj,
+.eva-#{$version}-flag.-fk,
+.eva-#{$version}-flag.-fm,
+.eva-#{$version}-flag.-fo,
+.eva-#{$version}-flag.-fr,
+.eva-#{$version}-flag.-ga,
+.eva-#{$version}-flag.-gb,
+.eva-#{$version}-flag.-gd,
+.eva-#{$version}-flag.-ge,
+.eva-#{$version}-flag.-gf,
+.eva-#{$version}-flag.-gg,
+.eva-#{$version}-flag.-gh,
+.eva-#{$version}-flag.-gi,
+.eva-#{$version}-flag.-gl,
+.eva-#{$version}-flag.-gm,
+.eva-#{$version}-flag.-gn,
+.eva-#{$version}-flag.-gp,
+.eva-#{$version}-flag.-gq,
+.eva-#{$version}-flag.-gr,
+.eva-#{$version}-flag.-gs,
+.eva-#{$version}-flag.-gt,
+.eva-#{$version}-flag.-gu,
+.eva-#{$version}-flag.-gw,
+.eva-#{$version}-flag.-gy,
+.eva-#{$version}-flag.-hk,
+.eva-#{$version}-flag.-hm,
+.eva-#{$version}-flag.-hn,
+.eva-#{$version}-flag.-hr,
+.eva-#{$version}-flag.-ht,
+.eva-#{$version}-flag.-hu,
+.eva-#{$version}-flag.-id,
+.eva-#{$version}-flag.-ie,
+.eva-#{$version}-flag.-il,
+.eva-#{$version}-flag.-im,
+.eva-#{$version}-flag.-in,
+.eva-#{$version}-flag.-io,
+.eva-#{$version}-flag.-iq,
+.eva-#{$version}-flag.-ir,
+.eva-#{$version}-flag.-is,
+.eva-#{$version}-flag.-it,
+.eva-#{$version}-flag.-je,
+.eva-#{$version}-flag.-jm,
+.eva-#{$version}-flag.-jo,
+.eva-#{$version}-flag.-jp,
+.eva-#{$version}-flag.-ke,
+.eva-#{$version}-flag.-kg,
+.eva-#{$version}-flag.-kh,
+.eva-#{$version}-flag.-ki,
+.eva-#{$version}-flag.-km,
+.eva-#{$version}-flag.-kn,
+.eva-#{$version}-flag.-kr,
+.eva-#{$version}-flag.-kt,
+.eva-#{$version}-flag.-kw,
+.eva-#{$version}-flag.-ky,
+.eva-#{$version}-flag.-kz,
+.eva-#{$version}-flag.-la,
+.eva-#{$version}-flag.-lb,
+.eva-#{$version}-flag.-lc,
+.eva-#{$version}-flag.-li,
+.eva-#{$version}-flag.-lk,
+.eva-#{$version}-flag.-lr,
+.eva-#{$version}-flag.-ls,
+.eva-#{$version}-flag.-lt,
+.eva-#{$version}-flag.-lu,
+.eva-#{$version}-flag.-lv,
+.eva-#{$version}-flag.-ly,
+.eva-#{$version}-flag.-ma,
+.eva-#{$version}-flag.-mc,
+.eva-#{$version}-flag.-md,
+.eva-#{$version}-flag.-me,
+.eva-#{$version}-flag.-mf,
+.eva-#{$version}-flag.-mg,
+.eva-#{$version}-flag.-mh,
+.eva-#{$version}-flag.-mk,
+.eva-#{$version}-flag.-ml,
+.eva-#{$version}-flag.-mm,
+.eva-#{$version}-flag.-mn,
+.eva-#{$version}-flag.-mo,
+.eva-#{$version}-flag.-mp,
+.eva-#{$version}-flag.-mq,
+.eva-#{$version}-flag.-mr,
+.eva-#{$version}-flag.-ms,
+.eva-#{$version}-flag.-mt,
+.eva-#{$version}-flag.-mu,
+.eva-#{$version}-flag.-mv,
+.eva-#{$version}-flag.-mw,
+.eva-#{$version}-flag.-mx,
+.eva-#{$version}-flag.-my,
+.eva-#{$version}-flag.-mz,
+.eva-#{$version}-flag.-na,
+.eva-#{$version}-flag.-nc,
+.eva-#{$version}-flag.-ne,
+.eva-#{$version}-flag.-nf,
+.eva-#{$version}-flag.-ng,
+.eva-#{$version}-flag.-ni,
+.eva-#{$version}-flag.-nl,
+.eva-#{$version}-flag.-no,
+.eva-#{$version}-flag.-np,
+.eva-#{$version}-flag.-nr,
+.eva-#{$version}-flag.-nt,
+.eva-#{$version}-flag.-nu,
+.eva-#{$version}-flag.-nz,
+.eva-#{$version}-flag.-om,
+.eva-#{$version}-flag.-ot,
+.eva-#{$version}-flag.-pa,
+.eva-#{$version}-flag.-pe,
+.eva-#{$version}-flag.-pf,
+.eva-#{$version}-flag.-pg,
+.eva-#{$version}-flag.-ph,
+.eva-#{$version}-flag.-pk,
+.eva-#{$version}-flag.-pl,
+.eva-#{$version}-flag.-pn,
+.eva-#{$version}-flag.-pr,
+.eva-#{$version}-flag.-ps,
+.eva-#{$version}-flag.-pt,
+.eva-#{$version}-flag.-pw,
+.eva-#{$version}-flag.-py,
+.eva-#{$version}-flag.-qa,
+.eva-#{$version}-flag.-re,
+.eva-#{$version}-flag.-rn,
+.eva-#{$version}-flag.-ro,
+.eva-#{$version}-flag.-rs,
+.eva-#{$version}-flag.-ru,
+.eva-#{$version}-flag.-rw,
+.eva-#{$version}-flag.-sa,
+.eva-#{$version}-flag.-sb,
+.eva-#{$version}-flag.-sc,
+.eva-#{$version}-flag.-sd,
+.eva-#{$version}-flag.-se,
+.eva-#{$version}-flag.-sg,
+.eva-#{$version}-flag.-sh,
+.eva-#{$version}-flag.-si,
+.eva-#{$version}-flag.-sj,
+.eva-#{$version}-flag.-sk,
+.eva-#{$version}-flag.-sl,
+.eva-#{$version}-flag.-sm,
+.eva-#{$version}-flag.-sn,
+.eva-#{$version}-flag.-so,
+.eva-#{$version}-flag.-sr,
+.eva-#{$version}-flag.-ss,
+.eva-#{$version}-flag.-st,
+.eva-#{$version}-flag.-sv,
+.eva-#{$version}-flag.-sx,
+.eva-#{$version}-flag.-sy,
+.eva-#{$version}-flag.-sz,
+.eva-#{$version}-flag.-tc,
+.eva-#{$version}-flag.-td,
+.eva-#{$version}-flag.-tf,
+.eva-#{$version}-flag.-tg,
+.eva-#{$version}-flag.-th,
+.eva-#{$version}-flag.-tj,
+.eva-#{$version}-flag.-tk,
+.eva-#{$version}-flag.-tl,
+.eva-#{$version}-flag.-tm,
+.eva-#{$version}-flag.-tn,
+.eva-#{$version}-flag.-to,
+.eva-#{$version}-flag.-tr,
+.eva-#{$version}-flag.-tt,
+.eva-#{$version}-flag.-tv,
+.eva-#{$version}-flag.-tw,
+.eva-#{$version}-flag.-tz,
+.eva-#{$version}-flag.-ua,
+.eva-#{$version}-flag.-ug,
+.eva-#{$version}-flag.-us,
+.eva-#{$version}-flag.-uy,
+.eva-#{$version}-flag.-uz,
+.eva-#{$version}-flag.-va,
+.eva-#{$version}-flag.-vc,
+.eva-#{$version}-flag.-ve,
+.eva-#{$version}-flag.-vg,
+.eva-#{$version}-flag.-vi,
+.eva-#{$version}-flag.-vn,
+.eva-#{$version}-flag.-vu,
+.eva-#{$version}-flag.-wa,
+.eva-#{$version}-flag.-wf,
+.eva-#{$version}-flag.-ws,
+.eva-#{$version}-flag.-xk,
+.eva-#{$version}-flag.-ye,
+.eva-#{$version}-flag.-yt,
+.eva-#{$version}-flag.-za,
+.eva-#{$version}-flag.-zm,
+.eva-#{$version}-flag.-zw {
+	background: white url("/ui/dist/resources/sprites/flags.png") no-repeat;
+}
+
+.eva-#{$version}-flag.-dj {
+	background-position: 0 0
+}
+
+.eva-#{$version}-flag.-ab {
+	background-position: 0 -32px
+}
+
+.eva-#{$version}-flag.-ad {
+	background-position: 0 -64px
+}
+
+.eva-#{$version}-flag.-ae {
+	background-position: 0 -96px
+}
+
+.eva-#{$version}-flag.-af {
+	background-position: 0 -128px
+}
+
+.eva-#{$version}-flag.-ag {
+	background-position: 0 -160px
+}
+
+.eva-#{$version}-flag.-ai {
+	background-position: 0 -192px
+}
+
+.eva-#{$version}-flag.-al {
+	background-position: 0 -224px
+}
+
+.eva-#{$version}-flag.-am {
+	background-position: 0 -256px
+}
+
+.eva-#{$version}-flag.-ao {
+	background-position: 0 -288px
+}
+
+.eva-#{$version}-flag.-aq {
+	background-position: 0 -320px
+}
+
+.eva-#{$version}-flag.-ar {
+	background-position: 0 -352px
+}
+
+.eva-#{$version}-flag.-as {
+	background-position: 0 -384px
+}
+
+.eva-#{$version}-flag.-at {
+	background-position: 0 -416px
+}
+
+.eva-#{$version}-flag.-au {
+	background-position: 0 -448px
+}
+
+.eva-#{$version}-flag.-aw {
+	background-position: 0 -480px
+}
+
+.eva-#{$version}-flag.-ax {
+	background-position: 0 -512px
+}
+
+.eva-#{$version}-flag.-az {
+	background-position: 0 -544px
+}
+
+.eva-#{$version}-flag.-ba {
+	background-position: 0 -576px
+}
+
+.eva-#{$version}-flag.-bb {
+	background-position: 0 -608px
+}
+
+.eva-#{$version}-flag.-bd {
+	background-position: 0 -640px
+}
+
+.eva-#{$version}-flag.-be {
+	background-position: 0 -672px
+}
+
+.eva-#{$version}-flag.-bf {
+	background-position: 0 -704px
+}
+
+.eva-#{$version}-flag.-bg {
+	background-position: 0 -736px
+}
+
+.eva-#{$version}-flag.-bh {
+	background-position: 0 -768px
+}
+
+.eva-#{$version}-flag.-bi {
+	background-position: 0 -800px
+}
+
+.eva-#{$version}-flag.-bj {
+	background-position: 0 -832px
+}
+
+.eva-#{$version}-flag.-bl {
+	background-position: 0 -864px
+}
+
+.eva-#{$version}-flag.-bm {
+	background-position: 0 -896px
+}
+
+.eva-#{$version}-flag.-bn {
+	background-position: 0 -928px
+}
+
+.eva-#{$version}-flag.-bo {
+	background-position: 0 -960px
+}
+
+.eva-#{$version}-flag.-bq {
+	background-position: 0 -992px
+}
+
+.eva-#{$version}-flag.-br {
+	background-position: 0 -1024px
+}
+
+.eva-#{$version}-flag.-bs {
+	background-position: 0 -1056px
+}
+
+.eva-#{$version}-flag.-bt {
+	background-position: 0 -1088px
+}
+
+.eva-#{$version}-flag.-bv {
+	background-position: 0 -1120px
+}
+
+.eva-#{$version}-flag.-bw {
+	background-position: 0 -1152px
+}
+
+.eva-#{$version}-flag.-by {
+	background-position: 0 -1184px
+}
+
+.eva-#{$version}-flag.-bz {
+	background-position: 0 -1216px
+}
+
+.eva-#{$version}-flag.-ca {
+	background-position: 0 -1248px
+}
+
+.eva-#{$version}-flag.-cc {
+	background-position: 0 -1280px
+}
+
+.eva-#{$version}-flag.-cd {
+	background-position: 0 -1312px
+}
+
+.eva-#{$version}-flag.-cf {
+	background-position: 0 -1344px
+}
+
+.eva-#{$version}-flag.-cg {
+	background-position: 0 -1376px
+}
+
+.eva-#{$version}-flag.-ch {
+	background-position: 0 -1408px
+}
+
+.eva-#{$version}-flag.-ci {
+	background-position: 0 -1440px
+}
+
+.eva-#{$version}-flag.-ck {
+	background-position: 0 -1472px
+}
+
+.eva-#{$version}-flag.-cl {
+	background-position: 0 -1504px
+}
+
+.eva-#{$version}-flag.-cm {
+	background-position: 0 -1536px
+}
+
+.eva-#{$version}-flag.-cn {
+	background-position: 0 -1568px
+}
+
+.eva-#{$version}-flag.-co {
+	background-position: 0 -1600px
+}
+
+.eva-#{$version}-flag.-cr {
+	background-position: 0 -1632px
+}
+
+.eva-#{$version}-flag.-cu {
+	background-position: 0 -1664px
+}
+
+.eva-#{$version}-flag.-cv {
+	background-position: 0 -1696px
+}
+
+.eva-#{$version}-flag.-cw {
+	background-position: 0 -1728px
+}
+
+.eva-#{$version}-flag.-cx {
+	background-position: 0 -1760px
+}
+
+.eva-#{$version}-flag.-cy {
+	background-position: 0 -1792px
+}
+
+.eva-#{$version}-flag.-cz {
+	background-position: 0 -1824px
+}
+
+.eva-#{$version}-flag.-de {
+	background-position: 0 -1856px
+}
+
+.eva-#{$version}-flag.-dk {
+	background-position: 0 -1888px
+}
+
+.eva-#{$version}-flag.-dm {
+	background-position: 0 -1920px
+}
+
+.eva-#{$version}-flag.-do {
+	background-position: 0 -1952px
+}
+
+.eva-#{$version}-flag.-dz {
+	background-position: 0 -1984px
+}
+
+.eva-#{$version}-flag.-ec {
+	background-position: 0 -2016px
+}
+
+.eva-#{$version}-flag.-ee {
+	background-position: 0 -2048px
+}
+
+.eva-#{$version}-flag.-ef {
+	background-position: 0 -2080px
+}
+
+.eva-#{$version}-flag.-eg {
+	background-position: 0 -2112px
+}
+
+.eva-#{$version}-flag.-eh {
+	background-position: 0 -2144px
+}
+
+.eva-#{$version}-flag.-en {
+	background-position: 0 -2176px
+}
+
+.eva-#{$version}-flag.-er {
+	background-position: 0 -2208px
+}
+
+.eva-#{$version}-flag.-es {
+	background-position: 0 -2240px
+}
+
+.eva-#{$version}-flag.-et {
+	background-position: 0 -2272px
+}
+
+.eva-#{$version}-flag.-fi {
+	background-position: 0 -2304px
+}
+
+.eva-#{$version}-flag.-fj {
+	background-position: 0 -2336px
+}
+
+.eva-#{$version}-flag.-fk {
+	background-position: 0 -2368px
+}
+
+.eva-#{$version}-flag.-fm {
+	background-position: 0 -2400px
+}
+
+.eva-#{$version}-flag.-fo {
+	background-position: 0 -2432px
+}
+
+.eva-#{$version}-flag.-fr {
+	background-position: 0 -2464px
+}
+
+.eva-#{$version}-flag.-ga {
+	background-position: 0 -2496px
+}
+
+.eva-#{$version}-flag.-gb {
+	background-position: 0 -2528px
+}
+
+.eva-#{$version}-flag.-gd {
+	background-position: 0 -2560px
+}
+
+.eva-#{$version}-flag.-ge {
+	background-position: 0 -2592px
+}
+
+.eva-#{$version}-flag.-gf {
+	background-position: 0 -2624px
+}
+
+.eva-#{$version}-flag.-gg {
+	background-position: 0 -2656px
+}
+
+.eva-#{$version}-flag.-gh {
+	background-position: 0 -2688px
+}
+
+.eva-#{$version}-flag.-gi {
+	background-position: 0 -2720px
+}
+
+.eva-#{$version}-flag.-gl {
+	background-position: 0 -2752px
+}
+
+.eva-#{$version}-flag.-gm {
+	background-position: 0 -2784px
+}
+
+.eva-#{$version}-flag.-gn {
+	background-position: 0 -2816px
+}
+
+.eva-#{$version}-flag.-gp {
+	background-position: 0 -2848px
+}
+
+.eva-#{$version}-flag.-gq {
+	background-position: 0 -2880px
+}
+
+.eva-#{$version}-flag.-gr {
+	background-position: 0 -2912px
+}
+
+.eva-#{$version}-flag.-gs {
+	background-position: 0 -2944px
+}
+
+.eva-#{$version}-flag.-gt {
+	background-position: 0 -2976px
+}
+
+.eva-#{$version}-flag.-gu {
+	background-position: 0 -3008px
+}
+
+.eva-#{$version}-flag.-gw {
+	background-position: 0 -3040px
+}
+
+.eva-#{$version}-flag.-gy {
+	background-position: 0 -3072px
+}
+
+.eva-#{$version}-flag.-hk {
+	background-position: 0 -3104px
+}
+
+.eva-#{$version}-flag.-hm {
+	background-position: 0 -3136px
+}
+
+.eva-#{$version}-flag.-hn {
+	background-position: 0 -3168px
+}
+
+.eva-#{$version}-flag.-hr {
+	background-position: 0 -3200px
+}
+
+.eva-#{$version}-flag.-ht {
+	background-position: 0 -3232px
+}
+
+.eva-#{$version}-flag.-hu {
+	background-position: 0 -3264px
+}
+
+.eva-#{$version}-flag.-id {
+	background-position: 0 -3296px
+}
+
+.eva-#{$version}-flag.-ie {
+	background-position: 0 -3328px
+}
+
+.eva-#{$version}-flag.-il {
+	background-position: 0 -3360px
+}
+
+.eva-#{$version}-flag.-im {
+	background-position: 0 -3392px
+}
+
+.eva-#{$version}-flag.-in {
+	background-position: 0 -3424px
+}
+
+.eva-#{$version}-flag.-io {
+	background-position: 0 -3456px
+}
+
+.eva-#{$version}-flag.-iq {
+	background-position: 0 -3488px
+}
+
+.eva-#{$version}-flag.-ir {
+	background-position: 0 -3520px
+}
+
+.eva-#{$version}-flag.-is {
+	background-position: 0 -3552px
+}
+
+.eva-#{$version}-flag.-it {
+	background-position: 0 -3584px
+}
+
+.eva-#{$version}-flag.-je {
+	background-position: 0 -3616px
+}
+
+.eva-#{$version}-flag.-jm {
+	background-position: 0 -3648px
+}
+
+.eva-#{$version}-flag.-jo {
+	background-position: 0 -3680px
+}
+
+.eva-#{$version}-flag.-jp {
+	background-position: 0 -3712px
+}
+
+.eva-#{$version}-flag.-ke {
+	background-position: 0 -3744px
+}
+
+.eva-#{$version}-flag.-kg {
+	background-position: 0 -3776px
+}
+
+.eva-#{$version}-flag.-kh {
+	background-position: 0 -3808px
+}
+
+.eva-#{$version}-flag.-ki {
+	background-position: 0 -3840px
+}
+
+.eva-#{$version}-flag.-km {
+	background-position: 0 -3872px
+}
+
+.eva-#{$version}-flag.-kn {
+	background-position: 0 -3904px
+}
+
+.eva-#{$version}-flag.-kr {
+	background-position: 0 -3936px
+}
+
+.eva-#{$version}-flag.-kt {
+	background-position: 0 -3968px
+}
+
+.eva-#{$version}-flag.-kw {
+	background-position: 0 -4000px
+}
+
+.eva-#{$version}-flag.-ky {
+	background-position: 0 -4032px
+}
+
+.eva-#{$version}-flag.-kz {
+	background-position: 0 -4064px
+}
+
+.eva-#{$version}-flag.-la {
+	background-position: 0 -4096px
+}
+
+.eva-#{$version}-flag.-lb {
+	background-position: 0 -4128px
+}
+
+.eva-#{$version}-flag.-lc {
+	background-position: 0 -4160px
+}
+
+.eva-#{$version}-flag.-li {
+	background-position: 0 -4192px
+}
+
+.eva-#{$version}-flag.-lk {
+	background-position: 0 -4224px
+}
+
+.eva-#{$version}-flag.-lr {
+	background-position: 0 -4256px
+}
+
+.eva-#{$version}-flag.-ls {
+	background-position: 0 -4288px
+}
+
+.eva-#{$version}-flag.-lt {
+	background-position: 0 -4320px
+}
+
+.eva-#{$version}-flag.-lu {
+	background-position: 0 -4352px
+}
+
+.eva-#{$version}-flag.-lv {
+	background-position: 0 -4384px
+}
+
+.eva-#{$version}-flag.-ly {
+	background-position: 0 -4416px
+}
+
+.eva-#{$version}-flag.-ma {
+	background-position: 0 -4448px
+}
+
+.eva-#{$version}-flag.-mc {
+	background-position: 0 -4480px
+}
+
+.eva-#{$version}-flag.-md {
+	background-position: 0 -4512px
+}
+
+.eva-#{$version}-flag.-me {
+	background-position: 0 -4544px
+}
+
+.eva-#{$version}-flag.-mf {
+	background-position: 0 -4576px
+}
+
+.eva-#{$version}-flag.-mg {
+	background-position: 0 -4608px
+}
+
+.eva-#{$version}-flag.-mh {
+	background-position: 0 -4640px
+}
+
+.eva-#{$version}-flag.-mk {
+	background-position: 0 -4672px
+}
+
+.eva-#{$version}-flag.-ml {
+	background-position: 0 -4704px
+}
+
+.eva-#{$version}-flag.-mm {
+	background-position: 0 -4736px
+}
+
+.eva-#{$version}-flag.-mn {
+	background-position: 0 -4768px
+}
+
+.eva-#{$version}-flag.-mo {
+	background-position: 0 -4800px
+}
+
+.eva-#{$version}-flag.-mp {
+	background-position: 0 -4832px
+}
+
+.eva-#{$version}-flag.-mq {
+	background-position: 0 -4864px
+}
+
+.eva-#{$version}-flag.-mr {
+	background-position: 0 -4896px
+}
+
+.eva-#{$version}-flag.-ms {
+	background-position: 0 -4928px
+}
+
+.eva-#{$version}-flag.-mt {
+	background-position: 0 -4960px
+}
+
+.eva-#{$version}-flag.-mu {
+	background-position: 0 -4992px
+}
+
+.eva-#{$version}-flag.-mv {
+	background-position: 0 -5024px
+}
+
+.eva-#{$version}-flag.-mw {
+	background-position: 0 -5056px
+}
+
+.eva-#{$version}-flag.-mx {
+	background-position: 0 -5088px
+}
+
+.eva-#{$version}-flag.-my {
+	background-position: 0 -5120px
+}
+
+.eva-#{$version}-flag.-mz {
+	background-position: 0 -5152px
+}
+
+.eva-#{$version}-flag.-na {
+	background-position: 0 -5184px
+}
+
+.eva-#{$version}-flag.-nc {
+	background-position: 0 -5216px
+}
+
+.eva-#{$version}-flag.-ne {
+	background-position: 0 -5248px
+}
+
+.eva-#{$version}-flag.-nf {
+	background-position: 0 -5280px
+}
+
+.eva-#{$version}-flag.-ng {
+	background-position: 0 -5312px
+}
+
+.eva-#{$version}-flag.-ni {
+	background-position: 0 -5344px
+}
+
+.eva-#{$version}-flag.-nl {
+	background-position: 0 -5376px
+}
+
+.eva-#{$version}-flag.-no {
+	background-position: 0 -5408px
+}
+
+.eva-#{$version}-flag.-np {
+	background-position: 0 -5440px
+}
+
+.eva-#{$version}-flag.-nr {
+	background-position: 0 -5472px
+}
+
+.eva-#{$version}-flag.-nt {
+	background-position: 0 -5504px
+}
+
+.eva-#{$version}-flag.-nu {
+	background-position: 0 -5536px
+}
+
+.eva-#{$version}-flag.-nz {
+	background-position: 0 -5568px
+}
+
+.eva-#{$version}-flag.-om {
+	background-position: 0 -5600px
+}
+
+.eva-#{$version}-flag.-ot {
+	background-position: 0 -5632px
+}
+
+.eva-#{$version}-flag.-pa {
+	background-position: 0 -5664px
+}
+
+.eva-#{$version}-flag.-pe {
+	background-position: 0 -5696px
+}
+
+.eva-#{$version}-flag.-pf {
+	background-position: 0 -5728px
+}
+
+.eva-#{$version}-flag.-pg {
+	background-position: 0 -5760px
+}
+
+.eva-#{$version}-flag.-ph {
+	background-position: 0 -5792px
+}
+
+.eva-#{$version}-flag.-pk {
+	background-position: 0 -5824px
+}
+
+.eva-#{$version}-flag.-pl {
+	background-position: 0 -5856px
+}
+
+.eva-#{$version}-flag.-pn {
+	background-position: 0 -5888px
+}
+
+.eva-#{$version}-flag.-pr {
+	background-position: 0 -5920px
+}
+
+.eva-#{$version}-flag.-ps {
+	background-position: 0 -5952px
+}
+
+.eva-#{$version}-flag.-pt {
+	background-position: 0 -5984px
+}
+
+.eva-#{$version}-flag.-pw {
+	background-position: 0 -6016px
+}
+
+.eva-#{$version}-flag.-py {
+	background-position: 0 -6048px
+}
+
+.eva-#{$version}-flag.-qa {
+	background-position: 0 -6080px
+}
+
+.eva-#{$version}-flag.-re {
+	background-position: 0 -6112px
+}
+
+.eva-#{$version}-flag.-rn {
+	background-position: 0 -6144px
+}
+
+.eva-#{$version}-flag.-ro {
+	background-position: 0 -6176px
+}
+
+.eva-#{$version}-flag.-rs {
+	background-position: 0 -6208px
+}
+
+.eva-#{$version}-flag.-ru {
+	background-position: 0 -6240px
+}
+
+.eva-#{$version}-flag.-rw {
+	background-position: 0 -6272px
+}
+
+.eva-#{$version}-flag.-sa {
+	background-position: 0 -6304px
+}
+
+.eva-#{$version}-flag.-sb {
+	background-position: 0 -6336px
+}
+
+.eva-#{$version}-flag.-sc {
+	background-position: 0 -6368px
+}
+
+.eva-#{$version}-flag.-sd {
+	background-position: 0 -6400px
+}
+
+.eva-#{$version}-flag.-se {
+	background-position: 0 -6432px
+}
+
+.eva-#{$version}-flag.-sg {
+	background-position: 0 -6464px
+}
+
+.eva-#{$version}-flag.-sh {
+	background-position: 0 -6496px
+}
+
+.eva-#{$version}-flag.-si {
+	background-position: 0 -6528px
+}
+
+.eva-#{$version}-flag.-sj {
+	background-position: 0 -6560px
+}
+
+.eva-#{$version}-flag.-sk {
+	background-position: 0 -6592px
+}
+
+.eva-#{$version}-flag.-sl {
+	background-position: 0 -6624px
+}
+
+.eva-#{$version}-flag.-sm {
+	background-position: 0 -6656px
+}
+
+.eva-#{$version}-flag.-sn {
+	background-position: 0 -6688px
+}
+
+.eva-#{$version}-flag.-so {
+	background-position: 0 -6720px
+}
+
+.eva-#{$version}-flag.-sr {
+	background-position: 0 -6752px
+}
+
+.eva-#{$version}-flag.-ss {
+	background-position: 0 -6784px
+}
+
+.eva-#{$version}-flag.-st {
+	background-position: 0 -6816px
+}
+
+.eva-#{$version}-flag.-sv {
+	background-position: 0 -6848px
+}
+
+.eva-#{$version}-flag.-sx {
+	background-position: 0 -6880px
+}
+
+.eva-#{$version}-flag.-sy {
+	background-position: 0 -6912px
+}
+
+.eva-#{$version}-flag.-sz {
+	background-position: 0 -6944px
+}
+
+.eva-#{$version}-flag.-tc {
+	background-position: 0 -6976px
+}
+
+.eva-#{$version}-flag.-td {
+	background-position: 0 -7008px
+}
+
+.eva-#{$version}-flag.-tf {
+	background-position: 0 -7040px
+}
+
+.eva-#{$version}-flag.-tg {
+	background-position: 0 -7072px
+}
+
+.eva-#{$version}-flag.-th {
+	background-position: 0 -7104px
+}
+
+.eva-#{$version}-flag.-tj {
+	background-position: 0 -7136px
+}
+
+.eva-#{$version}-flag.-tk {
+	background-position: 0 -7168px
+}
+
+.eva-#{$version}-flag.-tl {
+	background-position: 0 -7200px
+}
+
+.eva-#{$version}-flag.-tm {
+	background-position: 0 -7232px
+}
+
+.eva-#{$version}-flag.-tn {
+	background-position: 0 -7264px
+}
+
+.eva-#{$version}-flag.-to {
+	background-position: 0 -7296px
+}
+
+.eva-#{$version}-flag.-tr {
+	background-position: 0 -7328px
+}
+
+.eva-#{$version}-flag.-tt {
+	background-position: 0 -7360px
+}
+
+.eva-#{$version}-flag.-tv {
+	background-position: 0 -7392px
+}
+
+.eva-#{$version}-flag.-tw {
+	background-position: 0 -7424px
+}
+
+.eva-#{$version}-flag.-tz {
+	background-position: 0 -7456px
+}
+
+.eva-#{$version}-flag.-ua {
+	background-position: 0 -7488px
+}
+
+.eva-#{$version}-flag.-ug {
+	background-position: 0 -7520px
+}
+
+.eva-#{$version}-flag.-us {
+	background-position: 0 -7552px
+}
+
+.eva-#{$version}-flag.-uy {
+	background-position: 0 -7584px
+}
+
+.eva-#{$version}-flag.-uz {
+	background-position: 0 -7616px
+}
+
+.eva-#{$version}-flag.-va {
+	background-position: 0 -7648px
+}
+
+.eva-#{$version}-flag.-vc {
+	background-position: 0 -7680px
+}
+
+.eva-#{$version}-flag.-ve {
+	background-position: 0 -7712px
+}
+
+.eva-#{$version}-flag.-vg {
+	background-position: 0 -7744px
+}
+
+.eva-#{$version}-flag.-vi {
+	background-position: 0 -7776px
+}
+
+.eva-#{$version}-flag.-vn {
+	background-position: 0 -7808px
+}
+
+.eva-#{$version}-flag.-vu {
+	background-position: 0 -7840px
+}
+
+.eva-#{$version}-flag.-wa {
+	background-position: 0 -7872px
+}
+
+.eva-#{$version}-flag.-wf {
+	background-position: 0 -7904px
+}
+
+.eva-#{$version}-flag.-ws {
+	background-position: 0 -7936px
+}
+
+.eva-#{$version}-flag.-xk {
+	background-position: 0 -7968px
+}
+
+.eva-#{$version}-flag.-ye {
+	background-position: 0 -8000px
+}
+
+.eva-#{$version}-flag.-yt {
+	background-position: 0 -8032px
+}
+
+.eva-#{$version}-flag.-za {
+	background-position: 0 -8064px
+}
+
+.eva-#{$version}-flag.-zm {
+	background-position: 0 -8096px
+}
+
+.eva-#{$version}-flag.-zw {
+	background-position: 0 -8128px
+}

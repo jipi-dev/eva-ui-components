@@ -1,0 +1,35 @@
+@import "../../scss/eva-core";
+
+// Settings
+$code-validation-width: 48px;
+$code-validation-width-sm: 40px;
+
+// Code validation
+.eva-#{$version}-code-validation {
+	.code-validation-input {
+		display: flex;
+	}
+
+	.code-validation-cell {
+		width: $code-validation-width-sm;
+
+		&:not(:first-child) {
+			margin-left: $spacing-2;
+		}
+	}
+
+	// Se pisan estilos del componente para centrar el texto en los inputs y quitar el padding
+	.eva-#{$version}-input {
+		.input-tag {
+			padding-right: 0;
+			padding-left: 0;
+			text-align: center;
+		}
+	}
+
+	@include breakpoint("medium","up") {
+		.code-validation-cell {
+			width: $code-validation-width;
+		}
+	}
+}

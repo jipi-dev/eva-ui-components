@@ -1,0 +1,187 @@
+@import "../../scss/eva-core";
+
+//Variables radio-circle
+$radio-circle-width: 20px;
+$radio-circle-height: $radio-circle-width;
+$radio-circle-md-width: 18px;
+$radio-circle-md-height: $radio-circle-md-width;
+
+//Variables before (internal-dot)
+$radio-circle-inner-width: 12px;
+$radio-circle-inner-height: $radio-circle-inner-width;
+$radio-circle-inner-md-width: 10px;
+$radio-circle-inner-md-height: $radio-circle-inner-md-width;
+
+.eva-#{$version}-radio {
+	padding-bottom: 2px;
+
+	&:focus {
+		.radio-circle {
+			border-color: var(--brand-primary-4);
+			opacity: 1;
+		}
+	}
+
+	&:focus-visible {
+		outline: none;
+
+		.radio-circle {
+			@include eva-focus;
+		}
+	}
+
+	.radio-tag {
+		position: absolute;
+		width: 0;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		opacity: 0;
+
+		&:checked + .radio-circle {
+			border-color: var(--brand-primary-3);
+			background-color: var(--color-white);
+
+			&:before {
+				animation: eva_radio_2 0.2s ease-out;
+				opacity: 1;
+			}
+		}
+
+		& ~ .radio-circle, & ~ .radio-label {
+			cursor: pointer;
+		}
+
+		&:disabled {
+			& ~ .radio-label {
+				color: var(--color-neutral-300);
+				cursor: default;
+			}
+
+			& ~ .radio-circle {
+				border-color: var(--color-neutral-400);
+				background-color: var(--color-neutral-400);
+				cursor: default;
+
+				&:before {
+					background-color: var(--color-neutral-600);
+				}
+			}
+
+			&:checked {
+				& ~ .radio-circle {
+					&:before {
+						background-color: var(--color-neutral-600);
+					}
+				}
+			}
+		}
+
+		&:focus-visible {
+			+ .radio-circle {
+				@include eva-focus;
+			}
+		}
+	}
+
+	.radio-circle {
+		display: inline-block;
+		position: relative;
+		box-sizing: border-box;
+		width: $radio-circle-width;
+		height: $radio-circle-height;
+		margin-right: $spacing-2;
+		margin-bottom: $spacing-n1;
+		border: solid 1px var(--color-neutral-600);
+		border-radius: $border-radius-half;
+		background-color: var(--color-white);
+		transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: calc(50% - 3px);
+			left: calc(50% - 3px);
+			width: $radio-circle-inner-width;
+			height: $radio-circle-inner-height;
+			margin: -3px 0 0 -3px;
+			border-radius: $border-radius-half;
+			background-color: var(--brand-primary-3);
+			transition: opacity 0.2s ease-out;
+			opacity: 0;
+		}
+	}
+
+	// Lighten
+	&.-lighten {
+		&:focus {
+			.radio-circle {
+				border-color: var(--color-white);
+				opacity: 1;
+			}
+		}
+
+		&:focus-visible {
+			.radio-circle {
+				@include eva-focus("lighten");
+			}
+		}
+
+		.radio-circle {
+			border-color: var(--color-white);
+		}
+
+		.radio-tag {
+			&:checked + .radio-circle {
+				border-color: var(--color-white);
+			}
+
+			&:focus-visible {
+				+ .radio-circle {
+					@include eva-focus("lighten");
+				}
+			}
+		}
+	}
+
+	// Skins
+	&.-no-border {
+		.radio-circle {
+			border-color: var(--color-white);
+		}
+	}
+
+	// Sizes
+	&.-md {
+		padding-bottom: 2px;
+
+		.radio-circle {
+			width: $radio-circle-md-width;
+			height: $radio-circle-md-height;
+			margin-right: 10px;
+			margin-bottom: -5px;
+
+			&:before {
+				top: calc(50% - 2px);
+				left: calc(50% - 2px);
+				width: $radio-circle-inner-md-width;
+				height: $radio-circle-inner-md-height;
+			}
+		}
+	}
+}
+
+@include keyframes(eva_radio_2) {
+	0% {
+		transform: scale(0.7);
+	}
+
+	75% {
+		transform: scale(0.9);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

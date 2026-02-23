@@ -1,0 +1,50 @@
+@import "../../scss/eva-core";
+
+// Social
+$fb-color: #337FFF;
+$gp-color: #E94335;
+$x-color: var(--color-neutral-800);
+
+.eva-#{$version}-btn {
+	&.-facebook, &.-gmail, &.-google, &.-twitter, &.-x {
+		border: 1px solid var(--color-neutral-800);
+		background-color: transparent;
+		color: var(--color-neutral-800);
+		transform: translate3d(0,0,0);
+
+		&:hover, &:active {
+			background-color: var(--color-neutral-100);
+		}
+
+		&.-loading, &.-disable, &[disabled] {
+			border-color: var(--color-neutral-400);
+			background-color: transparent !important;
+
+			.btn-text, .btn-icon {
+				color: var(--color-neutral-400) !important;
+			}
+		}
+
+		.btn-text {
+			color: var(--color-neutral-800);
+		}
+	}
+
+	&.-facebook {
+		.btn-icon {
+			color: $fb-color;
+		}
+	}
+
+	&.-gmail, &.-google {
+		.btn-icon {
+			color: $gp-color;
+		}
+	}
+
+	&.-twitter, &.-x {
+		.btn-icon {
+			color: $x-color;
+		}
+	}
+}

@@ -1,0 +1,368 @@
+@use "sass:string";
+@import "../../scss/eva-core";
+
+//Variables
+$wizard-nav-shadow-size: 40px;
+$wizard-item-min_width-mobile: 33.33%;
+$wizard-item-min_width-desktop: 20%;
+$wizard-item-text-max_width: 120px;
+$wizard-item-step-size: 28px;
+$wizard-item-step-line: calc(#{$wizard-item-step-size} / 2);
+$wizard-item-step-line-margin: calc((#{$wizard-item-step-size} / 2) * 2); // mitad del ancho del circulo + el margin blanco que se quiera dejar de cada lado
+$wizard-item-step-font-size: 16px;
+
+// Common styles for :before and :after line
+@mixin step-line {
+	content: "";
+	display: block;
+	position: absolute;
+	top: $wizard-item-step-line;
+	box-sizing: border-box;
+	width: calc(100% - #{$wizard-item-step-line-margin});
+	height: 2px;
+}
+
+// Styles for navigation white gradient
+@mixin nav-gradient($direction: right, $color: #FFFFFF) {
+	@include eva-z-index("base", 1);
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	#{$direction}: 0;
+	bottom: 0;
+	width: $wizard-nav-shadow-size;
+	background: linear-gradient(to $direction, rgba(255,255,255,0), $color);
+}
+
+// General
+.eva-#{$version}-wizard {
+	position: relative;
+	box-sizing: border-box;
+	padding: $spacing-4 0;
+	background-color: var(--color-white);
+
+	* {
+		box-sizing: border-box;
+	}
+
+	// Nav slider
+	.wizard-nav-slider {
+		@include eva-z-index("base", 2);
+		transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.wizard-container {
+		position: relative;
+	}
+
+	.wizard-item-step-status,
+	.wizard-item-step-done,
+	.wizard-item-step-warning,
+	.wizard-item-step-error,
+	.wizard-item-step-edit {
+		display: flex;
+		position: absolute;
+		flex-basis: 100%;
+		flex-grow: 1;
+		flex-shrink: 0;
+		align-items: center;
+		font-size: $wizard-item-step-font-size;
+		// this is a hack for centering the text in the circle
+		line-height: 25px;
+		opacity: 0;
+	}
+
+	.wizard-list {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		overflow-x: auto;
+	}
+
+	.wizard-item {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		flex-grow: 1;
+		align-items: center;
+		min-width: $wizard-item-min_width-mobile;
+		padding: 0 $spacing-2;
+		color: var(--color-neutral-800);
+		cursor: pointer;
+
+		&:not(:last-child) {
+			&:after {
+				@include step-line;
+				right: 0;
+				background-color: var(--color-neutral-600);
+				transform: translateX(50%);
+			}
+		}
+
+		&:focus-visible {
+			outline: none;
+
+			.wizard-item-text {
+				@include eva-focus($offset: "inside", $radius: "rounded");
+			}
+		}
+
+		// Active state
+		&.-active:not(&.-error, &.-warning, &.-completed) {
+			.wizard-item-text {
+				font-weight: 500;
+			}
+
+			.wizard-item-step {
+				border-color: var(--color-neutral-800);
+				background-color: var(--color-neutral-800);
+			}
+
+			.wizard-item-step-done {
+				opacity: 0;
+			}
+
+			.wizard-item-step-status {
+				color: var(--color-white);
+				opacity: 1;
+			}
+		}
+
+		// Completed state
+		&.-completed:not(&.-error, &.-warning, &.-disabled) {
+			color: var(--color-success-500);
+
+			&:after {
+				background-color: var(--color-success-500);
+			}
+
+			.wizard-item-step {
+				border-color: var(--color-success-500);
+			}
+
+			.wizard-item-step-status {
+				opacity: 0;
+			}
+
+			.wizard-item-step-done {
+				opacity: 1;
+			}
+		}
+
+		// Disabled state
+		&.-disabled {
+			cursor: default;
+
+			&:after {
+				background-color: var(--color-neutral-600);
+			}
+
+			.wizard-item-text, .wizard-item-step-status {
+				color: var(--color-neutral-600);
+			}
+
+			.wizard-item-step {
+				border-color: var(--color-neutral-600);
+			}
+		}
+
+		// Warning state
+		&.-warning {
+			color: var(--color-warning-500);
+
+			&:after {
+				background-color: var(--color-neutral-600);
+			}
+
+			.wizard-item-step {
+				border-color: var(--color-warning-500);
+			}
+
+			.wizard-item-step-status {
+				opacity: 0;
+			}
+
+			.wizard-item-step-warning {
+				opacity: 1;
+			}
+		}
+		// Error state
+		&.-error {
+			color: var(--color-error-500);
+
+			&:after {
+				background-color: var(--color-neutral-600);
+			}
+
+			.wizard-item-step {
+				border-color: var(--color-error-500);
+			}
+
+			.wizard-item-step-status {
+				opacity: 0;
+			}
+
+			.wizard-item-step-error {
+				opacity: 1;
+			}
+		}
+	}
+
+	.wizard-item-text {
+		@include eva-text-as("body-2");
+		max-width: $wizard-item-text-max_width;
+		margin-top: $spacing-2;
+		text-align: center;
+	}
+
+	.wizard-item-step {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		align-items: center;
+		box-sizing: border-box;
+		width: $wizard-item-step-size;
+		height: $wizard-item-step-size;
+		border: 2px solid var(--color-neutral-800);
+		border-radius: $border-radius-half;
+		transition: background-color 0.5s;
+		overflow: hidden;
+	}
+
+	.wizard-item-step-status {
+		opacity: 1;
+	}
+
+	.wizard-item-step-error, .wizard-item-step-done, .wizard-item-step-warning, .wizard-item-step-status {
+		transition: opacity 0.1s ease-out, transform 0.15s ease-out;
+	}
+
+	.wizard-item-step-edit {
+		transform: translateY(100%);
+		transition: opacity 0.1s ease-in, transform 0.15s ease-in;
+	}
+
+	// Gradient at the end
+	&.-first {
+		.wizard-container {
+			&:after {
+				@include nav-gradient;
+			}
+		}
+	}
+
+	// Gradient at the beginning
+	&.-last {
+		.wizard-container {
+			&:before {
+				@include nav-gradient($direction: left);
+			}
+		}
+	}
+
+	// Background gray
+	&.-gray {
+		background-color: var(--color-neutral-100);
+
+		// Gradient at the end
+		&.-first {
+			.wizard-container {
+				&:after {
+					@include nav-gradient($direction: right, $color: #EEEEEE);
+				}
+			}
+		}
+
+		// Gradient at the beginning
+		&.-last {
+			.wizard-container {
+				&:before {
+					@include nav-gradient($direction: left, $color: #EEEEEE);
+				}
+			}
+		}
+	}
+
+	&:not(.-editable) {
+		.wizard-item-step-edit {
+			display: none;
+		}
+	}
+
+	&.-editable {
+		.wizard-item {
+			&.-completed, &.-error, &.-warning {
+				&:hover {
+					.wizard-item-step {
+						background-color: transparent;
+
+						.wizard-item-step-done,
+						.wizard-item-step-warning,
+						.wizard-item-step-error,
+						.wizard-item-step-status {
+							transform: translateY(-100%);
+							opacity: 0;
+						}
+
+						.wizard-item-step-edit {
+							transform: translateY(0);
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include breakpoint("medium", "up") {
+		padding-right: $spacing-8;
+		padding-left: $spacing-8;
+
+		.wizard-list {
+			justify-content: flex-start;
+			overflow: hidden;
+		}
+
+		.wizard-item {
+			min-width: $wizard-item-min_width-desktop;
+		}
+
+		.wizard-item-text {
+			width: $wizard-item-text-max_width;
+		}
+
+		// Navigation arrows on
+		&.-navigation {
+			&:hover {
+				.wizard-nav-slider {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+
+			&.-box {
+				padding-right: calc(#{$spacing-8} * 2);
+				padding-left: calc(#{$spacing-8} * 2);
+
+				.wizard-nav-slider {
+					&.-left {
+						left: $spacing-6;
+					}
+
+					&.-right {
+						right: $spacing-6;
+					}
+				}
+			}
+		}
+
+		// Box layout
+		&.-box {
+			border: 1px solid var(--color-neutral-300);
+			border-radius: $border-radius-6;
+		}
+	}
+}

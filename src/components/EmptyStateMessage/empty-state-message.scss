@@ -1,0 +1,149 @@
+@import "../../scss/eva-core";
+
+// Variables
+$empty-state-message-image-width: 200px;
+$empty-state-message-image-height: $empty-state-message-image-width;
+$empty-state-message-icon-width: 72px;
+$empty-state-message-icon-height: $empty-state-message-icon-width;
+
+// Empty states messages
+.eva-#{$version}-empty-state-message {
+
+	// Box layout message
+	&.-box-layout:not(.-error-state) {
+		background-image: none;
+
+		// Box layout con icono
+		&.-icon {
+			.empty-state-message-container {
+				padding: $spacing-8 $spacing-6;
+
+				@include breakpoint("medium","up") {
+					align-items: flex-start;
+					padding: $spacing-8;
+				}
+			}
+
+			.empty-state-message-image {
+				width: $empty-state-message-icon-width;
+				height: $empty-state-message-icon-height;
+				margin-left: 0;
+				background-image: none;
+
+				@include breakpoint("medium","up") {
+					margin-right: $spacing-6;
+				}
+			}
+		}
+
+		&.-vertical {
+			&:not(.-icon) {
+				.empty-state-message-image {
+					margin: 0 auto;
+				}
+			}
+
+			.empty-state-message-container {
+				display: block;
+
+				.empty-state-message-content {
+					padding-top: $spacing-6;
+					padding-left: 0;
+				}
+			}
+
+			.empty-state-message-button {
+				@include breakpoint("medium","up") {
+					justify-content: flex-end;
+				}
+			}
+		}
+
+		.empty-state-message-container {
+			padding: $spacing-10 $spacing-6;
+			border: 1px solid var(--color-neutral-300);
+			border-radius: $border-radius-4;
+			background-color: var(--color-white);
+			background-image: none;
+
+			@include breakpoint("medium","up") {
+				padding: $spacing-6 $spacing-8;
+			}
+		}
+
+		.empty-state-message-image {
+			@include breakpoint("medium","up") {
+				margin-right: $spacing-10;
+			}
+		}
+	}
+
+	// Error layout message
+	&.-error-state {
+		background-image: none;
+
+		.empty-state-message-image {
+			background-image: var(--eva-illustration-23);
+		}
+	}
+
+	// Boton secundario
+	&.-secondary-button:not(.-error-state) {
+		.eva-3-btn:first-child {
+			margin-right: $spacing-4;
+		}
+	}
+
+	.empty-state-message-container {
+		@include breakpoint("medium","up") {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+		}
+	}
+
+	.empty-state-message-image {
+		box-sizing: border-box;
+		width: $empty-state-message-image-width;
+		height: $empty-state-message-image-height;
+		margin: 0 auto;
+		background-image: var(--eva-illustration-18);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: contain;
+
+		@include breakpoint("medium","up") {
+			width: $empty-state-message-image-width;
+			height: $empty-state-message-image-height;
+			margin: 0 $spacing-12 0 0;
+		}
+	}
+
+	.empty-state-message-content {
+		padding-top: $spacing-6;
+
+		@include breakpoint("medium","up") {
+			flex-grow: 1;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	.empty-state-message-title-secondary {
+		display: none;
+
+		@include breakpoint("medium","up") {
+			display: block;
+		}
+	}
+
+	.empty-state-message-description {
+		margin-top: $spacing-2;
+		color: var(--color-neutral-700);
+	}
+
+	.empty-state-message-button {
+		margin-top: $spacing-6;
+	}
+}

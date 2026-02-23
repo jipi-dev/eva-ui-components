@@ -1,0 +1,40 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-validation-inline {
+	.validation-msg {
+		@include eva-text-as("body-2");
+		display: block;
+		padding: $spacing-2 $spacing-2 $spacing-2 0;
+		color: var(--color-error-500);
+		transition: opacity 0.2s, visibility 0.2s;
+		visibility: hidden;
+		opacity: 0;
+
+		[class^="eva-#{$version}-icon"] {
+			margin-right: 5px;
+		}
+	}
+
+	&.eva-#{$version}-checkbox,
+	&.eva-#{$version}-radio {
+		.validation-msg {
+			padding-left: 2px;
+		}
+	}
+
+	// Show validation
+	&.-invalid {
+		.input-tag,
+		.select-tag,
+		.textarea-tag,
+		.radio-tag {
+			border-color: var(--color-error-500);
+		}
+
+		.validation-msg {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}

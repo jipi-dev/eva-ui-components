@@ -1,0 +1,160 @@
+@import "../../scss/eva-core";
+
+// Comments
+.eva-#{$version}-view-more {
+	position: relative;
+	overflow: hidden;
+
+	.view-more-btn {
+		display: block;
+		position: relative;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		box-sizing: border-box;
+		height: 45px;
+		text-align: left;
+		line-height: 43px;
+		cursor: pointer;
+
+		&:hover {
+			.view-more-btn-text, .view-more-btn-icon {
+				color: var(--brand-primary-3);
+			}
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			right: 0;
+			bottom: 100%;
+			left: 0;
+			height: 100px;
+			background-image: linear-gradient(to top, #FFFFFF, rgba(255,255,255,0));
+			pointer-events: none;
+		}
+
+		&:active {
+			border-color: var(--brand-primary-3);
+
+			.view-more-btn-text, .view-more-btn-icon {
+				color: var(--brand-primary-3);
+			}
+		}
+	}
+
+	.view-more-btn-text {
+		display: inline-block;
+		padding-right: 8px;
+		color: var(--brand-primary-3);
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	.view-more-btn-icon {
+		color: var(--brand-primary-3);
+		font-size: 16px;
+		font-weight: 500;
+		vertical-align: middle;
+	}
+
+	&.-show-more {
+		.view-more-content {
+			max-height: 100%;
+			transform: translateY(0);
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.view-more-btn-icon {
+			transform: rotateZ(180deg);
+			vertical-align: initial;
+		}
+	}
+
+	&.-collapsible-bottom {
+		.view-more-content {
+			max-height: 0px;
+			margin: 0;
+			padding: 0;
+			transform: translateY(-10px);
+			transition: opacity 0.3s ease-out, max-height 0.1s, transform 0.3s ease-out, visibility 0.3s;
+			overflow: hidden;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		&.-show-more {
+			.view-more-content {
+				max-height: 100%;
+				margin-top: 1px;
+				transform: translateY(0);
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.view-more-btn-icon {
+				transform: rotateZ(180deg);
+			}
+		}
+
+		.view-more-btn {
+			&:before {
+				content: none;
+			}
+		}
+	}
+
+	&.-collapsible-top {
+		.view-more-content {
+			max-height: 0px;
+			margin: 0;
+			padding: 0;
+			transform: translateY(-10px);
+			transition: opacity 0.3s ease-out, max-height 0.1s, transform 0.3s ease-out, visibility 0.3s;
+			overflow: hidden;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		&.-show-more {
+			.view-more-content {
+				max-height: 100%;
+				transform: translateY(0);
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.view-more-btn-icon {
+				transform: rotateZ(180deg);
+			}
+		}
+
+		.view-more-btn {
+			top: 0;
+			bottom: auto;
+			margin-top: 0;
+
+			&:before {
+				content: none;
+			}
+		}
+	}
+
+	// Sizes
+	&.-sm {
+		.view-more-btn {
+			height: 35px;
+			line-height: 33px;
+		}
+
+		&.-collapsible-top {
+			padding-top: 35px;
+			padding-bottom: 0;
+
+			&.-show-more {
+				padding-top: 37px;
+			}
+		}
+	}
+}

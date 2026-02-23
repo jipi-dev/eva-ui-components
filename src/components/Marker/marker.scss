@@ -1,0 +1,221 @@
+@import "../../scss/eva-core";
+
+// Settings
+$marker-height: 36px;
+$marker-icon-size: 20px;
+
+$marker-poi-width: 28px;
+$marker-poi-height: $marker-poi-width;
+
+$minimarker-width: 28px;
+$minimarker-height: $minimarker-width;
+
+$marker-location-width: 28px;
+$marker-location-height: $marker-location-width;
+$marker-location-inner-width: 16px;
+$marker-location-inner-height: $marker-location-inner-width;
+
+$marker-tip-width: 12px;
+$marker-tip-height: 14px;
+
+@mixin hover-state {
+	border: 1px solid var(--brand-primary-1);
+	background-color: var(--brand-primary-1);
+	color: var(--brand-primary-3);
+
+	&:before {
+		border-color: var(--brand-primary-3) transparent transparent transparent;
+	}
+
+	.marker-tip:after {
+		border-color: var(--brand-primary-1);
+		background-color: var(--brand-primary-1);
+	}
+}
+
+// Marker
+.eva-#{$version}-marker {
+	display: inline-flex;
+	position: relative;
+	box-sizing: border-box;
+	height: $marker-height;
+	padding: $spacing-2;
+	border: 1px solid var(--color-neutral-300);
+	border-radius: $border-radius-2;
+	background-color: var(--color-white);
+	color: var(--color-neutral-700);
+	font-size: $marker-icon-size;
+	transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	cursor: pointer;
+	z-index: 2;
+
+	&:hover:not(.-active) {
+		@include hover-state;
+	}
+
+	.marker-container {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.marker-tip {
+		position: absolute;
+		bottom: calc(($marker-tip-height * -1) / 2);
+		left: calc(50% - ($marker-tip-width / 2));
+		width: $marker-tip-width;
+		height: calc($marker-tip-height / 2);
+		overflow: hidden;
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: $marker-tip-height * -1;
+			left: 0;
+			width: $marker-tip-width;
+			height: $marker-tip-height;
+			border: 1px solid var(--color-neutral-300);
+			border-radius: 1px;
+			background-color: var(--color-white);
+			transform: rotateZ(45deg);
+			transition: opacity 0.2s ease-in-out;
+		}
+	}
+
+	&.-minimarker {
+		align-items: center;
+		justify-content: center;
+		min-width: $minimarker-width;
+		max-width: $minimarker-width;
+		height: $minimarker-height;
+		padding: 0;
+
+		&.-expand:not(.-poi-marker, .-location-marker) {
+			transition: all 0.15s ease-in-out;
+
+			&:hover,&.-active {
+				max-width: 100%;
+				height: $marker-height;
+				padding: $spacing-2;
+				transition: all 0.25s ease-in-out;
+
+				.marker-container {
+					max-width: 100%;
+					transition: all 0.25s ease-in-out;
+				}
+
+				.marker-text, i {
+					color: var(--brand-primary-3);
+					transition: none;
+				}
+			}
+
+			.marker-container {
+				max-width: calc($minimarker-width - $spacing-2);
+				transition: all 0.25s ease-in-out;
+				overflow: hidden;
+			}
+
+			&:not(.-active).marker-text, &:not(.-active).marker-text i {
+				color: var(--color-neutral-700);
+				transition: none;
+			}
+		}
+	}
+
+	&.-poi-marker {
+		justify-content: center;
+		width: $marker-poi-width;
+		height: $marker-poi-height;
+		padding: 0;
+		border-radius: 50%;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&.-location-marker {
+		display: block;
+		align-items: center;
+		justify-content: center;
+		width: $marker-location-width;
+		height: $marker-location-height;
+		padding: 0;
+		border: none;
+		border-radius: 50%;
+		background-color: var(--brand-primary-1);
+
+		&:before {
+			display: none;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: calc(50% - ($marker-location-inner-height / 2));
+			left: calc(50% - ($marker-location-inner-width / 2));
+			box-sizing: border-box;
+			width: $marker-location-inner-width;
+			height: $marker-location-inner-height;
+			border: 2px solid var(--color-white);
+			border-radius: 50%;
+			background-color: var(--brand-primary-3);
+		}
+	}
+
+	&.-visited:not(.-location-marker) {
+		border: 1px solid var(--color-neutral-800);
+		color: var(--color-neutral-800);
+
+		&:after {
+			border-color: var(--color-neutral-800) transparent transparent transparent;
+		}
+
+		&:hover:not(.-active) {
+			@include hover-state;
+		}
+
+		.marker-tip:after {
+			border-color: var(--color-neutral-800);
+		}
+	}
+
+	// Estado de hover ejecutado con clases para cuando el marker se utiliza al lado de la vista de listado y eso ejecuta el hover.
+	&.-hover:not(.-location-marker):not(.-active) {
+		@include hover-state;
+	}
+
+	&.-active:not(.-location-marker) {
+		border: 1px solid var(--brand-primary-3);
+		color: var(--brand-primary-3);
+
+		&:after {
+			border-color: var(--brand-primary-3) transparent transparent transparent;
+		}
+
+		.marker-tip:after {
+			border-color: var(--brand-primary-3);
+		}
+	}
+
+	&.-secondary {
+		opacity: 0.5;
+
+		&:after {
+			opacity: 0.5;
+		}
+	}
+
+	.marker-text {
+		@include eva-text-as("h6");
+	}
+
+	i + .marker-text, img + .marker-text {
+		margin-left: $spacing-2;
+	}
+
+	img {
+		max-width: 100%;
+	}
+}

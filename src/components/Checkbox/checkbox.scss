@@ -1,0 +1,201 @@
+@import "../../scss/eva-core";
+
+//Variables
+$checkbox-check-width: 20px;
+$checkbox-check-height: $checkbox-check-width;
+$checkbox-check-md-width: 16px;
+$checkbox-check-md-height: $checkbox-check-md-width;
+
+.eva-#{$version}-checkbox {
+	&:focus-visible {
+		outline: none;
+
+		.checkbox-check {
+			@include eva-focus;
+		}
+	}
+
+	.checkbox-label {
+		position: relative;
+		cursor: pointer;
+	}
+
+	.checkbox-check {
+		display: inline-block;
+		box-sizing: border-box;
+		width: $checkbox-check-width;
+		height: $checkbox-check-height;
+		margin-top: -1px;
+		border: solid 1px var(--color-neutral-600);
+		border-radius: $border-radius-3;
+		background-color: var(--color-white);
+		color: var(--color-white);
+		text-align: center;
+		line-height: 18px;
+		transition: color 0.2s, border-color 0.2s;
+		vertical-align: middle;
+		overflow: hidden;
+
+		&:before {
+			display: block;
+			font-size: 13px;
+			opacity: 0;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 2px;
+			min-width: 0;
+			height: calc($checkbox-check-height - 2px);
+			border-radius: $border-radius-3;
+			background-color: var(--brand-primary-3);
+			opacity: 0;
+		}
+	}
+
+	.checkbox-tag {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
+		opacity: 0;
+
+		&:checked + .checkbox-check {
+			border-color: var(--brand-primary-3);
+			background-color: var(--brand-primary-3);
+			color: var(--color-white);
+
+			&:before {
+				opacity: 1;
+			}
+
+			&:after {
+				animation: eva_checkbox_check 0.3s ease-out;
+				opacity: 1;
+			}
+		}
+
+		&:focus-visible {
+			+ .checkbox-check {
+				@include eva-focus;
+			}
+		}
+
+		&:disabled ~ .checkbox-text {
+			color: var(--color-neutral-600);
+		}
+
+		&:disabled + .checkbox-check {
+			border-color: var(--color-neutral-400);
+			background-color: var(--color-neutral-400);
+			cursor: default;
+
+			&:before {
+				color: var(--color-neutral-600);
+			}
+		}
+
+		&:disabled {
+			cursor: default;
+
+			&:checked + .checkbox-check {
+				&:before {
+					color: var(--color-neutral-600);
+				}
+			}
+		}
+	}
+
+	// Lighten
+	&.-lighten {
+		&:focus-visible {
+			.checkbox-check {
+				@include eva-focus("lighten");
+			}
+		}
+
+		.checkbox-check {
+			border-color: transparent;
+		}
+
+		.checkbox-tag {
+			&:checked + .checkbox-check {
+				border-color: transparent;
+				background-color: var(--color-white);
+				color: var(--brand-primary-3);
+			}
+
+			&:focus-visible {
+				+ .checkbox-check {
+					@include eva-focus("lighten");
+				}
+			}
+
+			&:disabled + .checkbox-check {
+				border-color: var(--color-neutral-400);
+				background-color: var(--color-neutral-400);
+				cursor: default;
+
+				&:before {
+					color: var(--color-neutral-600);
+				}
+			}
+		}
+
+		&.-invalid {
+			.checkbox-check {
+				border-color: var(--color-error-300);
+				background-color: var(--color-white);
+			}
+		}
+	}
+
+	// Skins
+	&.-no-border {
+		.checkbox-check {
+			border-color: var(--color-white);
+		}
+	}
+
+	// Invalid
+	&.-invalid {
+		.checkbox-check {
+			border-color: var(--color-error-500);
+			background-color: var(--color-white);
+		}
+	}
+
+	// Sizes
+	&.-md {
+		.checkbox-check {
+			left: 0;
+			width: $checkbox-check-md-width;
+			height: $checkbox-check-md-height;
+			margin-top: -2px;
+			border-radius: $border-radius-2;
+			line-height: 13px;
+
+			&:before {
+				font-size: 10px;
+			}
+		}
+	}
+}
+
+@include keyframes(eva_checkbox_check) {
+	0% {
+		min-width: calc($checkbox-check-width - 4px);
+	}
+
+	40% {
+		min-width: 12px;
+	}
+
+	100% {
+		min-width: 0;
+	}
+}

@@ -1,0 +1,646 @@
+@import "../../scss/eva-core";
+@import "./label-settings";
+
+.eva-#{$version}-label {
+	display: inline-flex;
+	position: relative;
+	overflow: hidden;
+
+	.label-container {
+		display: inline-flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		box-sizing: border-box;
+		min-width: $label-container-min_width;
+		border-radius: $label-container-border_radius-half;
+		color: var(--color-white);
+		z-index: 1;
+
+		.label-icon {
+			margin-bottom: 2px;
+
+			& + .label-text {
+				margin-left: $spacing-2;
+			}
+		}
+
+		.label-text {
+			&.-linethrough {
+				position: relative;
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					right: 0;
+					left: 0;
+					height: 3px;
+					background-color: var(--color-success-100);
+					transform: translateY(-2px);
+				}
+			}
+		}
+	}
+
+	// Orientacion del tail
+	&.-top-left {
+		padding-top: $label-tail-space-md;
+
+		.label-container {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: $label-container-border_radius-size;
+
+			&:before {
+				@include label-tail($position: top-left, $color: transparent, $width: $tail-width-md, $height: $tail-height-md);
+				top: 0;
+				left: 0;
+				transform: translateY(-100%);
+			}
+
+			+ .label-container {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+
+				&:before {
+					content: none;
+				}
+			}
+
+			// Retrocompatibilidad para los colores de los labels
+			// Green
+			&.-eva-#{$version}-bc-green-3 {
+				&:before {
+					border-left-color: $label-green;
+				}
+			}
+
+			// Purple
+			&.-eva-#{$version}-bc-purple-4 {
+				&:before {
+					border-left-color: $label-purple;
+				}
+			}
+
+			// Loyalty
+			&.-eva-#{$version}-bc-bubblegum-1 {
+				&:before {
+					border-left-color: $label-loyalty;
+				}
+			}
+		}
+	}
+
+	&.-top-right {
+		padding-top: $label-tail-space-md;
+
+		.label-container {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: $label-container-border_radius-size;
+
+			&:last-child {
+				&:before {
+					@include label-tail($position: top-right, $color: transparent, $width: $tail-width-md, $height: $tail-height-md);
+					top: 0;
+					right: 0;
+					transform: translateY(-100%);
+				}
+			}
+
+			+ .label-container {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+
+			// Retrocompatibilidad para los colores de los labels
+			// Green
+			&.-eva-#{$version}-bc-green-3 {
+				&:before {
+					border-bottom-color: $label-green;
+				}
+			}
+
+			// Purple
+			&.-eva-#{$version}-bc-purple-4 {
+				&:before {
+					border-bottom-color: $label-purple;
+				}
+			}
+
+			// Loyalty
+			&.-eva-#{$version}-bc-bubblegum-1 {
+				&:before {
+					border-bottom-color: $label-loyalty;
+				}
+			}
+		}
+	}
+
+	&.-bottom-left {
+		padding-bottom: $label-tail-space-md;
+
+		.label-container {
+			border-top-left-radius: $label-container-border_radius-size;
+			border-bottom-left-radius: 0;
+
+			&:before {
+				@include label-tail($position: bottom-left, $color: transparent, $width: $tail-width-md, $height: $tail-height-md);
+				bottom: 0;
+				left: 0;
+				transform: translateY(100%);
+			}
+
+			+ .label-container {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+
+				&:before {
+					content: none;
+				}
+			}
+
+			// Retrocompatibilidad para los colores de los labels
+			// Green
+			&.-eva-#{$version}-bc-green-3 {
+				&:before {
+					border-top-color: $label-green;
+				}
+			}
+
+			// Purple
+			&.-eva-#{$version}-bc-purple-4 {
+				&:before {
+					border-top-color: $label-purple;
+				}
+			}
+
+			// Loyalty
+			&.-eva-#{$version}-bc-bubblegum-1 {
+				&:before {
+					border-top-color: $label-loyalty;
+				}
+			}
+		}
+	}
+
+	&.-bottom-right {
+		padding-bottom: $label-tail-space-md;
+
+		.label-container {
+			border-top-right-radius: $label-container-border_radius-size;
+			border-bottom-right-radius: 0;
+
+			&:last-child {
+				&:before {
+					@include label-tail($position: bottom-right, $color: transparent, $width: $tail-width-md, $height: $tail-height-md);
+					right: 0;
+					bottom: 0;
+					transform: translateY(100%);
+				}
+			}
+
+			+ .label-container {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+
+			// Retrocompatibilidad para los colores de los labels
+			// Green
+			&.-eva-#{$version}-bc-green-3 {
+				&:before {
+					border-right-color: $label-green;
+				}
+			}
+
+			// Purple
+			&.-eva-#{$version}-bc-purple-4 {
+				&:before {
+					border-right-color: $label-purple;
+				}
+			}
+
+			// Loyalty
+			&.-eva-#{$version}-bc-bubblegum-1 {
+				&:before {
+					border-right-color: $label-loyalty;
+				}
+			}
+		}
+	}
+
+	// Tamaños de label
+	&.-sm {
+		.label-container {
+			height: $label-container-height-sm;
+			padding: 0 $label-container-padding-sides-sm;
+		}
+
+		.label-text {
+			@include eva-text-as("p");
+		}
+
+		.label-icon {
+			width: $icon-width-sm;
+			height: $icon-height-sm;
+			font-size: $icon-font-size-sm;
+			// line-height: $icon-font-size-sm;
+		}
+
+		&.-top-left, &.-top-right {
+			padding-top: $label-tail-space-sm;
+		}
+
+		&.-bottom-left, &.-bottom-right {
+			padding-bottom: $label-tail-space-sm;
+		}
+
+		// Top left
+		&.-top-left {
+			.label-container {
+				&:before {
+					border-width: $tail-height-sm 0 0 $tail-width-sm;
+				}
+			}
+		}
+
+		// Top right
+		&.-top-right {
+			.label-container {
+				&:before {
+					border-width: 0 0 $tail-height-sm $tail-width-sm;
+				}
+			}
+		}
+
+		// Bottom left
+		&.-bottom-left {
+			.label-container {
+				&:before {
+					border-width: $tail-height-sm $tail-width-sm 0 0;
+				}
+			}
+		}
+
+		// Bottom right
+		&.-bottom-right {
+			.label-container {
+				&:before {
+					border-width: 0 $tail-width-sm $tail-height-sm  0;
+				}
+			}
+		}
+	}
+
+	&.-md, &.-lg {
+		.label-container {
+			height: $label-container-height-md;
+			padding: 0 $label-container-padding-sides-md;
+		}
+
+		.label-text {
+			@include eva-text-as("body-2");
+		}
+
+		.label-icon {
+			width: $icon-width-md;
+			height: $icon-height-md;
+			font-size: $icon-font-size-md;
+			// line-height: $icon-font-size-md;
+		}
+
+		.label-extra {
+			padding-right: $spacing-3;
+		}
+	}
+
+	// &.-lg {
+	// 	.label-container {
+	// 		height: $label-container-height-lg;
+	// 		padding: 0 $label-container-padding-sides-lg;
+	// 	}
+
+	// 	.label-text {
+	// 		@include eva-text-as("h5");
+	// 	}
+
+	// 	.label-icon {
+	// 		width: $icon-width-lg;
+	// 		height: $icon-height-lg;
+	// 		font-size: $icon-font-size-lg;
+	// 		line-height: $icon-font-size-lg;
+	// 	}
+
+	// 	.label-extra {
+	// 		padding-right: $spacing-4;
+	// 	}
+	// }
+
+	// Color del label
+	&.-green {
+		.label-container {
+			background-color: $label-green;
+		}
+
+		&.-top-left {
+			.label-container {
+				&:before {
+					border-left-color: $label-green;
+				}
+			}
+		}
+
+		&.-top-right {
+			.label-container {
+				&:before {
+					border-bottom-color: $label-green;
+				}
+			}
+		}
+
+		&.-bottom-left {
+			.label-container {
+				&:before {
+					border-top-color: $label-green;
+				}
+			}
+		}
+
+		&.-bottom-right {
+			.label-container {
+				&:before {
+					border-right-color: $label-green;
+				}
+			}
+		}
+	}
+
+	&.-purple {
+		.label-container {
+			background-color: $label-purple;
+		}
+
+		&.-top-left {
+			.label-container {
+				&:before {
+					border-left-color: $label-purple;
+				}
+			}
+		}
+
+		&.-top-right {
+			.label-container {
+				&:before {
+					border-bottom-color: $label-purple;
+				}
+			}
+		}
+
+		&.-bottom-left {
+			.label-container {
+				&:before {
+					border-top-color: $label-purple;
+				}
+			}
+		}
+
+		&.-bottom-right {
+			.label-container {
+				&:before {
+					border-right-color: $label-purple;
+				}
+			}
+		}
+	}
+
+	&.-loyalty {
+		.label-container {
+			background-color: $label-loyalty;
+		}
+
+		&.-top-left {
+			.label-container {
+				&:before {
+					border-left-color: $label-loyalty;
+				}
+			}
+		}
+
+		&.-top-right {
+			.label-container {
+				&:before {
+					border-bottom-color: $label-loyalty;
+				}
+			}
+		}
+
+		&.-bottom-left {
+			.label-container {
+				&:before {
+					border-top-color: $label-loyalty;
+				}
+			}
+		}
+
+		&.-bottom-right {
+			.label-container {
+				&:before {
+					border-right-color: $label-loyalty;
+				}
+			}
+		}
+	}
+
+	// Compound
+	&.-compound {
+		.label-container {
+			background-color: $label-green;
+
+			&:first-child {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+
+			&.-eva-#{$version}-bc-white {
+				border: 1px solid var(--color-neutral-300);
+			}
+		}
+
+		&.-top-left, &.-bottom-left {
+			.label-container {
+				&.-eva-#{$version}-bc-white {
+					border-left: 0;
+					border-top-left-radius: 0;
+				}
+			}
+		}
+
+		&.-top-right, &.-bottom-right {
+			.label-container {
+				&.-eva-#{$version}-bc-white {
+					border-right: 0;
+				}
+			}
+		}
+
+		&.-top-left {
+			.label-container {
+				&:before {
+					border-left-color: $label-green;
+				}
+			}
+		}
+
+		&.-top-right {
+			.label-container {
+				&:before {
+					border-bottom-color: $label-green;
+				}
+			}
+		}
+
+		&.-bottom-left {
+			.label-container {
+				&:before {
+					border-top-color: $label-green;
+				}
+			}
+		}
+
+		&.-bottom-right {
+			.label-container {
+				&:before {
+					border-right-color: $label-green;
+				}
+			}
+		}
+
+		&.-md, &.-lg {
+			.label-icon {
+				margin-left: $spacing-1;
+
+				& + .label-text {
+					margin-right: $spacing-1;
+				}
+			}
+		}
+	}
+
+	// Secret deals label
+	&.-secret-deals {
+		.label-container {
+			border: 1px solid var(--color-neutral-300);
+			background-color: $label-secret-deals;
+			color: var(--color-neutral-700);
+
+			&:before {
+				z-index: 1;
+			}
+		}
+
+		&.-top-left {
+			.label-container {
+				&:before {
+					top: 2px;
+					border-left-color: $label-secret-deals;
+				}
+
+				&:after {
+					@include label-tail($position: top-left, $color: transparent, $width: $tail-width-md, $height: $tail-height-md);
+					top: 0;
+					left: -1px;
+					border-left-color: var(--color-neutral-300);
+					transform: translateY(-100%);
+				}
+			}
+		}
+
+		&.-top-right {
+			.label-container {
+				&:before {
+					top: 2px;
+					border-bottom-color: $label-secret-deals;
+				}
+
+				&:after {
+					@include label-tail($position: top-right, $color: transparent, $width: $tail-width-md, $height: $tail-height-md);
+					top: 0;
+					right: -1px;
+					border-bottom-color: var(--color-neutral-300);
+					transform: translateY(-100%);
+				}
+			}
+		}
+
+		&.-bottom-left {
+			.label-container {
+				&:before {
+					bottom: 2px;
+					border-top-color: $label-secret-deals;
+				}
+
+				&:after {
+					@include label-tail($position: bottom-left, $color: transparent, $width: $tail-width-md, $height: $tail-height-md);
+					bottom: 0;
+					left: -1px;
+					border-top-color: var(--color-neutral-300);
+					transform: translateY(100%);
+				}
+			}
+		}
+
+		&.-bottom-right {
+			.label-container {
+				&:before {
+					bottom: 2px;
+					border-right-color: $label-secret-deals;
+				}
+
+				&:after {
+					@include label-tail($position: bottom-right, $color: transparent, $width: $tail-width-md, $height: $tail-height-md);
+					right: -1px;
+					bottom: 0;
+					border-right-color: var(--color-neutral-300);
+					transform: translateY(100%);
+				}
+			}
+		}
+
+		&.-sm {
+			// Top left
+			&.-top-left {
+				.label-container {
+					&:after {
+						border-width: $tail-height-sm 0 0 $tail-width-sm;
+					}
+				}
+			}
+
+			// Top right
+			&.-top-right {
+				.label-container {
+					&:after {
+						border-width: 0 0 $tail-height-sm $tail-width-sm;
+					}
+				}
+			}
+
+			// Bottom left
+			&.-bottom-left {
+				.label-container {
+					&:after {
+						border-width: $tail-height-sm $tail-width-sm 0 0;
+					}
+				}
+			}
+
+			// Bottom right
+			&.-bottom-right {
+				.label-container {
+					&:after {
+						border-width: 0 $tail-width-sm $tail-height-sm  0;
+					}
+				}
+			}
+		}
+	}
+}

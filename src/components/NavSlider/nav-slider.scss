@@ -1,0 +1,136 @@
+@import "../../scss/eva-core";
+
+// General
+.eva-#{$version}-nav-slider {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	color: var(--color-neutral-700);
+	text-align: center;
+	transition: opacity 0.5s ease-out;
+	cursor: pointer;
+
+	&:hover {
+		color: var(--color-neutral-800);
+		opacity: 1;
+	}
+
+	&:focus-visible {
+		@include eva-focus;
+	}
+
+	&.-sm {
+		width: 32px;
+		height: 32px;
+
+		.nav-slider-icon {
+			font-size: 16px;
+			//- FIX right chevron
+			&.eva-#{$version}-icon-arrow-right {
+				margin-right: -2px;
+			}
+		}
+	}
+
+	&.-md {
+		width: 48px;
+		height: 48px;
+
+		.nav-slider-icon {
+			font-size: 24px;
+			//- FIX right chevron
+			&.eva-#{$version}-icon-arrow-right {
+				margin-right: -4px;
+			}
+			//- FIX left chevron
+			&.eva-#{$version}-icon-arrow-left {
+				margin-left: -1px;
+			}
+		}
+	}
+
+	&.-lg {
+		width: 64px;
+		height: 64px;
+
+		.nav-slider-icon {
+			font-size: 32px;
+			//- FIX right chevron
+			&.eva-#{$version}-icon-arrow-right {
+				margin-top: 1px;
+				margin-right: -5px;
+			}
+			//- FIX left chevron
+			&.eva-#{$version}-icon-arrow-left {
+				margin-top: 1px;
+				margin-left: -2px;
+			}
+		}
+	}
+
+	&.-xlg {
+		width: 72px;
+		height: 72px;
+
+		.nav-slider-icon {
+			font-size: 42px;
+			//- FIX right chevron
+			&.eva-#{$version}-icon-arrow-right {
+				margin-top: 1px;
+				margin-right: -5px;
+			}
+			//- FIX left chevron
+			&.eva-#{$version}-icon-arrow-left {
+				margin-top: 1px;
+				margin-left: -2px;
+			}
+		}
+	}
+
+	&.-negative {
+		background-color: var(--color-neutral-700);
+		color: var(--color-white);
+
+		&:hover {
+			background-color: var(--color-neutral-800);
+		}
+	}
+
+	&.-white {
+		background-color: var(--color-white);
+
+		&:hover {
+			color: var(--color-neutral-800);
+			opacity: 1;
+		}
+	}
+
+	&.-disabled {
+		color: var(--color-neutral-700);
+		cursor: unset;
+		opacity: 1;
+
+		&.-negative,&.-white {
+			background-color: var(--color-neutral-300);
+
+			&:hover {
+				color: var(--color-neutral-700);
+			}
+		}
+	}
+
+	&.-left {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+
+	&.-right {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+	}
+}

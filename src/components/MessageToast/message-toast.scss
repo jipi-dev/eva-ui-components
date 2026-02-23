@@ -1,0 +1,185 @@
+@import "../../scss/eva-core";
+
+// Settings
+$default-padding: $spacing-5;
+$close-size-sm: $spacing-5;
+$close-size-md: $spacing-6;
+$icon-size: $spacing-5;
+$icon-margin: $spacing-2;
+
+// Right spacing
+$right-padding: $default-padding + $close-size-sm + $default-padding;
+// Left spacing
+$left-padding: $default-padding + $icon-size + $icon-margin;
+
+// Message base
+.eva-#{$version}-message--toast {
+	max-width: 350px;
+	overflow: hidden;
+
+	.message-close {
+		@include eva-text-as("body-1");
+		position: absolute;
+		top: $spacing-5;
+		right: $spacing-4;
+		padding: 0 $spacing-1;
+		color: var(--color-neutral-800);
+		cursor: pointer;
+
+		&:focus-visible {
+			@include eva-focus($radius: "rounded");
+		}
+	}
+
+	.message-icon-container {
+		top: $spacing-5;
+		left: $spacing-5;
+		font-size: $spacing-5;
+	}
+
+	.message-title {
+		@include eva-text-as("h6");
+		padding-top: 0;
+	}
+
+	.message-text {
+		@include eva-text-as("body-2");
+	}
+
+	.message-header {
+		min-height: unset;
+		padding: $spacing-5 $right-padding $spacing-2 $left-padding;
+	}
+
+	&.-no-title {
+		.message-body {
+			padding: $spacing-5 $right-padding $spacing-5 $left-padding;
+		}
+	}
+
+	&.-no-content {
+		.message-header {
+			padding-right: $spacing-12;
+			padding-bottom: $spacing-4;
+		}
+	}
+
+	&.-info {
+		.message-close {
+			color: var(--color-white);
+		}
+	}
+
+	&.-info-secondary, &.-success-secondary {
+		.message-close {
+			color: var(--color-neutral-700);
+		}
+	}
+
+	&.-info-secondary.-loading {
+		.message-loader {
+			background-color: var(--color-info-500);
+		}
+	}
+
+	&.-info.-loading {
+		.message-loader {
+			background-color: var(--color-white);
+		}
+	}
+
+	&.-success-secondary.-loading {
+		.message-loader {
+			background-color: var(--color-success-500);
+		}
+	}
+
+	&.-success.-loading {
+		.message-loader {
+			background-color: var(--color-success-300);
+		}
+	}
+
+	&.-warning.-loading {
+		.message-loader {
+			background-color: var(--color-warning-300);
+		}
+	}
+
+	&.-error.-loading {
+		.message-loader {
+			background-color: var(--brand-secondary-2);
+		}
+	}
+
+	.message-body {
+		padding: 0 $right-padding $spacing-5 $left-padding;
+	}
+
+	&.-loading {
+		.message-body {
+			position: relative;
+		}
+
+		.message-loader {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			// Pequeño hack para que la animación quede bien
+			left: 0;
+			width: 2%;
+			height: $spacing-1;
+			border-radius: 0 $border-radius-4 $border-radius-4 0;
+			transform-origin: 0 0;
+			animation: eva-message-toast-loading 5s infinite;
+		}
+	}
+
+	&.-with-button {
+		&.-no-title {
+			.message-body {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: baseline;
+				row-gap: $spacing-4;
+				padding-right: $spacing-5;
+			}
+
+			.message-text {
+				margin-right: $spacing-3;
+			}
+
+			.message-action {
+				margin-top: 0;
+				margin-left: auto;
+			}
+		}
+
+		.message-body {
+			padding-right: $spacing-5;
+		}
+
+		.message-close {
+			display: none;
+		}
+	}
+}
+
+@include breakpoint("large", "up") {
+	.eva-#{$version}-message--toast {
+		.message-title {
+			@include eva-text-as("h5");
+		}
+	}
+}
+
+// Keyframe
+@include keyframes(eva-message-toast-loading) {
+	0% {
+		width: 2%;
+	}
+
+	100% {
+		width: 100%;
+	}
+}

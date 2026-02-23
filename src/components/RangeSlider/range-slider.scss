@@ -1,0 +1,78 @@
+@import "../../scss/eva-core";
+
+$slider-handler-size-mobile: 48px;
+$slider-handler-size-desktop: 20px;
+$slider-handler-size-desktop-half: calc(#{$slider-handler-size-desktop} / 2);
+$slider-handler-size-mobile-half:  calc(#{$slider-handler-size-mobile} / 2);
+$slider-bar-height-mobile: $spacing-2;
+$slider-bar-height-desktop: $spacing-1;
+
+.eva-#{$version}-range-slider {
+	// CSS3 Variables
+	--eva-slider-range-left-handler-position: 0%;
+	--eva-slider-range-right-handler-position: 100%;
+	--eva-slider-range-width: calc(var(--eva-slider-range-right-handler-position) - var(--eva-slider-range-left-handler-position));
+	position: relative;
+	height: $slider-bar-height-mobile;
+	margin: $spacing-2 $spacing-4;
+	padding: 0;
+	border-radius: $border-radius-3;
+	background-color: var(--color-neutral-300);
+
+	.slider-bar {
+		position: relative;
+		width: calc(100% - #{$slider-handler-size-mobile});
+		height: 100%;
+		border-radius: $border-radius-2;
+	}
+
+	.slider-range {
+		position: absolute;
+		left: var(--eva-slider-range-left-handler-position);
+		width: calc(var(--eva-slider-range-width) + #{$slider-handler-size-mobile-half});
+		height: 100%;
+		margin-left: 1px;
+		background-color: var(--brand-primary-2);
+	}
+
+	.slider-handler {
+		position: absolute;
+		top: 50%;
+		width: $slider-handler-size-mobile;
+		height: $slider-handler-size-mobile;
+		border-radius: $border-radius-half;
+		background-color: var(--brand-primary-3);
+		transform: translateY(-50%);
+		cursor: pointer;
+
+		&:focus-visible {
+			@include eva-focus;
+		}
+
+		&.-left {
+			left: var(--eva-slider-range-left-handler-position);
+		}
+
+		&.-right {
+			left: var(--eva-slider-range-right-handler-position);
+		}
+	}
+
+	@include breakpoint("medium", "up") {
+		height: $slider-bar-height-desktop;
+		margin: $spacing-2 0;
+
+		.slider-bar {
+			width: calc(100% - #{$slider-handler-size-desktop});
+		}
+
+		.slider-handler {
+			width: $slider-handler-size-desktop;
+			height: $slider-handler-size-desktop;
+		}
+
+		.slider-range {
+			width: calc(var(--eva-slider-range-width) + #{$slider-handler-size-desktop-half});
+		}
+	}
+}

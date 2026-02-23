@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button – Eva Design System</title>
+    <!-- Eva CSS (adjust path relative to your server root) -->
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <!-- ── Default ─────────────────────────────────────────── -->
+    <section>
+      <h2>Default</h2>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -primary">
+          <em class="btn-text">Ver Detalle</em>
+        </button>
+      </div>
+    </section>
+
+    <!-- ── Variants ────────────────────────────────────────── -->
+    <section>
+      <h2>Variants</h2>
+      <span class="label">primary</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -primary"><em class="btn-text">Ver Detalle</em></button>
+        <button type="button" class="eva-3-btn -md -primary"><em class="btn-text">Ver Detalle</em></button>
+      </div>
+      <span class="label">secondary</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -secondary"><em class="btn-text">Ver Detalle</em></button>
+        <button type="button" class="eva-3-btn -md -secondary"><em class="btn-text">Ver Detalle</em></button>
+      </div>
+      <span class="label">link</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -link"><em class="btn-text">Ver Detalle</em></button>
+        <button type="button" class="eva-3-btn -md -link"><em class="btn-text">Ver Detalle</em></button>
+      </div>
+      <span class="label">dark</span>
+      <div class="row dark-bg">
+        <button type="button" class="eva-3-btn -lg -dark"><em class="btn-text">Ver Detalle</em></button>
+        <button type="button" class="eva-3-btn -md -dark"><em class="btn-text">Ver Detalle</em></button>
+      </div>
+      <span class="label">white</span>
+      <div class="row dark-bg">
+        <button type="button" class="eva-3-btn -lg -white"><em class="btn-text">Ver Detalle</em></button>
+        <button type="button" class="eva-3-btn -md -white"><em class="btn-text">Ver Detalle</em></button>
+      </div>
+    </section>
+
+    <!-- ── States ──────────────────────────────────────────── -->
+    <section>
+      <h2>States</h2>
+      <span class="label">disabled</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -primary -disable" disabled><em class="btn-text">Ver Detalle</em></button>
+        <button type="button" class="eva-3-btn -lg -secondary -disable" disabled><em class="btn-text">Ver Detalle</em></button>
+      </div>
+      <span class="label">loading</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -primary -loading">
+          <em class="btn-text">Ver Detalle</em>
+          <span class="btn-status">Cargando</span>
+        </button>
+        <button type="button" class="eva-3-btn -lg -secondary -loading">
+          <em class="btn-text">Ver Detalle</em>
+          <span class="btn-status">Cargando</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ── With Icon ───────────────────────────────────────── -->
+    <section>
+      <h2>With Icon</h2>
+      <span class="label">icon left</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -primary">
+          <i class="eva-3-icon -star btn-icon"></i>
+          <em class="btn-text">Favorito</em>
+        </button>
+      </div>
+      <span class="label">next (icon right)</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -primary">
+          <em class="btn-text">Continuar</em>
+          <i class="eva-3-icon -chevron-right btn-icon"></i>
+        </button>
+      </div>
+      <span class="label">icon only (circle)</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -lg -primary -circle">
+          <i class="eva-3-icon -edit btn-icon"></i>
+        </button>
+        <button type="button" class="eva-3-btn -md -secondary -circle">
+          <i class="eva-3-icon -search btn-icon"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ── As Anchor ───────────────────────────────────────── -->
+    <section>
+      <h2>As Anchor (<code>href</code>)</h2>
+      <div class="row">
+        <a href="#" class="eva-3-btn -lg -primary"><em class="btn-text">Ver Detalle</em></a>
+        <a href="#" class="eva-3-btn -lg -secondary"><em class="btn-text">Ver Detalle</em></a>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+
+// Variables del label container
+$label-container-border_radius-size: 8px;
+$label-container-border_radius-half: 24px;
+$label-container-min_width: $spacing-10;
+$label-container-height-sm: $spacing-7;
+$label-container-height-md: $spacing-8;
+$label-container-height-lg: $spacing-9;
+$label-container-padding-sides-sm: $spacing-2;
+$label-container-padding-sides-md: $spacing-3;
+$label-container-padding-sides-lg: $spacing-4;
+
+// Icono
+$icon-width-sm: $spacing-4;
+$icon-height-sm: $icon-width-sm;
+$icon-width-md: $spacing-4;
+$icon-height-md: $icon-width-md;
+$icon-width-lg: $spacing-5;
+$icon-height-lg: $icon-width-lg;
+$icon-font-size-sm: 16px;
+$icon-font-size-md: 16px;
+$icon-font-size-lg: 20px;
+
+// Tamaño del tail
+$tail-width-md: $spacing-4;
+$tail-height-md: $spacing-3;
+$tail-width-sm: $spacing-3;
+$tail-height-sm: $spacing-2;
+
+// Espacio donde va el tail
+$label-tail-space-sm: $tail-height-sm;
+$label-tail-space-md: $tail-height-md;
+
+// Color del label
+$label-green: var(--color-success-500);
+$label-purple: var(--brand-primary-4);
+$label-loyalty: var(--eva-loyalty-primary-300);
+$label-secret-deals: var(--color-white);
+
+@mixin label-tail($position, $color, $width, $height) {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+
+	@if $position == "top-left" {
+		border-width: $height 0 0 $width;
+		border-color: transparent transparent transparent $color;
+	} @else if $position == "top-right" {
+		border-width: 0 0 $height $width;
+		border-color: transparent transparent $color transparent;
+	} @else if $position == "bottom-left" {
+		border-width: $height $width 0 0;
+		border-color: $color transparent transparent transparent;
+	} @else if $position == "bottom-right" {
+		border-width: 0 $width $height 0;
+		border-color: transparent $color transparent transparent;
+	}
+}

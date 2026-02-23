@@ -1,0 +1,45 @@
+@import "../../scss/eva-core";
+
+// @mixin responsive-label($size, $min, $max) {
+// 	@media (min-width: $min) and (max-width: $max) {
+// 		&.-#{$size}-small {
+// 			font-size: 12px;
+// 		}
+
+// 		&.-#{$size}-medium {
+// 			font-size: 14px;
+// 		}
+
+// 		&.-#{$size}-large {
+// 			font-size: 14px;
+// 		}
+// 	}
+// }
+
+// Label-form
+.eva-#{$version}-label-form {
+	// responsive small label
+	//@include responsive-label("sm", 1px, 767px);
+	// responsive medium label
+	//@include responsive-label("md", 768px , 1023px);
+	// responsive large label
+	//@include responsive-label("lg", 1024px, 2048px);
+	display: inline-block;
+	color: var(--color-neutral-800);
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1pt;
+
+	&.-sm {
+		font-size: 12px;
+	}
+
+	&.-md {
+		font-size: 14px;
+	}
+
+	&.-lg {
+		font-size: 14px;
+	}
+}

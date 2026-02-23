@@ -1,0 +1,153 @@
+@import "../../scss/eva-core";
+
+// Settings
+$input-tag-height: $spacing-14;
+
+@mixin label-up {
+	@include eva-text-as("caption");
+	transform: translateY(-18px);
+}
+
+// Input field
+.eva-#{$version}-input-field {
+	.input-container {
+		position: relative;
+	}
+
+	.input-tag {
+		@include eva-text-as("body-2");
+		box-sizing: border-box;
+		width: 100%;
+		height: $input-tag-height;
+		padding: $spacing-4;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: $border-radius-4;
+		border-color: var(--color-neutral-600);
+		box-shadow: none;
+		color: var(--color-neutral-800);
+		font-family: var(--font-family), Arial, sans-serif;
+		transition: border-color 0.3s ease-out;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+
+		&:hover:not(:disabled) {
+			outline: 2px solid var(--color-neutral-600);
+			outline-offset: -2px;
+		}
+
+		&:focus, &:focus-visible {
+			@include eva-focus($offset: "inside");
+		}
+
+		&:focus, &:focus-visible,
+		&:not(:placeholder-shown) {
+			padding-top: $spacing-8;
+
+			& + .input-label {
+				@include label-up;
+			}
+		}
+
+		&:disabled {
+			border-color: var(--color-neutral-400);
+			background-color: var(--color-neutral-400);
+			color: var(--color-neutral-600);
+			cursor: default;
+
+			~ .input-icon {
+				color: var(--color-neutral-600);
+			}
+		}
+
+		&::placeholder {
+			opacity: 0;
+		}
+	}
+
+	.input-label {
+		@include eva-text-as("body-2");
+		position: absolute;
+		top: 50%;
+		left: $spacing-4;
+		color: var(--color-neutral-600);
+		transform: translateY(-50%);
+		transition: all 0.2s ease-out;
+	}
+
+	.input-icon {
+		position: absolute;
+		top: 50%;
+		right: $spacing-4;
+		color: var(--color-neutral-800);
+		font-size: 20px;
+		transform: translateY(-50%);
+	}
+
+	// Workaround para safari que utiliza mal el :placeholder-shown
+	// esta clase fuerza al label a estar en su estado default, sin texto en el input
+	&.-empty {
+		.input-tag {
+			& + .input-label {
+				@include eva-text-as("body-2");
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	// esta clase fuerza al label a estar en su estado final, con texto en el input
+	&.-not-empty {
+		.input-label {
+			@include label-up;
+		}
+	}
+
+	&.-invalid {
+		.input-tag:not(:disabled) {
+			border-color: var(--color-error-500);
+
+			&:focus, &:focus-visible {
+				@include eva-focus($color: "error", $offset: "inside");
+			}
+
+			~ .input-label {
+				color: var(--color-error-500);
+			}
+		}
+	}
+
+	&.-readonly {
+		.input-tag:not(:placeholder-shown), .input-tag[readonly] {
+			background-color: var(--color-neutral-100);
+			cursor: default;
+
+			&:focus, &:focus-visible {
+				outline-color: var(--color-neutral-600) !important;
+			}
+		}
+	}
+
+	&.-icon {
+		&.-left {
+			.input-tag {
+				padding-right: $spacing-4;
+				padding-left: $spacing-11;
+			}
+
+			.input-label {
+				padding-left: calc($spacing-11 - $spacing-4);
+			}
+
+			.input-icon {
+				right: auto;
+				left: $spacing-4;
+			}
+		}
+
+		.input-tag {
+			padding-right: $spacing-13;
+		}
+	}
+}
