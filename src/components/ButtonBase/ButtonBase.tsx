@@ -30,7 +30,7 @@ const ButtonBase: React.FC<ButtonBaseProps> = ({
   size = 'lg',
   variant = 'primary',
   disabled = false,
-  children = 'Ver detalle',
+  children,
   loading = false,
   className = '',
   iconOnly = false,
@@ -51,7 +51,7 @@ const ButtonBase: React.FC<ButtonBaseProps> = ({
       {icon && typeof icon === 'string' && (
         <Icon icon={icon as IconName} className="btn-icon" />
       )}
-      <em className="btn-text">{children}</em>
+      {children != null && <em className="btn-text">{children}</em>}
       {next && <Icon icon="chevron-right" className="btn-icon" />}
       {loading && <span className="btn-status">{loadingText}</span>}
     </>

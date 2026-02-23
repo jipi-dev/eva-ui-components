@@ -25,14 +25,16 @@ Nuestro sistema contempla botones con diferencias en el uso de color, tamaño y 
 
 ## Estructura HTML
 
+> **`{text}`** representa el texto del button container — el contenido literal escrito entre las etiquetas `<button>…</button>`. No es un placeholder fijo: se reemplaza dinámicamente por lo que cada instancia del botón contenga (`"Comprar"`, `"Cancelar"`, `"Ver detalle"`, etc.).
+
 ### Estructura Base
 
 ```html
 <button class="eva-3-btn [tamaño] [variante] [estados] [clases-adicionales]">
   <!-- Ícono opcional al inicio -->
   <i class="[clase-icono] btn-icon"></i>
-  <!-- Texto del botón -->
-  <em class="btn-text">[texto]</em>
+  <!-- Texto del botón: viene del contenido del container -->
+  <em class="btn-text">{text}</em>
   <!-- Ícono siguiente opcional -->
   <i class="eva-3-icon-chevron-right btn-icon"></i>
   <!-- Estado de carga opcional -->
@@ -61,7 +63,7 @@ Botón principal utilizado para acciones primarias con color de marca primario.
 **HTML:**
 ```html
 <button class="eva-3-btn -lg -primary">
-  <em class="btn-text">Botón Primario</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -75,7 +77,7 @@ Botón secundario para acciones alternativas con color de marca secundario.
 **HTML:**
 ```html
 <button class="eva-3-btn -lg -secondary">
-  <em class="btn-text">Botón Secundario</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -89,7 +91,7 @@ Botón estilo enlace, sin fondo. Se usa para acciones que no requieren énfasis 
 **HTML:**
 ```html
 <button class="eva-3-btn -lg -link">
-  <em class="btn-text">Botón Link</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -103,7 +105,7 @@ Botón blanco, usado sobre fondos oscuros.
 **HTML:**
 ```html
 <button class="eva-3-btn -lg -white">
-  <em class="btn-text">Botón White</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -117,7 +119,7 @@ Botón dark, solo para contexto Loyalty. Esta variante está diseñada específi
 **HTML:**
 ```html
 <button class="eva-3-btn -lg -dark">
-  <em class="btn-text">Botón Dark</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -130,14 +132,14 @@ Tamaño mediano (opcional, es el valor por defecto).
 
 ```html
 <button class="eva-3-btn -md -primary">
-  <em class="btn-text">Medium</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
 **Sin especificar tamaño (default a md):**
 ```html
 <button class="eva-3-btn -primary">
-  <em class="btn-text">Medium (por defecto)</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -148,7 +150,7 @@ Tamaño grande (opcional).
 
 ```html
 <button class="eva-3-btn -lg -primary">
-  <em class="btn-text">Large</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -161,7 +163,7 @@ Estado normal interactivo.
 
 ```html
 <button class="eva-3-btn -lg -primary">
-  <em class="btn-text">Button</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -173,7 +175,7 @@ Botón deshabilitado (usa atributo `disabled` de HTML).
 
 ```html
 <button class="eva-3-btn -lg -primary -disable" disabled>
-  <em class="btn-text">Botón Deshabilitado</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -200,7 +202,7 @@ El ícono puede estar al inicio del texto.
 ```html
 <button class="eva-3-btn -lg -primary">
   <i class="eva-3-icon-edit btn-icon"></i>
-  <em class="btn-text">Botón</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -209,7 +211,7 @@ El ícono puede estar al inicio del texto.
 
 ```html
 <button class="eva-3-btn -lg -primary">
-  <em class="btn-text">Ver detalle</em>
+  <em class="btn-text">{text}</em>
   <i class="eva-3-icon-chevron-right btn-icon"></i>
 </button>
 ```
@@ -240,7 +242,7 @@ El botón puede renderizarse como un elemento `<a>` si se proporciona un `href` 
 
 ```html
 <a href="/ruta" class="eva-3-btn -lg -primary">
-  <em class="btn-text">Ir a página</em>
+  <em class="btn-text">{text}</em>
 </a>
 ```
 
@@ -291,7 +293,7 @@ El botón acepta todos los atributos HTML estándar:
 ```html
 <button class="eva-3-btn -lg -primary">
   <i class="eva-3-icon-save btn-icon"></i>
-  <em class="btn-text">Guardar</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -299,7 +301,7 @@ El botón acepta todos los atributos HTML estándar:
 
 ```html
 <button class="eva-3-btn -lg -secondary -disable" disabled>
-  <em class="btn-text">Cancelar</em>
+  <em class="btn-text">{text}</em>
 </button>
 ```
 
@@ -323,7 +325,7 @@ El botón acepta todos los atributos HTML estándar:
 
 ```html
 <button class="eva-3-btn -lg -primary">
-  <em class="btn-text">Ver detalle</em>
+  <em class="btn-text">{text}</em>
   <i class="eva-3-icon-chevron-right btn-icon"></i>
 </button>
 ```
@@ -332,7 +334,7 @@ El botón acepta todos los atributos HTML estándar:
 
 ```html
 <a href="/productos" class="eva-3-btn -lg -primary">
-  <em class="btn-text">Ver productos</em>
+  <em class="btn-text">{text}</em>
 </a>
 ```
 

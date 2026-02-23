@@ -55,7 +55,7 @@ const Button: React.FC<ButtonProps> = ({
   variant,
   disabled = false,
   loading = false,
-  children = 'Ver Detalle',
+  children,
   className = '',
   iconOnly = false,
   onClick,
