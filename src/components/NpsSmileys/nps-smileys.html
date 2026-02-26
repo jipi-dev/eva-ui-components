@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NpsSmileys – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>NpsSmileys</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-nps-smileys">
+        <p class="nps-label">La confianza que te brindamos</p>
+        <div class="nps-scores">
+          <div class="smileys-container">
+            <label class="smile-score" title="Nada Satisfecho">
+              <input type="radio" name="nps-score" data-value="mad" />
+              <i class="smile-icon -smiley-mad"></i>
+              <span class="smile-value">Nada Satisfecho</span>
+            </label>
+            <label class="smile-score" title="Poco Satisfecho">
+              <input type="radio" name="nps-score" data-value="sad" />
+              <i class="smile-icon -smiley-sad"></i>
+              <span class="smile-value">Poco Satisfecho</span>
+            </label>
+            <label class="smile-score" title="Indiferente">
+              <input type="radio" name="nps-score" data-value="neutral" />
+              <i class="smile-icon -smiley-neutral"></i>
+              <span class="smile-value">Indiferente</span>
+            </label>
+            <label class="smile-score" title="Satisfecho">
+              <input type="radio" name="nps-score" data-value="happy" />
+              <i class="smile-icon -smiley-happy"></i>
+              <span class="smile-value">Satisfecho</span>
+            </label>
+            <label class="smile-score" title="Muy Satisfecho">
+              <input type="radio" name="nps-score" data-value="very-happy" />
+              <i class="smile-icon -smiley-very-happy"></i>
+              <span class="smile-value">Muy Satisfecho</span>
+            </label>
+          </div>
+          <label class="nps-not-apply">
+            <input type="checkbox" value="no-aplica" />
+            <span>No aplica</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con smiley seleccionado</h2>
+      <div class="eva-3-nps-smileys">
+        <p class="nps-label">¿Cómo fue tu experiencia?</p>
+        <div class="nps-scores">
+          <div class="smileys-container">
+            <label class="smile-score" title="Muy Satisfecho">
+              <input type="radio" name="nps-score-2" data-value="very-happy" checked />
+              <i class="smile-icon -smiley-very-happy -active"></i>
+              <span class="smile-value">Muy Satisfecho</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

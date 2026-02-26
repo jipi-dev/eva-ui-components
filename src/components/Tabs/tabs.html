@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Tabs</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-tabs -no-stroke">
+        <div class="tabs-nav-corners-container">
+          <div class="tabs-nav-container">
+            <ul class="tabs-nav">
+              <li class="tabs-nav-item -active">Vuelos</li>
+              <li class="tabs-nav-item">Hoteles</li>
+              <li class="tabs-nav-item">Paquetes</li>
+              <li class="tabs-nav-item -disabled">Cruceros</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tabs-container">
+          <div class="tab-content -active"><div class="tab-inner-content">Contenido de Vuelos</div></div>
+          <div class="tab-content"><div class="tab-inner-content">Contenido de Hoteles</div></div>
+          <div class="tab-content"><div class="tab-inner-content">Contenido de Paquetes</div></div>
+          <div class="tab-content"><div class="tab-inner-content">Cruceros (deshabilitado)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con subtítulos</h2>
+      <div class="eva-3-tabs -no-stroke">
+        <div class="tabs-nav-corners-container">
+          <div class="tabs-nav-container">
+            <ul class="tabs-nav">
+              <li class="tabs-nav-item -active -subtitle">
+                <span class="tab-label">Economy</span>
+                <span class="tab-label">Clase turista</span>
+              </li>
+              <li class="tabs-nav-item -subtitle">
+                <span class="tab-label">Business</span>
+                <span class="tab-label">Clase ejecutiva</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

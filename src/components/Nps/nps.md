@@ -7,6 +7,17 @@ Módulo para capturar Net Promoter Score (0-10) con labels, slider y tooltip par
 **Categoría:** Reviews  
 **Tags:** net promoter score, feedback, review, calificacion, opinion, qualification
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Estructura HTML
 ```html
 <div class="eva-3-nps -selected-7">

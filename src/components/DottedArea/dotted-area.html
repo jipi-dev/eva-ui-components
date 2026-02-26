@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DottedArea – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>DottedArea</h1>
+
+    <section>
+      <h2>Default</h2>
+      <label class="eva-3-dotted-area" for="da-default">
+        <div class="message">
+          <div class="message-icon"><i class="eva-3-icon-upload"></i></div>
+          <p><span class="eva-3-heading -link">Cargá los documentos</span> o arrastralos a esta sección.</p>
+          <p>Hasta 5 MB y en formato pdf, bmp, jpeg, jpg o png.</p>
+        </div>
+        <input class="-eva-3-hide" type="file" id="da-default" accept=".bmp,.pdf,.jpeg,.jpg,.png" />
+      </label>
+    </section>
+
+    <section>
+      <h2>Arrastrando (-dragging)</h2>
+      <label class="eva-3-dotted-area -dragging" for="da-dragging">
+        <div class="message">
+          <div class="message-icon"><i class="eva-3-icon-upload"></i></div>
+          <p>Soltá el archivo aquí.</p>
+        </div>
+        <input class="-eva-3-hide" type="file" id="da-dragging" />
+      </label>
+    </section>
+  </body>
+</html>

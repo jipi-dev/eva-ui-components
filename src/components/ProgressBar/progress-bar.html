@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProgressBar – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>ProgressBar</h1>
+
+    <section>
+      <h2>Porcentajes</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:400px">
+        <span class="label">25%</span>
+        <div class="eva-3-progress-bar">
+          <div class="progress-bar-content" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" style="width:25%"></div>
+        </div>
+        <span class="label">65%</span>
+        <div class="eva-3-progress-bar">
+          <div class="progress-bar-content -eva-3-bc-green-3" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" style="width:65%"></div>
+        </div>
+        <span class="label">100%</span>
+        <div class="eva-3-progress-bar">
+          <div class="progress-bar-content" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" style="width:100%"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

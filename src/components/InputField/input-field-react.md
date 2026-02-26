@@ -8,6 +8,17 @@ Campo de texto con label flotante. El label funciona como placeholder cuando est
 **Categoría:** Forms / Controls  
 **Tags:** react, input-field, floating label, icon, invalid, readonly
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Formularios donde el label debe permanecer visible sin ocupar espacio adicional.
 - Casos donde se necesita ícono integrado o estado de error inline.

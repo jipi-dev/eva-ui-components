@@ -12,6 +12,17 @@ Modal de pantalla completa para flujos complejos, con header, soporte de breadcr
 **Categoría:** Overlays / Fullscreen  
 **Tags:** react, modal, fullscreen, breadcrumb, overlay, close-on-left
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Flujos que requieren gran superficie (tablas, formularios extensos, configuraciones).
 - Casos mobile donde el modal convencional resulta estrecho.

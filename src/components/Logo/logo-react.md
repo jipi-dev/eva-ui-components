@@ -7,6 +7,17 @@ Componente React para renderizar los logos de Despegar/Decolar. Los logos se sir
 **Categoría:** Brand / Identity  
 **Tags:** react, logo, despegar, decolar, isologo, symbol, svg, staticontent
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Cabeceras, footers o lugares donde debas mostrar identidad de marca.
 - Variantes blancas sobre fondos oscuros; primarias sobre fondos claros.

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RangeSlider – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>RangeSlider</h1>
+
+    <section>
+      <h2>Rango doble (default)</h2>
+      <div
+        class="eva-3-range-slider"
+        style="--eva-slider-range-left-handler-position:20%;--eva-slider-range-right-handler-position:80%"
+        role="slider"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="20"
+      >
+        <div class="slider-bar">
+          <div class="slider-range"></div>
+          <div class="slider-handler -left" draggable="true"></div>
+          <div class="slider-handler -right" draggable="false"></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#555;margin-top:.5rem">
+        <span>$0</span><span>$100.000</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Modo simple (un handler)</h2>
+      <div
+        class="eva-3-range-slider -single"
+        style="--eva-slider-range-left-handler-position:0%;--eva-slider-range-right-handler-position:60%"
+        role="slider"
+      >
+        <div class="slider-bar">
+          <div class="slider-range"></div>
+          <div class="slider-handler -right" draggable="true"></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#555;margin-top:.5rem">
+        <span>0 km</span><span>10 km</span>
+      </div>
+    </section>
+  </body>
+</html>

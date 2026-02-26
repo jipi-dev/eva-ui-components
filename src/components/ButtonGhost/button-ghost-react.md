@@ -8,6 +8,17 @@ Componente React para botón ghost de EVA UI.
 **Categoría:** Actions / Buttons  
 **Tags:** react, ghost, button, secondary, outline, loading, disabled
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Acciones secundarias/terciarias con menor peso visual que un botón sólido.
 - Sobre fondos claros u oscuros ajustando `variant` (`lighten/darken/white-loyalty`).

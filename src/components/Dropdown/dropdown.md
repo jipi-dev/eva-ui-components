@@ -4,6 +4,17 @@
 
 Row colapsable que oculta información desplegable mediante clic/tap. Muestra un título siempre visible con ícono chevron; al activar (clase `-active`), despliega lista de items (`dropdown-subitem`). Soporta integración con `ViewMore` para opciones adicionales ocultas.
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Estructura HTML
 
 ```html

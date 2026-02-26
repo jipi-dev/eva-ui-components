@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EmptyStateMessage – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>EmptyStateMessage</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-empty-state-message">
+        <div class="empty-state-message-container">
+          <div class="empty-state-message-image"></div>
+          <div class="empty-state-message-content">
+            <div class="eva-3-heading -h3 empty-state-message-title">No hay resultados</div>
+            <p class="eva-3-heading -body-1 empty-state-message-description">Solo podemos buscar vuelos 330 días antes de tu fecha.</p>
+            <div class="empty-state-message-button">
+              <button class="eva-3-btn -lg -primary">Volar a Neuquén</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Box layout (-box-layout)</h2>
+      <div class="eva-3-empty-state-message -box-layout">
+        <div class="empty-state-message-container">
+          <div class="empty-state-message-image"></div>
+          <div class="empty-state-message-content">
+            <div class="eva-3-heading -h3 empty-state-message-title">Sección en mantenimiento</div>
+            <p class="eva-3-heading -body-1 empty-state-message-description">Intenta de nuevo en unos instantes.</p>
+            <div class="empty-state-message-button">
+              <button class="eva-3-btn -lg -primary">Reintentar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Error state (-error-state)</h2>
+      <div class="eva-3-empty-state-message -error-state">
+        <div class="empty-state-message-container">
+          <div class="empty-state-message-image"></div>
+          <div class="empty-state-message-content">
+            <div class="eva-3-heading -h3 empty-state-message-title">Algo salió mal</div>
+            <p class="eva-3-heading -body-1 empty-state-message-description">Hubo un problema al cargar los resultados.</p>
+            <div class="empty-state-message-button">
+              <button class="eva-3-btn -lg -primary">Volver a intentar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Vertical (-vertical)</h2>
+      <div class="eva-3-empty-state-message -vertical" style="max-width:360px">
+        <div class="empty-state-message-container">
+          <div class="empty-state-message-image"></div>
+          <div class="empty-state-message-content">
+            <div class="eva-3-heading -h3 empty-state-message-title">Sin resultados</div>
+            <p class="eva-3-heading -body-1 empty-state-message-description">Probá con otros filtros.</p>
+            <div class="empty-state-message-button">
+              <button class="eva-3-btn -lg -primary">Aceptar</button>
+              <button class="eva-3-btn -lg -link">Omitir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReSearch – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>ReSearch</h1>
+
+    <section>
+      <h2>Mostrando resumen (-show)</h2>
+      <div class="eva-3-re-search -eva-3-shadow-static-hover -show">
+        <ul class="re-search-container">
+          <li class="re-search-item">
+            <i class="eva-3-icon-location re-search-item-icon"></i>
+            <span class="origin">Buenos Aires</span>
+            <span> | </span>
+            <span class="destination">Bariloche</span>
+          </li>
+          <li class="re-search-item">
+            <i class="eva-3-icon-calendar re-search-item-icon"></i>
+            <span class="item-date-container">Sáb, 18 Ago 2024</span>
+          </li>
+          <li class="re-search-item">
+            <i class="eva-3-icon-user re-search-item-icon"></i>
+            <span>2 adultos</span>
+          </li>
+          <li class="re-search-item re-search-action">
+            <button class="eva-3-btn-ghost -md">
+              <i class="eva-3-icon-search"></i>Buscar
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Modos múltiples columnas (-multiple-columns)</h2>
+      <div class="eva-3-re-search -multiple-columns -show">
+        <div class="re-search-container">
+          <div class="re-search-main-col">
+            <ul>
+              <li class="re-search-item">
+                <i class="eva-3-icon-location re-search-item-icon"></i>
+                <span>Buenos Aires · Bariloche</span>
+              </li>
+              <li class="re-search-item">
+                <i class="eva-3-icon-calendar re-search-item-icon"></i>
+                <span>18 Ago · 25 Ago · 2 adultos</span>
+              </li>
+            </ul>
+          </div>
+          <div class="re-search-aside">
+            <button class="eva-3-btn-ghost -md"><i class="eva-3-icon-search"></i>Modificar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

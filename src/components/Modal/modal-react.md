@@ -13,6 +13,17 @@ Modal estándar con header opcional, tamaños (`sm/default`), variantes de close
 **Categoría:** Overlays / Dialogs  
 **Tags:** react, modal, dialog, overlay, header, footer, sticky, close-on-outside
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Bloquear la atención para confirmaciones, formularios cortos o contenido destacado.
 - Mostrar información que requiere foco sin navegar a otra página.

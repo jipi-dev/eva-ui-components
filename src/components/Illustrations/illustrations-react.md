@@ -8,6 +8,17 @@ Componente React que renderiza ilustraciones e iconos ilustrados desde staticont
 **Categoría:** Media / Illustrations  
 **Tags:** react, illustrations, scene, icon, composition, staticontent, brand, version
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Mostrar escenas o íconos ilustrados en estados vacíos, onboarding o mensajes destacados.
 - Necesidad de activos de marca versionados desde CDN.

@@ -8,6 +8,17 @@ Botón para autenticación/acciones sociales. Variantes por marca y tamaños `md
 **Categoría:** Actions / Buttons  
 **Tags:** react, social, oauth, login, share, google, facebook, twitter, x, loading, disabled
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Flujos de login/social auth (`Ingresá con ...`).
 - Acciones sociales (share) donde se requiere branding de proveedor.

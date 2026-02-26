@@ -4,6 +4,17 @@
 
 Mensaje mostrado cuando no hay resultados disponibles o hay un error. Presenta ilustración/ícono, título, descripción opcional y botones de acción. Soporta múltiples layouts (default, box, vertical) y estados (default, error-state).
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Estructura HTML
 
 ```html

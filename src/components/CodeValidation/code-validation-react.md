@@ -8,6 +8,17 @@ Molécula de 6 celdas para ingresar códigos de verificación. Usa `Input` (un c
 **Categoría:** Forms / Verification  
 **Tags:** react, code, otp, validation, inline error, 2fa, 6-digit
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Ingreso de códigos OTP/2FA o validaciones de 6 dígitos/letras.
 - Flujos de seguridad, recuperación de cuenta o confirmación de contacto.

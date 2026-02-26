@@ -12,6 +12,17 @@ Alerta informativa con variantes (info/success/warning/error y secundarias), sop
 **Categoría:** Feedback / Alerts  
 **Tags:** react, message, alert, info, success, warning, error, dismissible, collapsible
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Mostrar alertas en página con título + cuerpo y acciones opcionales.
 - Estados informativos, éxito, advertencia o error en formularios y flujos.

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Comment</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-comment" style="max-width:600px">
+        <div class="comment-header">
+          <div class="comment-flag-container">
+            <div class="eva-3-flag comment-flag -arg"></div>
+          </div>
+          <div class="comment-header-text">
+            <span class="comment-name">Nombre del Usuario</span>
+            <span class="comment-info">
+              <span class="comment-filter">Viajó en Familia</span>
+              <span class="comment-date"> · Febrero 2024</span>
+            </span>
+          </div>
+          <div class="comment-rating">
+            <span class="comment-rating-number">
+              <div class="eva-3-rating -md -good">9,3</div>
+            </span>
+            <span class="comment-rating-text">Huésped verificado</span>
+          </div>
+        </div>
+        <div class="comment-items">
+          <div class="comment-item -pos">
+            <i class="eva-3-icon-checkmark comment-icon"></i>
+            <div class="comment-text-container">
+              <div class="comment-text-subcontainer">
+                <p class="comment-text">Atención excelente, habitación limpia y cómoda. Vista al mar impresionante.</p>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item -neg">
+            <i class="eva-3-icon-cross comment-icon"></i>
+            <div class="comment-text-container">
+              <div class="comment-text-subcontainer">
+                <p class="comment-text">El desayuno podría mejorar la variedad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con "Ver más" (-read-more)</h2>
+      <div class="eva-3-comment" style="max-width:600px">
+        <div class="comment-header">
+          <div class="comment-header-text">
+            <span class="comment-name">Ana Martínez</span>
+            <span class="comment-info"><span class="comment-date">Marzo 2024</span></span>
+          </div>
+          <div class="comment-rating">
+            <div class="eva-3-rating -md -good">8,5</div>
+          </div>
+        </div>
+        <div class="comment-items">
+          <div class="comment-item -pos -read-more">
+            <i class="eva-3-icon-checkmark comment-icon"></i>
+            <div class="comment-text-container">
+              <div class="comment-text-subcontainer">
+                <p class="comment-text">Excelente ubicación céntrica. Personal muy amable y servicial en todo momento.<span role="presentation" class="comment-text-less">Ver menos</span></p>
+              </div>
+              <span class="comment-text-more-dots">...<span role="presentation" class="comment-text-more">Ver más</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cargando</h2>
+      <div class="eva-3-comment -loading" style="max-width:600px">
+        <div class="comment-items">
+          <div class="comment-items-overlay">
+            <div class="eva-3-loader comment-items-loader"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

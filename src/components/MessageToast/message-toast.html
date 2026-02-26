@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MessageToast – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>MessageToast</h1>
+
+    <section>
+      <h2>Variantes Toast</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:370px">
+        <div class="eva-3-message eva-3-message--toast -info">
+          <i class="eva-3-icon -cross message-close"></i>
+          <div class="message-icon-container">
+            <i class="eva-3-icon -info-circle-filled message-icon"></i>
+          </div>
+          <div class="message-header"><h5 class="message-title">Información</h5></div>
+          <div class="message-body"><div class="message-text">Mensaje informativo temporal.</div></div>
+        </div>
+
+        <div class="eva-3-message eva-3-message--toast -success">
+          <i class="eva-3-icon -cross message-close"></i>
+          <div class="message-icon-container">
+            <i class="eva-3-icon -checkmark-circle-filled message-icon"></i>
+          </div>
+          <div class="message-header"><h5 class="message-title">Éxito</h5></div>
+          <div class="message-body"><div class="message-text">Tu reserva fue confirmada.</div></div>
+        </div>
+
+        <div class="eva-3-message eva-3-message--toast -warning">
+          <i class="eva-3-icon -cross message-close"></i>
+          <div class="message-icon-container">
+            <i class="eva-3-icon -warning-filled message-icon"></i>
+          </div>
+          <div class="message-header"><h5 class="message-title">Advertencia</h5></div>
+          <div class="message-body"><div class="message-text">El tiempo de sesión está por vencer.</div></div>
+        </div>
+
+        <div class="eva-3-message eva-3-message--toast -error">
+          <i class="eva-3-icon -cross message-close"></i>
+          <div class="message-icon-container">
+            <i class="eva-3-icon -error-circle-filled message-icon"></i>
+          </div>
+          <div class="message-header"><h5 class="message-title">Error</h5></div>
+          <div class="message-body"><div class="message-text">No se pudo procesar el pago.</div></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

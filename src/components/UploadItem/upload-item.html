@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UploadItem – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>UploadItem</h1>
+
+    <section>
+      <h2>Default (info)</h2>
+      <div class="eva-3-upload-item" style="max-width:480px">
+        <div class="upload-icon"><i class="eva-3-icon-document"></i></div>
+        <div class="upload-info">
+          <div class="upload-name">pasaporte.pdf</div>
+          <div class="upload-meta">1.2 MB · PDF</div>
+        </div>
+        <div class="upload-actions">
+          <button class="eva-3-link -sm" aria-label="Eliminar"><i class="eva-3-icon-close"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Subiendo (-uploading)</h2>
+      <div class="eva-3-upload-item -uploading" style="max-width:480px">
+        <div class="upload-icon"><i class="eva-3-icon-time"></i></div>
+        <div class="upload-info">
+          <div class="upload-name">documento.pdf</div>
+          <div class="upload-meta">Subiendo...</div>
+          <div class="upload-progress">
+            <div class="upload-progress-bar" style="width:65%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Exitoso (-success)</h2>
+      <div class="eva-3-upload-item -success" style="max-width:480px">
+        <div class="upload-icon"><i class="eva-3-icon-document"></i></div>
+        <div class="upload-info">
+          <div class="upload-name">foto_dni.jpg</div>
+          <div class="upload-meta">850 KB · JPG</div>
+        </div>
+        <div class="upload-actions">
+          <button class="eva-3-link -sm" aria-label="Eliminar"><i class="eva-3-icon-close"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Error (-error)</h2>
+      <div class="eva-3-upload-item -error" style="max-width:480px">
+        <div class="upload-icon"><i class="eva-3-icon-error-circle"></i></div>
+        <div class="upload-info">
+          <div class="upload-name">archivo_invalido.exe</div>
+          <div class="upload-error">No pudimos subir el archivo. Probá de nuevo.</div>
+        </div>
+        <div class="upload-actions">
+          <button class="eva-3-link -sm" aria-label="Reintentar">Reintentar</button>
+          <button class="eva-3-link -sm" aria-label="Eliminar"><i class="eva-3-icon-close"></i></button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

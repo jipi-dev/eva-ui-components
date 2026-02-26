@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steppers – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Steppers</h1>
+
+    <section>
+      <h2>Tamaños</h2>
+      <div class="row">
+        <div class="eva-3-steppers -md">
+          <input class="steppers-tag" type="text" value="1" id="qty-md" readonly />
+          <button type="button" class="steppers-icon-left eva-3-icon -minus" aria-label="Menos"></button>
+          <button type="button" class="steppers-icon-right eva-3-icon -plus" aria-label="Más"></button>
+        </div>
+        <div class="eva-3-steppers -lg">
+          <input class="steppers-tag" type="text" value="2" id="qty-lg" readonly />
+          <button type="button" class="steppers-icon-left eva-3-icon -minus" aria-label="Menos"></button>
+          <button type="button" class="steppers-icon-right eva-3-icon -plus" aria-label="Más"></button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Estado inválido</h2>
+      <div class="eva-3-steppers -lg -invalid">
+        <input class="steppers-tag" type="text" value="0" id="qty-invalid" readonly />
+        <button type="button" class="steppers-icon-left eva-3-icon -minus" aria-label="Menos"></button>
+        <button type="button" class="steppers-icon-right eva-3-icon -plus" aria-label="Más"></button>
+      </div>
+    </section>
+  </body>
+</html>

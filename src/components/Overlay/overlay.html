@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlay – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Overlay</h1>
+
+    <section>
+      <h2>Overlay oscuro</h2>
+      <div style="position:relative;height:150px;background:#eee;border-radius:4px;overflow:hidden">
+        <p style="padding:16px">Contenido detrás del overlay</p>
+        <div class="eva-3-overlay -show-overlay" style="position:absolute"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Overlay blanco (sobre fondo oscuro)</h2>
+      <div style="position:relative;height:150px;background:#1d2129;border-radius:4px;overflow:hidden">
+        <p style="padding:16px;color:#fff">Contenido detrás</p>
+        <div class="eva-3-overlay -show-overlay -white" style="position:absolute"></div>
+      </div>
+    </section>
+  </body>
+</html>

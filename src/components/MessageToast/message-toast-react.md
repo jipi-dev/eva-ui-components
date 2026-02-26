@@ -12,6 +12,17 @@ Toast desestimable con variantes (info/success/warning/error y secundarias), sop
 **Categoría:** Feedback / Toasts  
 **Tags:** react, toast, message, alert, info, success, warning, error, dismissible, loading
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Notificaciones breves y no bloqueantes, en overlay o contenedor fijo.
 - Confirmaciones rápidas de acciones o alertas livianas.

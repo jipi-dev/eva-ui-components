@@ -13,7 +13,7 @@ export interface HeadingProps extends UtilitiesProps {
   /** Visual/semantic variant of the text element */
   variant: HeadingVariant;
   /** Content to render */
-  children?: React.ReactNode;
+  children: React.ReactNode;
   /** Override the HTML tag used to render the element */
   tag?: string;
   /** URL for link variants */
@@ -31,7 +31,7 @@ export interface HeadingProps extends UtilitiesProps {
 const Heading: React.FC<HeadingProps> = ({
   className = '',
   variant = 'p',
-  children = 'Example of Text',
+  children,
   tag: CustomTag,
   href,
   onClick,

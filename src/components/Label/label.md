@@ -8,6 +8,17 @@ Etiquetas decorativas tipo "ribbon" para mostrar descuentos, promociones, oferta
 **Categoría:** Badges / Ribbons  
 **Tags:** badge, ribbon, oferta, descuento, loyalty, promo, corner
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Cuándo Usar
 - Destacar descuentos, beneficios o programas de loyalty sobre cards o imágenes.
 - Mostrar incentivos específicos (secret/member deals) sin ocupar espacio del contenido principal.

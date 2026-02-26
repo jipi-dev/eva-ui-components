@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Slider</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-slider" style="max-width:400px">
+        <div class="slider-input-container">
+          <div class="slider-input-content">
+            <input class="slider-input" type="range" min="0" max="100" step="1" id="slider-demo" value="40" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Deshabilitado</h2>
+      <div class="eva-3-slider" style="max-width:400px">
+        <div class="slider-input-container">
+          <div class="slider-input-content">
+            <input class="slider-input" type="range" min="0" max="100" step="1" id="slider-disabled" value="60" disabled />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

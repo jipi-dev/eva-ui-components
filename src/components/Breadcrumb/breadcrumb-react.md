@@ -8,6 +8,17 @@ Componente React para migas de pan con soporte de atributos SEO (`itemscope`, `i
 **Categoría:** Navigation / SEO  
 **Tags:** react, breadcrumb, seo, navigation, schema.org, itemprop, trail
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Mostrar jerarquía de navegación y ayudar al SEO con datos estructurados.
 - Rutas de detalle (ej. Home > Vuelos > Miami).

@@ -8,6 +8,17 @@ Ghost buttons son botones transparentes con solo borde y texto, utilizados para 
 **Categoría:** Actions / Buttons  
 **Tags:** ghost, button, secondary, tertiary, outline, loading, disabled
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Cuándo Usar
 - Acciones secundarias/terciarias donde se busca menor peso visual.
 - Superficies con fondo claro u oscuro (ajustar contraste con variante adecuada).

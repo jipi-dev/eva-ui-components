@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uploader – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Uploader</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-uploader" style="max-width:520px">
+        <div class="uploader-dotted-area-container">
+          <label class="eva-3-dotted-area" for="up-default">
+            <div class="message">
+              <div class="message-icon"><i class="eva-3-icon-upload"></i></div>
+              <p><span class="eva-3-heading -link">Cargá los documentos</span> o arrastralos a esta sección.</p>
+              <p>Hasta 5 MB: pdf, bmp, jpeg, jpg o png.</p>
+            </div>
+            <input class="-eva-3-hide" type="file" id="up-default" accept=".bmp,.pdf,.jpeg,.jpg,.png" multiple />
+          </label>
+        </div>
+        <div class="uploader-items-container"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con archivos subidos</h2>
+      <div class="eva-3-uploader" style="max-width:520px">
+        <div class="uploader-dotted-area-container">
+          <label class="eva-3-dotted-area" for="up-items">
+            <div class="message">
+              <div class="message-icon"><i class="eva-3-icon-upload"></i></div>
+              <p>Agregar más archivos</p>
+            </div>
+            <input class="-eva-3-hide" type="file" id="up-items" multiple />
+          </label>
+        </div>
+        <div class="uploader-items-container">
+          <div class="eva-3-upload-item -success">
+            <div class="upload-icon"><i class="eva-3-icon-document"></i></div>
+            <div class="upload-info">
+              <div class="upload-name">pasaporte.pdf</div>
+              <div class="upload-meta">1.2 MB</div>
+            </div>
+            <div class="upload-actions">
+              <button class="eva-3-link -sm"><i class="eva-3-icon-close"></i></button>
+            </div>
+          </div>
+          <div class="eva-3-upload-item -uploading">
+            <div class="upload-icon"><i class="eva-3-icon-time"></i></div>
+            <div class="upload-info">
+              <div class="upload-name">foto_dni.jpg</div>
+              <div class="upload-progress"><div class="upload-progress-bar" style="width:40%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

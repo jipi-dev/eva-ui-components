@@ -8,6 +8,17 @@ Componente React para mostrar iconos de la familia EVA 3 con soporte de diferent
 **Categoría:** Display / Icons  
 **Tags:** react, icon, svg, iconography, visual, size, eva-3-icon
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Mostrar iconos decorativos o funcionales en botones, menús, tarjetas, etc.
 - Agregar indicadores visuales (ej. ubicación, éxito, error, información).

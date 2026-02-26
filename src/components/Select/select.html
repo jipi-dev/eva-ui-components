@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Select</h1>
+
+    <section>
+      <h2>Tamaños</h2>
+      <div class="row" style="flex-direction:column;align-items:flex-start;gap:16px">
+        <div class="eva-3-select -lg" style="width:280px">
+          <select class="select-tag">
+            <option value="">Seleccioná una opción</option>
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 2</option>
+            <option value="3">Opción 3</option>
+          </select>
+          <i class="eva-3-icon -chevron-down select-icon"></i>
+        </div>
+        <div class="eva-3-select -md" style="width:280px">
+          <select class="select-tag">
+            <option value="">Seleccioná una opción</option>
+            <option value="1">Opción 1</option>
+          </select>
+          <i class="eva-3-icon -chevron-down select-icon"></i>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Estado inválido</h2>
+      <div class="eva-3-select -lg -invalid" style="width:280px">
+        <select class="select-tag">
+          <option value="">Seleccioná una opción</option>
+        </select>
+        <i class="eva-3-icon -chevron-down select-icon"></i>
+      </div>
+    </section>
+  </body>
+</html>

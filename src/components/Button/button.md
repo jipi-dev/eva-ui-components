@@ -8,6 +8,17 @@ Nuestro sistema contempla botones con diferencias en el uso de color, tamaño y 
 **Categoría:** Actions / Buttons  
 **Tags:** button, primary, secondary, link, white, dark, loading, disabled
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Cuándo Usar
 - Llamados a la acción primarios o secundarios en flujos transaccionales.
 - Disparar acciones en formularios, modales y tarjetas.

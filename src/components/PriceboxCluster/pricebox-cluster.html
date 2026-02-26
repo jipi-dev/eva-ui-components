@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PriceboxCluster – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>PriceboxCluster</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-pricebox-cluster" style="max-width:320px">
+        <div class="pricebox-top-container">
+          <div class="pricebox-value-container">
+            <div class="pricebox-small-text">Precio por adulto desde</div>
+            <div class="pricebox-value">
+              <span class="pricebox-currency">$</span>
+              <span class="pricebox-big-text">222.539</span>
+              <span class="pricebox-cents">00</span>
+            </div>
+            <div class="pricebox-small-text -description">Total por 10 días $2.225.390</div>
+          </div>
+          <div class="pricebox-action">
+            <button class="eva-3-btn -md -primary -fullwidth">Comprar</button>
+          </div>
+        </div>
+        <div class="pricebox-bottom-container">3 cuotas sin interés</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con precio tachado</h2>
+      <div class="eva-3-pricebox-cluster" style="max-width:320px">
+        <div class="pricebox-top-container">
+          <div class="pricebox-value-container">
+            <div class="pricebox-small-text">Precio por adulto desde</div>
+            <div class="pricebox-value">
+              <div class="pricebox-strikethrough-text">$ 250.000</div>
+              <span class="pricebox-currency">$</span>
+              <span class="pricebox-big-text">222.539</span>
+              <span class="pricebox-cents">00</span>
+            </div>
+            <div class="pricebox-small-text -description">Total por 10 días</div>
+          </div>
+          <div class="pricebox-action">
+            <button class="eva-3-btn -md -primary -fullwidth">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variante Loyalty (-loyalty)</h2>
+      <div class="eva-3-pricebox-cluster -loyalty" style="max-width:320px">
+        <div class="pricebox-top-container">
+          <div class="pricebox-value-container">
+            <div class="pricebox-small-text">Precio por adulto desde</div>
+            <div class="pricebox-value">
+              <span class="pricebox-currency">$</span>
+              <span class="pricebox-big-text">218.481</span>
+              <span class="pricebox-cents">00</span>
+            </div>
+            <div class="pricebox-small-text -loyalty-description -eva-3-tc-bubblegum-1">Usando 4.058 puntos</div>
+          </div>
+          <div class="pricebox-action">
+            <button class="eva-3-btn -md -primary -fullwidth">Comprar</button>
+          </div>
+        </div>
+        <div class="pricebox-loyalty-container eva-3-pricing-points">
+          <span>Sumás <span class="-eva-3-bold">300 puntos</span></span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

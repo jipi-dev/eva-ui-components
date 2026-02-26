@@ -8,6 +8,17 @@ Módulo rectangular con esquinas redondeadas para presentar información de form
 **Categoría:** Layout / Cards  
 **Tags:** card, container, shadow, padding, layout
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Cuándo Usar
 - Agrupar contenido relacionado en listados, resúmenes o módulos clickeables.
 - Destacar bloques con sombra o padding para mejorar jerarquía visual.

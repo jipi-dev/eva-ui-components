@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PriceDetail – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>PriceDetail</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-price-detail" style="max-width:400px">
+        <div class="price-detail-item">
+          <span class="price-detail-label">Ida Buenos Aires → Madrid</span>
+          <span class="price-detail-value">$ 150.000</span>
+        </div>
+        <div class="price-detail-item">
+          <span class="price-detail-label">Vuelta Madrid → Buenos Aires</span>
+          <span class="price-detail-value">$ 145.000</span>
+        </div>
+        <div class="price-detail-item -total">
+          <span class="price-detail-label">Total</span>
+          <span class="price-detail-value">$ 295.000</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con ítem doble</h2>
+      <div class="eva-3-price-detail" style="max-width:400px">
+        <div class="price-detail-item">
+          <span class="price-detail-label">Vuelo</span>
+          <span class="price-detail-value">$ 200.000</span>
+        </div>
+        <div class="price-detail-double">
+          <div class="price-detail-double-item">
+            <span class="price-detail-label">Adulto</span>
+            <span class="price-detail-value">$ 100.000</span>
+          </div>
+          <div class="price-detail-double-item">
+            <span class="price-detail-label">Niño</span>
+            <span class="price-detail-value">$ 100.000</span>
+          </div>
+        </div>
+        <div class="price-detail-item -total">
+          <span class="price-detail-label">Total</span>
+          <span class="price-detail-value -highlight">$ 200.000</span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

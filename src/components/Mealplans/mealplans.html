@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mealplans – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Mealplans</h1>
+
+    <style>
+      .meal-grid { display:flex;flex-wrap:wrap;gap:1.5rem;margin-bottom:1rem; }
+      .meal-item { display:flex;flex-direction:column;align-items:center;gap:.5rem;font-size:.75rem;color:#555; }
+    </style>
+
+    <section>
+      <h2>Planes de comidas</h2>
+      <div class="meal-grid">
+        <div class="meal-item">
+          <div class="eva-3-mealplans -breakfast">
+            <img class="mealplans-image" src="/ui/dist/resources/sprites/ic-breakfast.svg" alt="breakfast" />
+          </div>
+          <span>Desayuno</span>
+        </div>
+        <div class="meal-item">
+          <div class="eva-3-mealplans -half-board">
+            <img class="mealplans-image" src="/ui/dist/resources/sprites/ic-half-board.svg" alt="half-board" />
+          </div>
+          <span>Media pensión</span>
+        </div>
+        <div class="meal-item">
+          <div class="eva-3-mealplans -full-board">
+            <img class="mealplans-image" src="/ui/dist/resources/sprites/ic-full-board.svg" alt="full-board" />
+          </div>
+          <span>Pensión completa</span>
+        </div>
+        <div class="meal-item">
+          <div class="eva-3-mealplans -all-inclusive">
+            <img class="mealplans-image" src="/ui/dist/resources/sprites/ic-all-inclusive.svg" alt="all-inclusive" />
+          </div>
+          <span>Todo incluido</span>
+        </div>
+        <div class="meal-item">
+          <div class="eva-3-mealplans -no-meals">
+            <img class="mealplans-image" src="/ui/dist/resources/sprites/ic-no-meals.svg" alt="no-meals" />
+          </div>
+          <span>Sin comidas</span>
+        </div>
+        <div class="meal-item">
+          <div class="eva-3-mealplans -brunch">
+            <img class="mealplans-image" src="/ui/dist/resources/sprites/ic-brunch.svg" alt="brunch" />
+          </div>
+          <span>Brunch</span>
+        </div>
+        <div class="meal-item">
+          <div class="eva-3-mealplans -lunch">
+            <img class="mealplans-image" src="/ui/dist/resources/sprites/ic-lunch.svg" alt="lunch" />
+          </div>
+          <span>Almuerzo</span>
+        </div>
+        <div class="meal-item">
+          <div class="eva-3-mealplans -dinner">
+            <img class="mealplans-image" src="/ui/dist/resources/sprites/ic-dinner.svg" alt="dinner" />
+          </div>
+          <span>Cena</span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

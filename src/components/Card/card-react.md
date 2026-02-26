@@ -8,6 +8,17 @@ Contenedor rectangular con esquinas redondeadas. Soporta utilidades de sombra (`
 **Categoría:** Layout / Surface  
 **Tags:** react, card, container, shadow, padding, surface
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Agrupar contenido en superficies diferenciadas (listados, resúmenes, tarjetas de resultado).
 - Necesitar elevación ligera con sombras utilitarias.

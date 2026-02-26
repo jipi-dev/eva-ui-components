@@ -4,6 +4,17 @@
 
 Elemento compacto (badge/label) para comunicar atributos, beneficios, estados o pertenencia a submarcas. Soporta texto e íconos opcionales. Diseñado para resaltar información clave de productos o reservas.
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Estructura HTML
 
 ```html

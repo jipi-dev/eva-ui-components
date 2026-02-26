@@ -8,6 +8,17 @@ Componente React para botones EVA UI. Internamente delega en `ButtonBase` y expo
 **Categoría:** Actions / Buttons  
 **Tags:** react, button, primary, secondary, link, white, dark, loading, disabled, icon
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - CTA principales y secundarios en flows web/app.
 - Acciones que requieran feedback de carga (`loading`).
@@ -46,7 +57,7 @@ import { Button } from "@despegar/eva-react-components";
   next={false}
   onClick={handleClick}
 >
-  Texto del botón
+  {children}
 </Button>
 ```
 
@@ -64,7 +75,7 @@ import { Button } from "@despegar/eva-react-components";
 | `icon` | `string \| boolean` | `false` | Ícono junto al texto. |
 | `iconOnly` | `boolean` | `false` | Botón circular solo con ícono. |
 | `className` | `string` | `''` | Clase adicional para el botón. |
-| `children` | `string \| ReactNode` | `'Ver Detalle'` | Texto/contenido del botón. |
+| `children` | `string \| ReactNode` | **requerido** | Texto/contenido del botón. |
 | `onClick` | `function` | `undefined` | Handler de click. |
 | `btnType` | `'default' \| 'social' \| 'ghost'` | `'default'` | Tipo base de botón. |
 | `href` | `string` | `undefined` | Si existe y no hay `onClick`, renderiza `<a>`. |
@@ -74,6 +85,8 @@ import { Button } from "@despegar/eva-react-components";
 
 > **Defaults internos de `ButtonBase`:** `size='lg'`, `variant='primary'`, `loadingText='Cargando'`, `btnType='default'`.
 
+> **`children` es obligatorio.** El componente no renderiza ningún texto por defecto — siempre debés pasar el contenido entre las etiquetas del componente.
+
 ---
 
 ## Ejemplos
@@ -82,13 +95,13 @@ import { Button } from "@despegar/eva-react-components";
 
 ```jsx
 <Button size="lg" variant="primary">
-  Botón Primario
+  {children}
 </Button>
 ```
 
 ```jsx
 <Button size="lg" variant="secondary">
-  Botón Secundario
+  {children}
 </Button>
 ```
 
@@ -96,7 +109,7 @@ import { Button } from "@despegar/eva-react-components";
 
 ```jsx
 <Button size="lg" variant="primary" disabled>
-  Botón Secundario
+  {children}
 </Button>
 ```
 
@@ -104,7 +117,7 @@ import { Button } from "@despegar/eva-react-components";
 
 ```jsx
 <Button size="lg" variant="dark">
-  Botón Dark
+  {children}
 </Button>
 ```
 
@@ -112,7 +125,7 @@ import { Button } from "@despegar/eva-react-components";
 
 ```jsx
 <Button size="lg" variant="link">
-  Botón Link
+  {children}
 </Button>
 ```
 
@@ -120,7 +133,7 @@ import { Button } from "@despegar/eva-react-components";
 
 ```jsx
 <Button size="lg" variant="white">
-  Botón White
+  {children}
 </Button>
 ```
 
@@ -128,23 +141,23 @@ import { Button } from "@despegar/eva-react-components";
 
 ```jsx
 <Button size="lg" variant="primary" loading>
-  Botón
+  {children}
 </Button>
 ```
 
 ### Botón con ícono
 
 ```jsx
-<Button text="Botón" size="lg" variant="primary" icon="edit">
-  Botón Secundario
+<Button size="lg" variant="primary" icon="edit">
+  {children}
 </Button>
 ```
 
-### Botón con ícono Icono a la derecha
+### Botón con ícono a la derecha (next)
 
 ```jsx
 <Button size="lg" variant="primary" next>
-  Ver detalle
+  {children}
 </Button>
 ```
 

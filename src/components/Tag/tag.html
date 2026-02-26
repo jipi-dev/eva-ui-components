@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tag – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Tag</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="row">
+        <span class="eva-3-tag">
+          <span class="tag-text">{texto}</span>
+        </span>
+        <span class="eva-3-tag -active">
+          <span class="tag-text">{texto}</span>
+        </span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con ícono</h2>
+      <div class="row">
+        <span class="eva-3-tag -icon -active">
+          <span class="tag-text">Vuelo</span>
+          <i class="tag-icon-product eva-3-icon -flights-ui"></i>
+          <i class="tag-icon eva-3-icon -cross"></i>
+        </span>
+        <span class="eva-3-tag -icon">
+          <span class="tag-text">Hotel</span>
+          <i class="tag-icon-product eva-3-icon -hotel"></i>
+          <i class="tag-icon eva-3-icon -cross"></i>
+        </span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Lighten (fondo oscuro)</h2>
+      <div class="row dark-bg">
+        <span class="eva-3-tag -lighten">
+          <span class="tag-text">{texto}</span>
+        </span>
+        <span class="eva-3-tag -lighten -active">
+          <span class="tag-text">{texto}</span>
+        </span>
+      </div>
+    </section>
+  </body>
+</html>

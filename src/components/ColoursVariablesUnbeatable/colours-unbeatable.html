@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ColoursVariables Unbeatable – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>ColoursVariables Unbeatable</h1>
+
+    <style>
+      .swatch-grid { display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem; }
+      .swatch { width:180px;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15); }
+      .swatch-color { height:56px; }
+      .swatch-label { padding:.3rem .5rem;font-size:.7rem;background:#fff; }
+    </style>
+
+    <section>
+      <h2>Variables CSS – Unbeatable</h2>
+      <p style="color:#666;font-size:.875rem;margin-bottom:1rem">Variables inyectadas globalmente desde el componente.</p>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:var(--unbeatable-1,#FFF0EB)"></div><div class="swatch-label">unbeatable-1</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--unbeatable-2,#FFBDA8)"></div><div class="swatch-label">unbeatable-2</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--unbeatable-3,#FF4D00)"></div><div class="swatch-label">unbeatable-3</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--unbeatable-4,#B23500)"></div><div class="swatch-label">unbeatable-4</div></div>
+      </div>
+    </section>
+  </body>
+</html>

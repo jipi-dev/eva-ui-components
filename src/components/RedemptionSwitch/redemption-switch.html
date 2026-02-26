@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RedemptionSwitch – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>RedemptionSwitch</h1>
+
+    <section>
+      <h2>Default (-loyalty)</h2>
+      <div class="eva-3-redemption-switch -loyalty">
+        <img class="redemption-logo" src="https://www.staticontent.com/eva-core/assets/loyalty/loyalty-logo.svg" alt="Pasaporte Despegar" style="height:24px" />
+        <div class="redemption-content">
+          <div class="redemption-title -eva-3-bold">Usar mis puntos</div>
+          <div class="redemption-subtitle">Tenes 12.500 puntos disponibles</div>
+        </div>
+        <div class="redemption-switch">
+          <label class="switch-label" for="rs-default">
+            <input class="switch-input" type="checkbox" id="rs-default" />
+            <span class="switch-container"><span class="switch-circle"></span></span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variante horizontal (-horizontal)</h2>
+      <div class="eva-3-redemption-switch -horizontal">
+        <i class="eva-3-icon-loyalty-filled redemption-icon"></i>
+        <div class="redemption-content">
+          <div class="redemption-title -eva-3-bold">Mis puntos</div>
+          <div class="redemption-subtitle">12.500 pts</div>
+        </div>
+        <label class="switch-label" for="rs-horizontal">
+          <input class="switch-input" type="checkbox" id="rs-horizontal" />
+          <span class="switch-container"><span class="switch-circle"></span></span>
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variante pill (-pill)</h2>
+      <div class="eva-3-redemption-switch -pill">
+        <i class="eva-3-icon-loyalty-filled redemption-icon"></i>
+        <span class="redemption-title">Pagar con puntos</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Card para registro</h2>
+      <div class="eva-3-redemption-switch -card">
+        <div class="redemption-content">
+          <div class="redemption-title -eva-3-bold">Empezá a sumar puntos</div>
+          <div class="redemption-subtitle">Registrate en Pasaporte Despegar</div>
+        </div>
+        <i class="eva-3-icon-chevron-right redemption-arrow"></i>
+      </div>
+    </section>
+  </body>
+</html>

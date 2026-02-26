@@ -8,6 +8,17 @@ Casilla de verificación controlada/no controlada con estados de error, deshabil
 **Categoría:** Forms / Controls  
 **Tags:** react, checkbox, indeterminate, partial, invalid, disabled, lighten, label
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Selecciones binarias o listas de selección múltiple.
 - Necesidad de estado parcial/indeterminado (ej. “Seleccionar todos”).

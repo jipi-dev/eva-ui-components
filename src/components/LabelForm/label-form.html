@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LabelForm – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>LabelForm</h1>
+
+    <section>
+      <h2>Tamaños</h2>
+      <div class="row" style="flex-direction:column;align-items:flex-start;gap:16px">
+        <label class="eva-3-label-form -sm" for="lf-sm">Small (12px) — NOMBRE</label>
+        <label class="eva-3-label-form -md" for="lf-md">Medium (14px) — EMAIL</label>
+        <label class="eva-3-label-form -lg" for="lf-lg">Large (14px) — DIRECCIÓN</label>
+      </div>
+    </section>
+
+    <section>
+      <h2>En formulario</h2>
+      <div style="max-width:320px;display:flex;flex-direction:column;gap:16px">
+        <div>
+          <label class="eva-3-label-form -md" for="lf-name" style="display:block;margin-bottom:6px">Nombre completo</label>
+          <div class="eva-3-input -lg">
+            <div class="input-container">
+              <input id="lf-name" class="input-tag" type="text" placeholder="Juan Pérez" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <label class="eva-3-label-form -md" for="lf-email" style="display:block;margin-bottom:6px">Email</label>
+          <div class="eva-3-input -lg">
+            <div class="input-container">
+              <input id="lf-email" class="input-tag" type="email" placeholder="email@ejemplo.com" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

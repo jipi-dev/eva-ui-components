@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NPS – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>NPS</h1>
+
+    <section>
+      <h2>Default (sin selección)</h2>
+      <div class="eva-3-nps">
+        <div class="nps-title">¿Qué tan probable es que recomiendes Despegar?</div>
+        <div class="nps-container">
+          <ul class="nps-options">
+            <li class="nps-option" data-value="0">Nada Probable</li>
+            <li class="nps-option" data-value="1">1</li>
+            <li class="nps-option" data-value="2">2</li>
+            <li class="nps-option" data-value="3">3</li>
+            <li class="nps-option" data-value="4">4</li>
+            <li class="nps-option" data-value="5">5</li>
+            <li class="nps-option" data-value="6">6</li>
+            <li class="nps-option" data-value="7">7</li>
+            <li class="nps-option" data-value="8">8</li>
+            <li class="nps-option" data-value="9">9</li>
+            <li class="nps-option" data-value="10">Muy Probable</li>
+          </ul>
+          <div class="nps-input-container">
+            <input type="range" min="-1" max="10" value="-1" class="nps-input" />
+            <span class="nps-input-help-caption -eva-3-fl">Poco probable</span>
+            <span class="nps-input-help-caption -eva-3-fr">Muy probable</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con valor seleccionado (score 7)</h2>
+      <div class="eva-3-nps -selected-7">
+        <div class="nps-title">¿Qué tan probable es que recomiendes Despegar?</div>
+        <p class="nps-status">7: Probable</p>
+        <div class="nps-container">
+          <ul class="nps-options">
+            <li class="nps-option" data-value="0">Nada Probable</li>
+            <li class="nps-option" data-value="1">1</li>
+            <li class="nps-option" data-value="2">2</li>
+            <li class="nps-option" data-value="3">3</li>
+            <li class="nps-option" data-value="4">4</li>
+            <li class="nps-option" data-value="5">5</li>
+            <li class="nps-option" data-value="6">6</li>
+            <li class="nps-option -active" data-value="7">Probable</li>
+            <li class="nps-option" data-value="8">8</li>
+            <li class="nps-option" data-value="9">9</li>
+            <li class="nps-option" data-value="10">Muy Probable</li>
+          </ul>
+          <div class="nps-input-container">
+            <input type="range" min="-1" max="10" value="7" class="nps-input" />
+            <span class="nps-input-help-caption -eva-3-fl">Poco probable</span>
+            <span class="nps-input-help-caption -eva-3-fr">Muy probable</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

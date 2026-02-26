@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marker – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Marker</h1>
+
+    <section>
+      <h2>Variantes</h2>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end">
+        <div class="eva-3-marker"><i class="eva-3-icon-location marker-icon"></i></div>
+        <div class="eva-3-marker -poi"><i class="eva-3-icon-location marker-icon"></i></div>
+        <div class="eva-3-marker -active"><i class="eva-3-icon-location marker-icon"></i></div>
+        <div class="eva-3-marker -visited"><i class="eva-3-icon-location marker-icon"></i></div>
+        <div class="eva-3-marker -minimarker"><i class="eva-3-icon-location marker-icon"></i></div>
+      </div>
+      <div style="display:flex;gap:.5rem;margin-top:.5rem;font-size:.75rem;color:#555">
+        <span style="width:40px;text-align:center">default</span>
+        <span style="width:40px;text-align:center">-poi</span>
+        <span style="width:40px;text-align:center">-active</span>
+        <span style="width:40px;text-align:center">-visited</span>
+        <span style="width:40px;text-align:center">-mini</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Expandido (-expand)</h2>
+      <div class="eva-3-marker -expand">
+        <i class="eva-3-icon-location marker-icon"></i>
+        <span class="marker-label">Hotel Sheraton</span>
+      </div>
+    </section>
+  </body>
+</html>

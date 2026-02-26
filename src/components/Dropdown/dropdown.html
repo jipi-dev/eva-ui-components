@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Dropdown</h1>
+
+    <section>
+      <h2>Colapsado</h2>
+      <ul class="eva-3-dropdown" style="max-width:320px">
+        <li class="dropdown-item">
+          <span role="presentation" class="dropdown-item-container" tabindex="0">
+            <span class="item-label">Filtros</span>
+            <i class="eva-3-icon -chevron-down dropdown-icon"></i>
+          </span>
+          <ul class="dropdown-subcontent">
+            <li class="dropdown-subitem"><span class="dropdown-item-container" tabindex="0">Opción 1</span></li>
+            <li class="dropdown-subitem"><span class="dropdown-item-container" tabindex="0">Opción 2</span></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Expandido (-active)</h2>
+      <ul class="eva-3-dropdown" style="max-width:320px">
+        <li class="dropdown-item -active">
+          <span role="presentation" class="dropdown-item-container" tabindex="0">
+            <span class="item-label">Filtros</span>
+            <i class="eva-3-icon -chevron-down dropdown-icon"></i>
+          </span>
+          <ul class="dropdown-subcontent">
+            <li class="dropdown-subitem"><span class="dropdown-item-container" tabindex="0">Opción 1</span></li>
+            <li class="dropdown-subitem"><span class="dropdown-item-container" tabindex="0">Opción 2</span></li>
+            <li class="dropdown-subitem"><span class="dropdown-item-container" tabindex="0">Opción 3</span></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

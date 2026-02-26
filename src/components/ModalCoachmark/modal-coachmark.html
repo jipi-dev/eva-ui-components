@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ModalCoachmark – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>ModalCoachmark</h1>
+
+    <section>
+      <h2>Default (1 paso)</h2>
+      <div class="eva-3-modal-coachmark -show" style="max-width:420px;position:relative">
+        <div class="modal-coachmark-header">
+          <button class="modal-coachmark-close" aria-label="Cerrar"><i class="eva-3-icon-cross"></i></button>
+        </div>
+        <div class="modal-coachmark-body">
+          <div class="modal-coachmark-step -active">
+            <div class="modal-coachmark-image" style="height:180px;background:var(--brand-primary-1)"></div>
+            <div class="modal-coachmark-content">
+              <h3 class="modal-coachmark-title">Bienvenido a Pasaporte Despegar</h3>
+              <p class="modal-coachmark-description">Sumá puntos en cada compra y canjealo por tu próximo viaje.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-coachmark-footer">
+          <div class="modal-coachmark-dots">
+            <span class="modal-coachmark-dot -active"></span>
+            <span class="modal-coachmark-dot"></span>
+            <span class="modal-coachmark-dot"></span>
+          </div>
+          <button class="eva-3-btn -primary -md">Siguiente</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Múltiples pasos (paso 2 activo)</h2>
+      <div class="eva-3-modal-coachmark -show" style="max-width:420px;position:relative">
+        <div class="modal-coachmark-header">
+          <button class="modal-coachmark-close" aria-label="Cerrar"><i class="eva-3-icon-cross"></i></button>
+        </div>
+        <div class="modal-coachmark-body">
+          <div class="modal-coachmark-step -active">
+            <div class="modal-coachmark-image" style="height:180px;background:var(--brand-primary-1)"></div>
+            <div class="modal-coachmark-content">
+              <h3 class="modal-coachmark-title">Sumá puntos</h3>
+              <p class="modal-coachmark-description">Cada compra suma puntos que pods usar en tu próximo viaje.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-coachmark-footer">
+          <div class="modal-coachmark-dots">
+            <span class="modal-coachmark-dot"></span>
+            <span class="modal-coachmark-dot -active"></span>
+            <span class="modal-coachmark-dot"></span>
+          </div>
+          <button class="eva-3-btn -primary -md">Siguiente</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

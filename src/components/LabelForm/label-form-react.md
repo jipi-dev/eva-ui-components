@@ -8,6 +8,17 @@ Componente React para labels de formulario con estilo uppercase, bold y letter-s
 **Categoría:** Forms / Typography  
 **Tags:** react, label, form, htmlFor, uppercase, helper, spacing
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Etiquetar campos de formulario (inputs, selects, textareas, checkboxes/radios).
 - Necesidad de estilo consistente en headings de campo (uppercase, tracking).

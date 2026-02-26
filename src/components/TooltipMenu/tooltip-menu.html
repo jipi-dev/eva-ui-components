@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TooltipMenu – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>TooltipMenu</h1>
+
+    <section>
+      <h2>Default (visible)</h2>
+      <div class="eva-3-tooltip -show-tooltip eva-3-tooltip--menu -small-center -white" style="position:relative;max-width:300px">
+        <div class="tooltip-container">
+          <div class="tooltip-menu">
+            <div class="tooltip-menu-section -separator">
+              <div class="tooltip-menu-section-title">
+                <i class="eva-3-icon-hotel-bell"></i> Hoteles
+              </div>
+              <button class="tooltip-menu-option" role="menuitem">
+                <span class="tooltip-menu-title">Hotel Sheraton</span>
+                <span class="tooltip-menu-subtitle">Buenos Aires</span>
+              </button>
+              <button class="tooltip-menu-option" role="menuitem">
+                <span class="tooltip-menu-title">Hotel Marriott</span>
+                <span class="tooltip-menu-subtitle">Córdoba</span>
+              </button>
+              <button class="tooltip-menu-option -separator" role="menuitem">
+                <span class="tooltip-menu-title">Ver más hoteles</span>
+              </button>
+            </div>
+            <div class="tooltip-menu-section">
+              <div class="tooltip-menu-info">Cargando más resultados...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con scroll vertical (-scroll-y)</h2>
+      <div class="eva-3-tooltip -show-tooltip eva-3-tooltip--menu -scroll-y -small-center -white" style="position:relative;max-width:300px;max-height:200px;overflow:auto">
+        <div class="tooltip-container">
+          <div class="tooltip-menu">
+            <div class="tooltip-menu-section">
+              <button class="tooltip-menu-option" role="menuitem"><span class="tooltip-menu-title">Opción 1</span></button>
+              <button class="tooltip-menu-option" role="menuitem"><span class="tooltip-menu-title">Opción 2</span></button>
+              <button class="tooltip-menu-option" role="menuitem"><span class="tooltip-menu-title">Opción 3</span></button>
+              <button class="tooltip-menu-option" role="menuitem"><span class="tooltip-menu-title">Opción 4</span></button>
+              <button class="tooltip-menu-option" role="menuitem"><span class="tooltip-menu-title">Opción 5</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -13,6 +13,17 @@ Bottom sheet para mobile que aparece desde el borde inferior, con título opcion
 **Categoría:** Overlays / Sheets  
 **Tags:** react, modal, bottom-sheet, mobile, overlay, sticky-footer
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Flujos mobile donde se necesita mostrar opciones, filtros o formularios breves sin salir de la pantalla.
 - Selección contextual o acciones rápidas que no requieren un modal centrado.

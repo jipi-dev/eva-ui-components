@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Checkbox</h1>
+
+    <section>
+      <h2>Tamaños</h2>
+      <div class="row">
+        <span class="eva-3-checkbox -md">
+          <label class="checkbox-label" for="cb-md">
+            <input id="cb-md" class="checkbox-tag" type="checkbox" />
+            <i class="checkbox-check"></i>
+            Mediano (default)
+          </label>
+        </span>
+        <span class="eva-3-checkbox -lg">
+          <label class="checkbox-label" for="cb-lg">
+            <input id="cb-lg" class="checkbox-tag" type="checkbox" />
+            <i class="checkbox-check"></i>
+            Grande
+          </label>
+        </span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Estados</h2>
+      <div class="row">
+        <span class="eva-3-checkbox -md">
+          <label class="checkbox-label" for="cb-checked">
+            <input id="cb-checked" class="checkbox-tag" type="checkbox" checked />
+            <i class="checkbox-check"></i>
+            Seleccionado
+          </label>
+        </span>
+        <span class="eva-3-checkbox -md -invalid">
+          <label class="checkbox-label" for="cb-invalid">
+            <input id="cb-invalid" class="checkbox-tag" type="checkbox" />
+            <i class="checkbox-check"></i>
+            Inválido
+          </label>
+        </span>
+        <span class="eva-3-checkbox -md">
+          <label class="checkbox-label" for="cb-disabled">
+            <input id="cb-disabled" class="checkbox-tag" type="checkbox" disabled />
+            <i class="checkbox-check"></i>
+            Deshabilitado
+          </label>
+        </span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Lighten (fondo oscuro)</h2>
+      <div class="row dark-bg">
+        <span class="eva-3-checkbox -md -lighten">
+          <label class="checkbox-label" for="cb-lighten">
+            <input id="cb-lighten" class="checkbox-tag" type="checkbox" />
+            <i class="checkbox-check"></i>
+            <span style="color:#fff">Lighten</span>
+          </label>
+        </span>
+      </div>
+    </section>
+  </body>
+</html>

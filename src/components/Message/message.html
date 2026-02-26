@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Message</h1>
+
+    <section>
+      <h2>Variantes</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:500px">
+        <div class="eva-3-message -info">
+          <div class="message-icon-container">
+            <i class="eva-3-icon -info-circle-filled message-icon"></i>
+          </div>
+          <div class="message-header">
+            <h5 class="message-title">Información</h5>
+          </div>
+          <div class="message-body">
+            <div class="message-text">Este es un mensaje de tipo informativo.</div>
+          </div>
+        </div>
+
+        <div class="eva-3-message -success">
+          <div class="message-icon-container">
+            <i class="eva-3-icon -checkmark-circle-filled message-icon"></i>
+          </div>
+          <div class="message-header">
+            <h5 class="message-title">Éxito</h5>
+          </div>
+          <div class="message-body">
+            <div class="message-text">La operación se completó correctamente.</div>
+          </div>
+        </div>
+
+        <div class="eva-3-message -warning">
+          <div class="message-icon-container">
+            <i class="eva-3-icon -warning-filled message-icon"></i>
+          </div>
+          <div class="message-header">
+            <h5 class="message-title">Advertencia</h5>
+          </div>
+          <div class="message-body">
+            <div class="message-text">Revisá los datos antes de continuar.</div>
+          </div>
+        </div>
+
+        <div class="eva-3-message -error">
+          <div class="message-icon-container">
+            <i class="eva-3-icon -error-circle-filled message-icon"></i>
+          </div>
+          <div class="message-header">
+            <h5 class="message-title">Error</h5>
+          </div>
+          <div class="message-body">
+            <div class="message-text">Ocurrió un error. Intentá de nuevo.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

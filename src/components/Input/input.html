@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Input</h1>
+
+    <section>
+      <h2>Tamaños</h2>
+      <span class="label">-lg</span>
+      <div class="row">
+        <div class="eva-3-input -lg" style="width:280px">
+          <div class="input-container">
+            <input class="input-tag" type="text" placeholder="Placeholder texto" />
+          </div>
+        </div>
+      </div>
+      <span class="label">-md</span>
+      <div class="row">
+        <div class="eva-3-input -md" style="width:280px">
+          <div class="input-container">
+            <input class="input-tag" type="text" placeholder="Placeholder texto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Estados</h2>
+      <span class="label">invalid</span>
+      <div class="row">
+        <div class="eva-3-input -lg -invalid" style="width:280px">
+          <div class="input-container">
+            <input class="input-tag" type="text" placeholder="Campo inválido" />
+          </div>
+        </div>
+      </div>
+      <span class="label">disabled</span>
+      <div class="row">
+        <div class="eva-3-input -lg" style="width:280px">
+          <div class="input-container">
+            <input class="input-tag" type="text" placeholder="Deshabilitado" disabled />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con íconos</h2>
+      <div class="row">
+        <div class="eva-3-input -lg" style="width:280px">
+          <div class="input-container">
+            <i class="eva-3-icon -search input-icon -left"></i>
+            <input class="input-tag" type="search" placeholder="Buscar..." />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

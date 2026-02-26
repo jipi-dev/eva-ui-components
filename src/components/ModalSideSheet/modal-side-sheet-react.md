@@ -12,6 +12,17 @@ Side sheet deslizable desde izquierda/derecha, con header opcional, tamaños (`s
 **Categoría:** Overlays / Sheets  
 **Tags:** react, modal, side-sheet, drawer, overlay, sticky-footer
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Panel de filtros, detalles o configuración sin abandonar la página.
 - Navegación auxiliar o menús contextuales que deben mantener el contexto visible.

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wizard – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Wizard</h1>
+
+    <section>
+      <h2>Default (3 pasos, paso 2 activo)</h2>
+      <ol class="eva-3-wizard" role="list">
+        <li class="wizard-step -completed">
+          <div class="wizard-bullet"><i class="eva-3-icon-check"></i></div>
+          <div class="wizard-text">
+            <span class="wizard-title">Datos personales</span>
+            <span class="wizard-subtitle">Completado</span>
+          </div>
+        </li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -active" aria-current="step">
+          <div class="wizard-bullet">2</div>
+          <div class="wizard-text">
+            <span class="wizard-title">Documentos</span>
+            <span class="wizard-subtitle">En progreso</span>
+          </div>
+        </li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -disabled">
+          <div class="wizard-bullet">3</div>
+          <div class="wizard-text">
+            <span class="wizard-title">Confirmación</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Variante compacta (-compact)</h2>
+      <ol class="eva-3-wizard -compact" role="list">
+        <li class="wizard-step -completed">
+          <div class="wizard-bullet"><i class="eva-3-icon-check"></i></div>
+          <div class="wizard-text"><span class="wizard-title">Paso 1</span></div>
+        </li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -active" aria-current="step">
+          <div class="wizard-bullet">2</div>
+          <div class="wizard-text"><span class="wizard-title">Paso 2</span></div>
+        </li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -disabled">
+          <div class="wizard-bullet">3</div>
+          <div class="wizard-text"><span class="wizard-title">Paso 3</span></div>
+        </li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -disabled">
+          <div class="wizard-bullet">4</div>
+          <div class="wizard-text"><span class="wizard-title">Paso 4</span></div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>5 pasos todos completados</h2>
+      <ol class="eva-3-wizard" role="list">
+        <li class="wizard-step -completed"><div class="wizard-bullet"><i class="eva-3-icon-check"></i></div><div class="wizard-text"><span class="wizard-title">Paso 1</span></div></li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -completed"><div class="wizard-bullet"><i class="eva-3-icon-check"></i></div><div class="wizard-text"><span class="wizard-title">Paso 2</span></div></li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -completed"><div class="wizard-bullet"><i class="eva-3-icon-check"></i></div><div class="wizard-text"><span class="wizard-title">Paso 3</span></div></li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -completed"><div class="wizard-bullet"><i class="eva-3-icon-check"></i></div><div class="wizard-text"><span class="wizard-title">Paso 4</span></div></li>
+        <li class="wizard-connector"></li>
+        <li class="wizard-step -completed"><div class="wizard-bullet"><i class="eva-3-icon-check"></i></div><div class="wizard-text"><span class="wizard-title">Paso 5</span></div></li>
+      </ol>
+    </section>
+  </body>
+</html>

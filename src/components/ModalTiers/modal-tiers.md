@@ -8,6 +8,17 @@ Variante de modal para procesos de onboarding de Loyalty (tiers). Basado en Moda
 **Status:** toBeDeprecated (según metadata)  
 **Tags:** popup, emergente, ventana, window, overlay, pasaporte
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Estructura General
 Usa `ModalCoachmark` internamente con `size="lg"`, `steps={false}`, `noColor`, `tiers`, `className="... -show-sticky-footer -tier-header"`.
 

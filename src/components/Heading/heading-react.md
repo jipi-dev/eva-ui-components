@@ -8,6 +8,17 @@ Componente React tipográfico con variantes para títulos, body text, botones, c
 **Categoría:** Typography  
 **Tags:** react, heading, typography, h1, h2, h3, h4, h5, h6, body, caption, overline, link
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Definir jerarquía textual en páginas y componentes con estilos EVA.
 - Renderizar links tipográficos (`variant="link"`) con control del tag (`<a>` o custom).

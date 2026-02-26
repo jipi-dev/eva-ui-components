@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViewMore – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>ViewMore</h1>
+
+    <section>
+      <h2>Colapsado (default)</h2>
+      <div class="eva-3-view-more" style="max-width:400px">
+        <div class="view-more-content" style="max-height:80px;overflow:hidden">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat eros sit amet eros egestas, nec fermentum arcu pretium. Sed facilisis nulla at quam dictum, sed maximus metus venenatis. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
+        <div class="view-more-shadow"></div>
+        <button class="eva-3-link view-more-toggle" aria-expanded="false">
+          Ver más <i class="eva-3-icon -arrow-bold-down"></i>
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Expandido (-expanded)</h2>
+      <div class="eva-3-view-more -expanded" style="max-width:400px">
+        <div class="view-more-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat eros sit amet eros egestas, nec fermentum arcu pretium. Sed facilisis nulla at quam dictum, sed maximus metus venenatis. Nulla facilisi.</p>
+        </div>
+        <button class="eva-3-link view-more-toggle" aria-expanded="true">
+          Ver menos <i class="eva-3-icon -arrow-bold-up"></i>
+        </button>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ValidationInline – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>ValidationInline</h1>
+
+    <section>
+      <h2>Error (default)</h2>
+      <div class="eva-3-validation-inline -error" role="alert">
+        <i class="eva-3-icon-warning"></i>
+        <span>Ingresá un correo válido.</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Success</h2>
+      <div class="eva-3-validation-inline -success">
+        <i class="eva-3-icon-check"></i>
+        <span>Campo validado correctamente.</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Warning</h2>
+      <div class="eva-3-validation-inline -warning">
+        <i class="eva-3-icon-warning"></i>
+        <span>Este usuario ya existe. Probá con otro.</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Info</h2>
+      <div class="eva-3-validation-inline -info">
+        <i class="eva-3-icon-info"></i>
+        <span>La contraseña debe tener al menos 8 caracteres.</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Dentro de un campo (campo + mensaje)</h2>
+      <div style="max-width:320px">
+        <div class="eva-3-input -lg -invalid">
+          <input id="email-field" class="input-tag" type="email" placeholder="email@ejemplo.com" />
+        </div>
+        <div class="eva-3-validation-inline -error" role="alert">
+          <i class="eva-3-icon-warning"></i>
+          <span>Ingresá un correo válido.</span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -12,6 +12,17 @@ Variante de modal para onboarding paso a paso, con soporte de imágenes, dots de
 **Categoría:** Overlays / Coachmarks  
 **Tags:** react, modal, coachmark, onboarding, steps, overlay
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Presentar nuevas funcionalidades en un flujo guiado de 1 a 5 pasos.
 - Mostrar tips contextuales al iniciar una experiencia sin cambiar de página.

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PriceboxSticky – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>PriceboxSticky</h1>
+
+    <section>
+      <h2>Default</h2>
+      <div class="eva-3-pricebox-sticky eva-3-shadow" style="max-width:600px">
+        <div class="pricebox-content-container">
+          <div class="pricebox-sticky-more-info">
+            <div class="pricebox-sticky-info-container">
+              <p class="pricebox-sticky-description">Precio final por noche</p>
+              <div class="pricebox-sticky-price">
+                <p class="pricebox-sticky-currency">$</p>
+                100.000<sup class="pricebox-sticky-cents">00</sup>
+              </div>
+            </div>
+          </div>
+          <button class="eva-3-btn -primary -lg pricebox-sticky-button">Comprar</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con mensaje y descuento (-with-info -with-label -green)</h2>
+      <div class="eva-3-pricebox-sticky eva-3-shadow -with-info -with-label -green" style="max-width:600px">
+        <div class="pricebox-content-container">
+          <div class="pricebox-sticky-more-info">
+            <h4 class="pricebox-sticky-message">San Pedro, una escapada con energía rural</h4>
+            <div class="pricebox-sticky-discount-container">
+              <span class="eva-3-label -md -green">-20%</span>
+            </div>
+            <div class="pricebox-sticky-info-container">
+              <p class="pricebox-sticky-description">Precio final por noche</p>
+              <div class="pricebox-sticky-price">
+                <p class="pricebox-sticky-currency">$</p>
+                80.000<sup class="pricebox-sticky-cents">00</sup>
+              </div>
+              <p class="pricebox-sticky-description">Total 2 personas $160.000</p>
+            </div>
+          </div>
+          <button class="eva-3-btn -primary -lg pricebox-sticky-button">Comprar</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variante Loyalty (-loyalty)</h2>
+      <div class="eva-3-pricebox-sticky eva-3-shadow -with-info -loyalty" style="max-width:600px">
+        <div class="pricebox-content-container">
+          <div class="pricebox-sticky-more-info">
+            <div class="pricebox-sticky-loyalty-container eva-3-pricing-points">
+              Podrías sumar <span class="-eva-3-bold">300 puntos</span>
+            </div>
+            <div class="pricebox-sticky-info-container">
+              <p class="pricebox-sticky-description">Precio final por noche</p>
+              <div class="pricebox-sticky-price">
+                <p class="pricebox-sticky-currency">$</p>
+                95.000<sup class="pricebox-sticky-cents">00</sup>
+              </div>
+            </div>
+          </div>
+          <button class="eva-3-btn -primary -lg pricebox-sticky-button">Comprar</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

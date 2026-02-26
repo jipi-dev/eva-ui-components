@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ColoursVariables Loyalty – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>ColoursVariables Loyalty</h1>
+
+    <style>
+      .swatch-grid { display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem; }
+      .swatch { width:160px;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15); }
+      .swatch-color { height:56px; }
+      .swatch-label { padding:.3rem .5rem;font-size:.7rem;background:#fff; }
+    </style>
+
+    <section>
+      <h2>Variables CSS – Loyalty Gold</h2>
+      <p style="color:#666;font-size:.875rem;margin-bottom:1rem">Variables inyectadas globalmente desde el componente.</p>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:var(--loyalty-gold-1,#FDF4DC)"></div><div class="swatch-label">loyalty-gold-1</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--loyalty-gold-2,#F5D97C)"></div><div class="swatch-label">loyalty-gold-2</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--loyalty-gold-3,#C8991F)"></div><div class="swatch-label">loyalty-gold-3</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--loyalty-gold-4,#7A5B08)"></div><div class="swatch-label">loyalty-gold-4</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tiers</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:var(--loyalty-tier-explorer,#4A90D9)"></div><div class="swatch-label">tier-explorer</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--loyalty-tier-traveler,#7B68EE)"></div><div class="swatch-label">tier-traveler</div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--loyalty-tier-global,#C8991F)"></div><div class="swatch-label">tier-global</div></div>
+      </div>
+    </section>
+  </body>
+</html>

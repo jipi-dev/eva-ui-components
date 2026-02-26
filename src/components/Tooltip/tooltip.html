@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Tooltip</h1>
+
+    <section>
+      <h2>Posiciones</h2>
+      <div class="row" style="padding:48px 0;gap:48px;flex-wrap:wrap">
+        <span class="eva-3-tooltip -show-tooltip -top-center -sm">
+          <span class="tooltip-container -eva-3-shadow-static">
+            <i class="tooltip-marker"></i>
+            <span class="tooltip-content">
+              <span class="tooltip-text">Top center</span>
+            </span>
+          </span>
+        </span>
+
+        <span class="eva-3-tooltip -show-tooltip -bottom-center -sm">
+          <span class="tooltip-container -eva-3-shadow-static">
+            <i class="tooltip-marker"></i>
+            <span class="tooltip-content">
+              <span class="tooltip-text">Bottom center</span>
+            </span>
+          </span>
+        </span>
+
+        <span class="eva-3-tooltip -show-tooltip -right-inline -sm">
+          <span class="tooltip-container -eva-3-shadow-static">
+            <i class="tooltip-marker"></i>
+            <span class="tooltip-content">
+              <span class="tooltip-text">Right inline</span>
+            </span>
+          </span>
+        </span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con título</h2>
+      <span class="eva-3-tooltip -show-tooltip -top-center">
+        <span class="tooltip-container -eva-3-shadow-static">
+          <i class="tooltip-marker"></i>
+          <span class="tooltip-content">
+            <h5 class="tooltip-title">Título del tooltip</h5>
+            <span class="tooltip-text">Texto descriptivo del tooltip con más detalle.</span>
+          </span>
+        </span>
+      </span>
+    </section>
+  </body>
+</html>

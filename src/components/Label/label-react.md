@@ -8,6 +8,17 @@ Componente React para etiquetas decorativas tipo "ribbon" que muestran descuento
 **Categoría:** Status / Marketing  
 **Tags:** react, label, ribbon, descuento, promo, loyalty, member-deals, secret-deals, corner, posicion
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Mostrar descuentos, badges de programa o deals destacados sobre tarjetas o imágenes.
 - Señalar exclusividad (member/loyalty/secret deals) o mensajes compuestos.

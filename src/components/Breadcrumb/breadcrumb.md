@@ -8,6 +8,17 @@ Sistema de navegación auxiliar que muestra el camino recorrido. Incluye atribut
 **Categoría:** Navigation  
 **Tags:** breadcrumb, navegación, SEO, schema.org, camino
 
+## Instalación CSS
+
+> Para que los estilos del componente se rendericen correctamente, el proyecto debe incluir los CSS de EVA UI. Agregá estas dos hojas de estilo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen instalando el paquete `@despegar/eva-ui` (o desde la CDN interna del Design System).
+
 ## Cuándo Usar
 - Indicar al usuario su ubicación dentro de una jerarquía y permitir saltos a niveles anteriores.
 - Mejorar SEO con marcadores de esquema de ruta (`BreadcrumbList`).

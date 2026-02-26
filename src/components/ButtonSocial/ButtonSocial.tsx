@@ -17,8 +17,8 @@ export interface ButtonSocialProps extends UtilitiesProps {
   disabled?: boolean;
   /** Whether the button is in loading state */
   loading?: boolean;
-  /** Button content - defaults to "Ingresa con {variant}" */
-  children?: React.ReactNode;
+  /** Button content */
+  children: React.ReactNode;
   /** Click handler */
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -54,7 +54,7 @@ const ButtonSocial: React.FC<ButtonSocialProps> = ({
       btnType="social"
       {...rest}
     >
-      {children || `Ingresa con ${capitalize(variant)}`}
+      {children}
     </ButtonBase>
   );
 };

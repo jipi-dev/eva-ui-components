@@ -12,6 +12,17 @@ Variante loyalty basada en coachmark para mostrar niveles/timeline de acumulaci�
 **Categoría:** Overlays / Loyalty  
 **Tags:** react, modal, tiers, loyalty, coachmark, timeline
 
+## Instalación CSS
+
+> Los CSS de EVA UI **no están incluidos** en el paquete de componentes React — son assets estáticos separados que deben incluirse en el `<head>` del HTML del proyecto:
+
+```html
+<link rel="stylesheet" href="/eva/eva-core.min.css" />
+<link rel="stylesheet" href="/eva/eva.min.css" />
+```
+
+> Los archivos se obtienen desde el paquete `@despegar/eva-ui` (o la CDN interna del Design System). Sin ellos, los componentes no tendrán estilos.
+
 ## Cuándo Usar
 - Comunicar niveles de loyalty, beneficios o breakdown de puntos en un flujo destacado.
 - Onboarding específico de tiers cuando se necesita foco modal.

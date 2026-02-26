@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Ghost – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+    <h1>Button Ghost</h1>
+
+    <section>
+      <h2>Variantes</h2>
+      <span class="label">default</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -ghost -lg"><em class="btn-text">{text}</em></button>
+        <button type="button" class="eva-3-btn -ghost -md"><em class="btn-text">{text}</em></button>
+      </div>
+      <span class="label">darken</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -ghost -darken -lg"><em class="btn-text">{text}</em></button>
+        <button type="button" class="eva-3-btn -ghost -darken -md"><em class="btn-text">{text}</em></button>
+      </div>
+      <span class="label">lighten (fondo oscuro)</span>
+      <div class="row dark-bg">
+        <button type="button" class="eva-3-btn -ghost -lighten -lg"><em class="btn-text">{text}</em></button>
+        <button type="button" class="eva-3-btn -ghost -lighten -md"><em class="btn-text">{text}</em></button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Estados</h2>
+      <span class="label">disabled</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -ghost -lg -disable" disabled><em class="btn-text">{text}</em></button>
+      </div>
+      <span class="label">loading</span>
+      <div class="row">
+        <button type="button" class="eva-3-btn -ghost -lg -loading">
+          <em class="btn-text">{text}</em>
+          <span class="btn-status">Cargando</span>
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Con ícono</h2>
+      <div class="row">
+        <button type="button" class="eva-3-btn -ghost -lg">
+          <i class="eva-3-icon -star btn-icon"></i>
+          <em class="btn-text">{text}</em>
+        </button>
+        <button type="button" class="eva-3-btn -ghost -lg">
+          <em class="btn-text">{text}</em>
+          <i class="eva-3-icon -chevron-right btn-icon"></i>
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
