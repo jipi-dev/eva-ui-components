@@ -1,0 +1,91 @@
+@import "../../scss/eva-core";
+
+// ── Carousel ──────────────────────────────────────────────────────────────────
+
+.eva-#{$version}-carousel {
+	padding-left: 10px;
+
+	// Título
+	.carousel-title-container {
+		display: block;
+		margin-bottom: $spacing-5;
+		padding: 0 $spacing-2;
+
+		&.-title-align-center {
+			text-align: center;
+		}
+
+		&.-title-align-right {
+			text-align: right;
+		}
+	}
+
+	// Área de cards
+	.carousel-cards-container {
+		display: flex;
+		position: relative;
+		align-items: stretch;
+	}
+
+	.cards-container-list {
+		position: relative;
+		flex: 1;
+		overflow: hidden;
+	}
+
+	.list-container {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.card-item {
+		box-sizing: border-box;
+		flex-shrink: 0;
+		padding: $spacing-2 $spacing-3 $spacing-4;
+
+		&.-item-nav-slider {
+			align-self: center;
+			width: 100%;
+		}
+	}
+
+	// Navegación inferior (nav dots + flechas externas)
+	.carousel-navigation-container {
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		padding: $spacing-3 0 10px;
+	}
+
+	.eva-#{$version}-nav-dots {
+		align-self: center;
+		margin: 0 10px;
+	}
+
+	// Posicionamiento de flechas internas
+	.eva-#{$version}-nav-slider {
+		&.-left {
+			left: 0;
+		}
+
+		&.-right {
+			right: 0;
+		}
+	}
+
+	// Imagen dentro de card
+	.card-item-image {
+		width: 100%;
+		min-width: 134px;
+		min-height: 132px;
+	}
+
+	// Variante con flechas dentro del contenedor de cards
+	&.-with-nav {
+		.cards-container-list {
+			padding: 0 $spacing-3;
+		}
+	}
+}

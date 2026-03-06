@@ -25,8 +25,9 @@ Elemento compacto (badge/label) para comunicar atributos, beneficios, estados o 
 
 ## Mejores Prácticas
 - Mantén textos cortos (1-3 palabras) para evitar desbordes.
-- Elige la variante según semántica (success/warning/error/information) o brand (loyalty/unbeatable).
+- Elige la variante según semántica (success/warning/error/information) o brand (loyalty/unbeatable/ifood).
 - Combina ícono + texto solo si aporta claridad; evita duplicar significado.
+- Para variantes Loyalty, usar el ícono `loyalty-filled` como referencia visual del tier.
 
 ## Dependencias
 - Usa clases `eva-3-driver` y modificadores de variante provistos por EVA.
@@ -41,9 +42,33 @@ import { Driver } from "@despegar/eva-react-components";
 
 | Prop | Tipo | Default | Descripción |
 |------|------|---------|-------------|
-| `variant` | `enum` | `''` (default) | Variante del driver. Valores: `''` (default), `'secondary'`, `'benefits'`, `'urgent'`, `'default-lighten'`, `'new'`, `'new-lighten'`, `'information'`, `'success'`, `'warning'`, `'error'`, `'loyalty'`, `'unbeatable'`, `'mintur'`. |
+| `variant` | `enum` | `''` (default) | Variante del driver. Ver tabla de variantes más abajo. |
 | `className` | `string` | `''` | Clases adicionales para el contenedor `eva-3-driver`. |
 | `children` | `Driver.Text \| Driver.Icon \| array` | — | Puede ser un único `Driver.Text`, un único `Driver.Icon`, o array de ambos. |
+
+### Valores de `variant`
+
+| Grupo | Valor | Descripción |
+|-------|-------|-------------|
+| Atributos | `''` | Default — fondo `neutral-800`, texto `white` |
+| Atributos | `'secondary'` | Fondo `neutral-200`, texto `neutral-800` |
+| Atributos | `'benefits'` | Fondo `success-300`, texto `success-900` |
+| Atributos | `'urgent'` | Fondo `error-300`, texto `error-900` |
+| Atributos | `'default-lighten'` | Fondo `white`, texto `neutral-800` |
+| New | `'new'` | Fondo `brand-primary-4`, texto `white` |
+| New | `'new-lighten'` | Fondo `brand-primary-1`, texto `brand-primary-4` |
+| Estados | `'information'` | Sin estilo propio; usa default |
+| Estados | `'success'` | Fondo `success-300`, texto `success-900` |
+| Estados | `'warning'` | Fondo `warning-300`, texto `warning-900` |
+| Estados | `'error'` | Fondo `error-300`, texto `error-900` |
+| Loyalty | `'loyalty'` | Tier Explorador — fondo `--eva-loyalty-primary-500`, texto `white` |
+| Loyalty | `'traveller'` | Tier Viajero — fondo `--eva-loyalty-secondary-500`, texto `neutral-800` |
+| Loyalty | `'global'` | Tier Global — fondo `--eva-loyalty-tertiary-900`, texto `white` |
+| Loyalty | `'premium'` | Tier Premium — fondo `--eva-loyalty-quaternary-800`, texto `white` |
+| Submarcas | `'unbeatable'` | Fondo `--eva-unbeatable-secondary-800`, texto `--eva-unbeatable-primary-500` |
+| Submarcas | `'mintur'` | Fondo `#37BBED`, texto `white` |
+| Submarcas | `'ifood'` | Fondo `#EB0033`, texto `white` |
+| Submarcas | `'club-ifood'` | Fondo `#C375FF`, texto `white` |
 
 ## Sub-componentes
 
@@ -66,15 +91,15 @@ Renderiza un ícono en el driver.
 
 | Prop | Tipo | Default | Descripción |
 |------|------|---------|-------------|
-| `icon` | `string` | `'star-filled'` | Nombre del ícono (ej. `'star'`, `'star-filled'`). |
+| `icon` | `string` | `'star-filled'` | Nombre del ícono (ej. `'star'`, `'star-filled'`, `'loyalty-filled'`). |
 | `className` | `string` | `''` | Clases adicionales para `driver-icon`. |
 
 ## Estructura renderizada
 
 ```jsx
-<div className={`eva-3-driver ${classes} ${className}`}>
+<span className={`eva-3-driver ${classes} ${className}`}>
   {children}
-</div>
+</span>
 ```
 
 - `classes` agrega `-{variant}` según la prop `variant`.
@@ -168,14 +193,43 @@ Renderiza un ícono en el driver.
 </Driver>
 ```
 
-### Submarcas
+### Loyalty
 
-#### Loyalty
+Cada variante corresponde a un tier del programa Loyalty. Se recomienda acompañar con el ícono `loyalty-filled`.
+
+#### Loyalty (Explorador)
 ```jsx
 <Driver variant="loyalty">
+  <Driver.Icon icon="loyalty-filled" />
   <Driver.Text>Loyalty</Driver.Text>
 </Driver>
 ```
+
+#### Viajero
+```jsx
+<Driver variant="traveller">
+  <Driver.Icon icon="loyalty-filled" />
+  <Driver.Text>Viajero</Driver.Text>
+</Driver>
+```
+
+#### Global
+```jsx
+<Driver variant="global">
+  <Driver.Icon icon="loyalty-filled" />
+  <Driver.Text>Global</Driver.Text>
+</Driver>
+```
+
+#### Premium
+```jsx
+<Driver variant="premium">
+  <Driver.Icon icon="loyalty-filled" />
+  <Driver.Text>Premium</Driver.Text>
+</Driver>
+```
+
+### Submarcas
 
 #### Unbeatable
 ```jsx
@@ -188,6 +242,20 @@ Renderiza un ícono en el driver.
 ```jsx
 <Driver variant="mintur">
   <Driver.Text>Mintur</Driver.Text>
+</Driver>
+```
+
+#### iFood
+```jsx
+<Driver variant="ifood">
+  <Driver.Text>iFood</Driver.Text>
+</Driver>
+```
+
+#### Club iFood
+```jsx
+<Driver variant="club-ifood">
+  <Driver.Text>Club iFood</Driver.Text>
 </Driver>
 ```
 
@@ -212,8 +280,7 @@ Renderiza un ícono en el driver.
 
 ```jsx
 <Driver variant="loyalty">
-  <Driver.Icon icon="star-filled" />
-  <Driver.Icon icon="star" />
+  <Driver.Icon icon="loyalty-filled" />
   <Driver.Text>Loyalty</Driver.Text>
 </Driver>
 ```
@@ -228,7 +295,7 @@ Renderiza un ícono en el driver.
 
 - Componentes: `colours-variables-unbeatable` (para variante `-unbeatable`).
 - HOC/utilidades: `withUtilities`, `classResolver`, `instanceOfFunctional`, `PREFIX`.
-- Íconos: `star`, `star-filled` (opcionales en `Driver.Icon`).
+- Íconos: `star`, `star-filled`, `loyalty-filled` (opcionales en `Driver.Icon`).
 - Clase base: `eva-3-driver`.
 - Categoría: `labels` (type: atoms).
 

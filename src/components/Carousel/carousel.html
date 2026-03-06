@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel – Eva Design System</title>
+    <link rel="stylesheet" href="/eva/eva-core.min.css" />
+    <link rel="stylesheet" href="/eva/eva.min.css" />
+  </head>
+  <body>
+
+    <!-- ── Básico (solo scroll, nav dots) ──────────────────────────────────── -->
+    <section>
+      <h2>Básico</h2>
+      <div class="eva-3-carousel">
+        <div class="carousel-title-container -title-align-left">
+          <h6 class="eva-3-h6">¡Conocé lo mejor de Miami!</h6>
+        </div>
+        <div class="carousel-cards-container">
+          <div class="cards-container-list">
+            <ul class="list-container">
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 1</p>
+                  </div>
+                </div>
+              </li>
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 2</p>
+                  </div>
+                </div>
+              </li>
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 3</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-navigation-container">
+          <ul class="eva-3-nav-dots -sm">
+            <li class="nav-dot -active" role="presentation"></li>
+            <li class="nav-dot" role="presentation"></li>
+            <li class="nav-dot" role="presentation"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Título centrado ──────────────────────────────────────────────────── -->
+    <section>
+      <h2>Título centrado</h2>
+      <div class="eva-3-carousel">
+        <div class="carousel-title-container -title-align-center">
+          <h6 class="eva-3-h6">Destinos destacados</h6>
+        </div>
+        <div class="carousel-cards-container">
+          <div class="cards-container-list">
+            <ul class="list-container">
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 1</p>
+                  </div>
+                </div>
+              </li>
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 2</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="carousel-navigation-container">
+          <ul class="eva-3-nav-dots -sm">
+            <li class="nav-dot -active" role="presentation"></li>
+            <li class="nav-dot" role="presentation"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Con flechas externas (hasSubNav, !navsInNavigation) ─────────────── -->
+    <section>
+      <h2>Con flechas externas (debajo del carousel)</h2>
+      <div class="eva-3-carousel">
+        <div class="carousel-title-container -title-align-left">
+          <h6 class="eva-3-h6">Hoteles recomendados</h6>
+        </div>
+        <div class="carousel-cards-container">
+          <div class="cards-container-list">
+            <ul class="list-container">
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 1</p>
+                  </div>
+                </div>
+              </li>
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 2</p>
+                  </div>
+                </div>
+              </li>
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 3</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Flechas externas + nav dots en la barra inferior -->
+        <div class="carousel-navigation-container">
+          <div class="eva-3-nav-slider -sm -white -eva-3-shadow-line-hover" role="button" tabindex="0">
+            <i class="eva-3-icon-chevron-left nav-slider-icon"></i>
+          </div>
+          <ul class="eva-3-nav-dots -sm">
+            <li class="nav-dot -active" role="presentation"></li>
+            <li class="nav-dot" role="presentation"></li>
+            <li class="nav-dot" role="presentation"></li>
+          </ul>
+          <div class="eva-3-nav-slider -sm -white -eva-3-shadow-line-hover" role="button" tabindex="0">
+            <i class="eva-3-icon-chevron-right nav-slider-icon"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Con flechas internas (-with-nav) ────────────────────────────────── -->
+    <section>
+      <h2>Con flechas internas (-with-nav)</h2>
+      <div class="eva-3-carousel -with-nav">
+        <div class="carousel-title-container -title-align-left">
+          <h6 class="eva-3-h6">Vuelos disponibles</h6>
+        </div>
+        <div class="carousel-cards-container">
+          <div class="cards-container-list">
+            <!-- Flecha izquierda dentro del contenedor -->
+            <div class="eva-3-nav-slider -md -white -eva-3-shadow-line-hover -left" role="button" tabindex="0">
+              <i class="eva-3-icon-chevron-left nav-slider-icon"></i>
+            </div>
+            <ul class="list-container">
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 1</p>
+                  </div>
+                </div>
+              </li>
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 2</p>
+                  </div>
+                </div>
+              </li>
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 3</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- Flecha derecha dentro del contenedor -->
+            <div class="eva-3-nav-slider -md -white -eva-3-shadow-line-hover -right" role="button" tabindex="0">
+              <i class="eva-3-icon-chevron-right nav-slider-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-navigation-container">
+          <ul class="eva-3-nav-dots -sm">
+            <li class="nav-dot -active" role="presentation"></li>
+            <li class="nav-dot" role="presentation"></li>
+            <li class="nav-dot" role="presentation"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sin nav dots ─────────────────────────────────────────────────────── -->
+    <section>
+      <h2>Sin nav dots</h2>
+      <div class="eva-3-carousel">
+        <div class="carousel-title-container -title-align-left">
+          <h6 class="eva-3-h6">Ofertas especiales</h6>
+        </div>
+        <div class="carousel-cards-container">
+          <div class="cards-container-list">
+            <ul class="list-container">
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 1</p>
+                  </div>
+                </div>
+              </li>
+              <li class="card-item">
+                <div class="card-item-link-container">
+                  <div class="eva-3-card -eva-3-p-md -eva-3-shadow-line" tabindex="0">
+                    <p style="line-height:200px;width:200px;text-align:center">Card 2</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Sin nav dots: navigation container vacío -->
+        <div class="carousel-navigation-container"></div>
+      </div>
+    </section>
+
+  </body>
+</html>

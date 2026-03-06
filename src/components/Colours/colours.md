@@ -1,11 +1,11 @@
-# Colours Component
+# Colours (colors) Component
 
 ## Descripción
 
 La paleta de colores del design system EVA UI se encuentra disponible en variables de CSS3. Los colores están organizados en diferentes categorías para facilitar su uso y mantener la consistencia visual en todas las aplicaciones.
 
-**Tipo:** Fundacional  
-**Categoría:** Visual / Colour  
+**Tipo:** Fundacional
+**Categoría:** Visual / Colour
 **Tags:** colours, palette, brand, neutrals, states, gradients, tokens, variables
 
 ## Instalación CSS
@@ -143,7 +143,7 @@ Estos son 4: **info**, **success**, **warning** y **error**; y sus variantes de 
 ```css
 --color-warning-100: #FEF4E6  /* Tono más claro */
 --color-warning-300: #FDDDB4
---color-warning-500: #C87203  /* Tono principal */
+--color-warning-500: #AE6504  /* Tono principal */
 --color-warning-900: #643902  /* Tono más oscuro */
 ```
 
@@ -235,7 +235,7 @@ Actualmente disponible: **gradient-primary-500-300**. La nomenclatura indica el 
   --brand-tertiary-2: #CBF6EC;
   --brand-tertiary-3: #ADEDDD;
   --brand-tertiary-4: #62C1A3;
-  
+
   /* Neutral Colors */
   --color-black: #000000;
   --color-neutral-100: #F2F4F5;
@@ -246,31 +246,31 @@ Actualmente disponible: **gradient-primary-500-300**. La nomenclatura indica el 
   --color-neutral-700: #565A60;
   --color-neutral-800: #323439;
   --color-white: #FFFFFF;
-  
+
   /* State Colors - Info */
   --color-info-100: #ECF4FE;
   --color-info-300: #C5DFFD;
   --color-info-500: #2D77CF;
   --color-info-900: #19406E;
-  
+
   /* State Colors - Success */
   --color-success-100: #E6FBFB;
   --color-success-300: #C9F0ED;
   --color-success-500: #028574;
   --color-success-900: #01423A;
-  
+
   /* State Colors - Warning */
   --color-warning-100: #FEF4E6;
   --color-warning-300: #FDDDB4;
-  --color-warning-500: #C87203;
+  --color-warning-500: #AE6504;
   --color-warning-900: #643902;
-  
+
   /* State Colors - Error */
   --color-error-100: #FEEDEC;
   --color-error-300: #FDCAC5;
   --color-error-500: #CB4032;
   --color-error-900: #6E2119;
-  
+
   /* Gradients */
   --gradient-primary-500-300: linear-gradient(335deg, var(--brand-primary-2) 18%, var(--brand-primary-3) 107%);
 }
@@ -415,7 +415,7 @@ Las clases utilitarias de colores se mantienen por motivos de retro-compatibilid
 
 .-eva-3-bc-orange-1 → #FEF4E6 (warning-100)
 .-eva-3-bc-orange-2 → #FDDDB4 (warning-300)
-.-eva-3-bc-orange-3 → #C87203 (warning-500)
+.-eva-3-bc-orange-3 → #AE6504 (warning-500)
 .-eva-3-bc-orange-4 → #643902 (warning-900)
 
 .-eva-3-bc-red-1 → #FEEDEC (error-100)

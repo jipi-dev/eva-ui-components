@@ -21,6 +21,7 @@ $checkbox-check-md-height: $checkbox-check-md-width;
 	}
 
 	.checkbox-check {
+		position: relative;
 		display: inline-block;
 		box-sizing: border-box;
 		width: $checkbox-check-width;
